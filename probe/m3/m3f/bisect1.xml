@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RegisterDescription
+  ModelName="KineoBridgeProducer"
+  VendorName="IDS_Imaging_Development_Systems_GmbH"
+  StandardNameSpace="None"
+  SchemaMajorVersion="1"
+  SchemaMinorVersion="1"
+  SchemaSubMinorVersion="0"
+  MajorVersion="1"
+  MinorVersion="0"
+  SubMinorVersion="0"
+  ProductGuid="c1c1c1c1-0001-0001-0001-000000000001"
+  VersionGuid="c1c1c1c1-0002-0001-0001-000000000001"
+  ToolTip="Kineo Bridge minimal GenICam description (M3c bootstrap)"
+  xmlns="http://www.genicam.org/GenApi/Version_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1 GenApiSchema_Version_1_1.xsd">
+
+  <Category Name="Root" NameSpace="Standard">
+    <pFeature>DeviceVendorName</pFeature>
+    <pFeature>DeviceModelName</pFeature>
+    <pFeature>DeviceSerialNumber</pFeature>
+    <pFeature>Width</pFeature>
+    <pFeature>Height</pFeature>
+    <pFeature>PixelFormat</pFeature>
+    <pFeature>PayloadSize</pFeature>
+  </Category>
+
+  <Port Name="Remote" NameSpace="Standard">
+    <ToolTip>Port through which this device's register/XML content is accessed</ToolTip>
+  </Port>
+
+  <String Name="DeviceVendorName" NameSpace="Standard">
+    <ToolTip>Vendor name</ToolTip>
+    <Value>IDS Imaging Development Systems GmbH</Value>
+  </String>
+
+  <String Name="DeviceModelName" NameSpace="Standard">
+    <ToolTip>Model name</ToolTip>
+    <Value>U3-3560XCP-M</Value>
+  </String>
+
+  <String Name="DeviceSerialNumber" NameSpace="Standard">
+    <ToolTip>Serial number</ToolTip>
+    <Value>4110010861</Value>
+  </String>
+
+  <IntReg Name="Width" NameSpace="Standard">
+    <ToolTip>Image width</ToolTip>
+    <Address>0x20000</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+    <Min>1920</Min>
+    <Max>1920</Max>
+  </IntReg>
+
+  <Integer Name="Height" NameSpace="Standard">
+    <ToolTip>Image height</ToolTip>
+    <Value>1200</Value>
+    <Min>1200</Min>
+    <Max>1200</Max>
+    <Inc>1</Inc>
+  </Integer>
+
+  <Enumeration Name="PixelFormat" NameSpace="Standard">
+    <ToolTip>Pixel format</ToolTip>
+    <EnumEntry Name="Mono8" NameSpace="Standard">
+      <Value>0x01080001</Value>
+    </EnumEntry>
+    <Value>0x01080001</Value>
+  </Enumeration>
+
+  <Integer Name="PayloadSize" NameSpace="Standard">
+    <ToolTip>Payload size in bytes for the current mode</ToolTip>
+    <Value>2304000</Value>
+  </Integer>
+
+</RegisterDescription>

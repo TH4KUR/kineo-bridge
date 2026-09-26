@@ -1,0 +1,38 @@
+api-ms-win-core-synch-l1-2-0.dll
+kernel32.dll
+#+3;CScs
+!1Aa
+alnum
+blank
+alpha
+cntrl
+graph
+digit
+print
+lower
+punct
+space
+upper
+xdigit
+VS_VERSION_INFO
+StringFileInfo
+040C04B0
+CompanyName
+IMV Technologies
+FileDescription
+Kineo device manager
+FileVersion
+1.2.0.0
+InternalName
+NomInterne
+OriginalFilename
+VotreExe.exe
+ProductName
+Votre Produit
+ProductVersion
+1.2.0.0
+LegalCopyright
+ IMV Technologies. Tous droits r
+serv
+VarFileInfo
+Translation

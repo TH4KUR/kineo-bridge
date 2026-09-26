@@ -1,0 +1,323 @@
+&+?input@CompiledModel@ov@@QEBAAEBV?$Output@$$CBVNode@ov@@@2@XZ
+) | Error-Description: 
+*** enterring SerialCom::IdentificationValidation() ***
+*** enterring SerialCom::Nop() ***
+*** exiting SerialCom::GetTemperature() ***
+*** exiting SerialCom::IdentificationValidation() ***
+*** exiting SerialCom::Nop() ***
+*** exiting SerialCom::StartIdentification() ***
+**********************************************Starting application****************************************************************
+--- Enterring SerialCom::GetElecticalParam() ---
+--- Enterring SerialCom::GetFirmwareInfos() ---
+--- Enterring SerialCom::GetPlatinumBoardStatus() ---
+--- Enterring SerialCom::SetCameraOnOff() ---
+--- Enterring SerialCom::SetFanSpeedSetPoint() ---
+--- Enterring SerialCom::SetRelayOnOff() ---
+--- Exiting SerialCom::GetElecticalParam() ---
+--- Exiting SerialCom::GetFirmwareInfos() ---
+--- Exiting SerialCom::GetPlatinumBoardStatus() ---
+--- Exiting SerialCom::SetCameraOnOff() ---
+--- Exiting SerialCom::SetFanSpeedSetPoint() ---
+--- Exiting SerialCom::SetRelayOnOff() ---
+--------- Capture completed successfully.--------
+--------- Starting Video capture ----------------
+----------Analysis completed successfully.--------
+----------Starting Analysis--------
+----> Camera module stopped
+----> Kineo status module stopped
+----> Serial module stopped
+----> Serial protocol module stopped
+..\..\Data\PerfTest
+.?AU?$wrapexcept@Vlength_error@std@@@boost@@
+.?AU?$wrapexcept@Vservice_already_exists@asio@boost@@@boost@@
+.?AU?$wrapexcept@Vsystem_error@system@boost@@@boost@@
+.?AV?$ClassCreator@VCommandNode@nodes@core@peak@@@?A0x44354e43@@
+.?AV?$_Binder@U_Unforced@std@@P8?$connection@Uasio@config@websocketpp@@@websocketpp@@EAAXAEBVerror_code@2@@ZPEAV34@AEBU?$_Ph@$00@2@@std@@
+.?AV?$_Binder@U_Unforced@std@@P8?$connection@Uasio@config@websocketpp@@@websocketpp@@EAAXAEBVerror_code@2@_K@ZPEAV34@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@@std@@
+.?AV?$_Binder@U_Unforced@std@@P8ChironDeviceService@@EAAXW4PerfLevel@@@ZPEAV3@AEBU?$_Ph@$00@2@@std@@
+.?AV?$_CancellationTokenCallback@V<lambda_be3e5d9dce35d2c8dbfa8485373731d5>@@@details@Concurrency@@
+.?AV?$_Fake_no_copy_callable_adapter@P8SerialCom@@EAAXXZPEAV1@@std@@
+.?AV?$_Func_base@XAEBVerror_code@std@@@std@@
+.?AV?$_Func_base@XAEBVerror_code@std@@_K@std@@
+.?AV?$_Func_base@XAEBVerror_code@system@boost@@@std@@
+.?AV?$_Func_base@XW4PerfLevel@@@std@@
+.?AV?$_Func_impl_no_alloc@V?$_Binder@U_Unforced@std@@P8ChironDeviceService@@EAAXW4PerfLevel@@@ZPEAV3@AEBU?$_Ph@$00@2@@std@@XW4PerfLevel@@@std@@
+.?AV?$_Func_impl_no_alloc@V?$_Fake_no_copy_callable_adapter@P8SerialCom@@EAAXXZPEAV1@@std@@X$$V@std@@
+.?AV?$_Packaged_state@$$A6A?AUAnalysisResult@@XZ@std@@
+.?AV?$_Packaged_state@$$A6AXXZ@std@@
+.?AV?$_Ref_count_obj2@V?$ClassCreator@VCommandNode@nodes@core@peak@@@?A0x44354e43@@@std@@
+.?AV?$_Ref_count_obj2@VCompiledModel@ov@@@std@@
+.?AVCameraException@@
+.?AVCommandNode@nodes@core@peak@@
+.?AVISerialCom@@
+.?AVInternalErrorException@core@peak@@
+.?AVSerialCom@@
+.?AVSerialComException@@
+.?AV_Future_error_category2@std@@
+.?AV_Generic_error_category@std@@
+.?AV_Node_back@std@@
+.?AV_System_error@std@@
+.?AV_System_error_category@std@@
+.?AVcategory@error@asio@transport@websocketpp@@
+.?AVcategory@error@transport@websocketpp@@
+.?AVcategory@error@websocketpp@@
+.?AVcolor_start_formatter@details@spdlog@@
+.?AVcolor_stop_formatter@details@spdlog@@
+.?AVerror_category@std@@
+.?AVerror_category@system@boost@@
+.?AVfilesystem_error@filesystem@std@@
+.?AVgeneric_error_category@detail@system@boost@@
+.?AVinterop_error_category@detail@system@boost@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVmisc_category@detail@error@asio@boost@@
+.?AVother_error@detail@json_abi_v3_11_3@nlohmann@@
+.?AVparse_error@detail@json_abi_v3_11_3@nlohmann@@
+.?AVprocessor_category@error@processor@websocketpp@@
+.?AVruntime_error@std@@
+.?AVservice_already_exists@asio@boost@@
+.?AVsystem_error@std@@
+.?AVsystem_error@system@boost@@
+.?AVsystem_error_category@detail@system@boost@@
+.?AVtype_error@detail@json_abi_v3_11_3@nlohmann@@
+.PEAVCameraException@@
+.PEAVruntime_error@std@@
+/tracks.txt
+/xyn_track.txt
+<---- Camera module stop
+<---- Kineo status module stop
+<---- Serial module stop
+<---- Serial protocol module stop
+<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>
+<parse error>
+<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+>>>> Image processing : cell tracking
+>>>> Post processing : Track categorization
+??0CompiledModel@ov@@QEAA@AEBV01@@Z
+??1CompiledModel@ov@@QEAA@XZ
+?ReportUnhandledError@_ExceptionHolder@details@Concurrency@@AEAAXXZ
+?_CallInContext@_ContextCallback@details@Concurrency@@QEBAXV?$function@$$A6AXXZ@std@@_N@Z
+?_Capture@_ContextCallback@details@Concurrency@@AEAAXXZ
+?_LogTaskCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+?_LogTaskExecutionCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+?_LogWorkItemCompleted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+?_LogWorkItemStarted@_TaskEventLogger@details@Concurrency@@QEAAXXZ
+?_Reset@_ContextCallback@details@Concurrency@@AEAAXXZ
+?_Syserror_map@std@@YAPEBDH@Z
+?_Throw_C_error@std@@YAXH@Z
+?_Throw_Cpp_error@std@@YAXH@Z
+?_Throw_future_error@std@@YAXAEBVerror_code@1@@Z
+?_Winerror_map@std@@YAHH@Z
+?_Xlength_error@std@@YAXPEBD@Z
+?_Xregex_error@std@@YAXW4error_type@regex_constants@1@@Z
+?complex@af@@YA?AVarray@1@NAEBV21@@Z
+?create_infer_request@CompiledModel@ov@@QEAA?AVInferRequest@2@XZ
+?error@cv@@YAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD1H@Z
+?format_system_error@v11@fmt@@YAXAEAV?$buffer@D@detail@12@HPEBD@Z
+?setBackend@af@@YAXW4af_backend@@@Z
+ACK-Response
+AUTHENTICATED
+AcquisitionStart
+AcquisitionStop
+Already open
+Analysis started with camera not intialized
+Analysis-Cancel
+Analysis-Start
+Analysis-Start-Response
+BlackLevel
+CONNECTED
+Camera error during analysis: 
+Camera initialized successfully
+Camera opened successfully
+Camera settings loaded and applied successfully
+Camera settings saved successfully
+Can't start a new analysis as one is currently in progress.
+Capture completed
+Client connected.
+Client disconnected.
+CompanyName
+Complete message received. Dispatching
+Comptage: 
+Could not query the last error!
+CreateIoCompletionPort
+DISCONNECTED
+Device is ready for analysis -> Set to Capturing status
+Device not ready.
+Device status error:
+Device-Get-State
+Device-Get-State-Response
+DeviceStatus error: {}
+Different ZIP already loaded: 
+ERROR
+Enterring  SetCameraOnOff with Frame_ID = {}
+Enterring StartIdentification API with Frame_ID = {}
+Error authenticating device:
+Error during cleanup: {}
+Error getting remote endpoint: 
+Error handling message: {}
+Error in image size
+Error parsing extension header
+Error parsing subprotocol header
+Error reading temperature : 
+Error reading temperature:
+Error updating LED:
+Error-Code: 
+Error-Response
+Exception Camera Acquisition stop
+ExposureStart
+Failed to detect camera: {}
+Failed to initialize camera: {}
+Failed to load camera settings: 
+Failed to load camera settings: {}
+Failed to save camera settings: {}
+Fatal boundaries checking error.
+Generic TLS related error
+Generic asio transport policy error
+Generic error
+Generic processor error
+Generic transport policy error
+GetLastError
+GetQueuedCompletionStatus
+Got acknowledgement of close
+HTTP parse error
+Handshake ended with HTTP error: 
+Image processing error during analysis: 
+Incomplete Request
+InitOnceComplete
+Initializing the camera
+Internal Server Error
+Internal library error: Processor
+Internal library error: missing processor
+Loading camera settings from {}
+Network Authentication Required
+New Analysis starts -> new device authentication request.
+No message text available for error %d
+Non Authoritative Information
+PEAK_IPL_RETURN_CODE_ERROR
+PEAK_IPL_RETURN_CODE_FORMAT_INTERPRETATION_ERROR
+PEAK_IPL_RETURN_CODE_IO_ERROR
+PEAK_RETURN_CODE_CTI_LOADING_ERROR
+PEAK_RETURN_CODE_ERROR
+PerfTest-Response
+PerfTest-Start
+PostQueuedCompletionStatus
+Processing error: 
+Protocol error close frame 
+Proxy Authentication Required
+Proxy connection error: 
+QueryPerformanceCounter
+READY
+Received invalid close reason. Sending acknowledgement and closing
+RenderTracksFileToTransparentPng exception: {}
+RenderTracksFileToTransparentPng unknown exception
+RenderTracksFileToTransparentPng: cannot open '{}'
+RenderTracksFileToTransparentPng: empty input/output path
+RenderTracksFileToTransparentPng: invalid image size {}x{}
+RenderTracksFileToTransparentPng: no valid data in '{}'
+RenderTracksFileToTransparentPng: parse error line {}: '{}'
+Restarting async_accept loop failed: 
+SHA-1 library error
+Saving camera settings to {}
+Security policy error
+Send message error: {}
+Serial port error during re-authentication:
+Serial port error during status update:
+SerialCom error: {}
+SerialCom::// device configuration failed 
+SerialCom::Nop / RxdataBuffer or encryptedData Memory allocation failed
+SerialComLib Second heating point sending OK
+SerialComLib Second heating point to {}
+Service already exists.
+SetLastError
+Settings file not found. Using default camera settings.
+Skipping image due to read error: {}
+Socket component error
+Start called in invalid state
+Starting a {} ms video capture of {} images
+Starting performance test
+Starting to build the video...
+Stop
+Stopping acceptance of new connections because the underlying transport is no longer listening.
+Test Error
+Track categorization: 
+Track {} ignored (only {} point)
+Tracking: 
+Tracks bounds: X=[{},{}], Y=[{},{}], scale={}, parsedLines={}, trackCount={}
+Unauthorized
+Underlying Transport Error
+Unexpected error authenticating device:
+Unexpected error during analysis start:
+Unexpected error during status update : 
+Unexpected error reading temperature:
+Unexpected error updating LED:
+Unexpected error: {}
+Unknown error
+Unknown error (%d)
+Unknown interop error %d
+Video capture error
+Video-Ready
+WebSocket error: {}
+[*** LOG ERROR #%04zu ***] [%s] [%s] %s
+[Error-Code: 
+\AnalysisResults\tracks.txt
+\tracking
+_Query_perf_counter
+_Query_perf_frequency
+__p__commode
+__std_type_info_compare
+__stdio_common_vfprintf
+__stdio_common_vsprintf
+__stdio_common_vsprintf_s
+_register_thread_local_exe_atexit_callback
+acknowledging a no-status close with normal code
+acknowledging with remote codes
+asio handle_proxy_read error: 
+asio open handle_close_handshake_timeout error: 
+asio.misc error
+camera_settings.json
+cannot compare iterators of different containers
+connection start
+do_complete
+error
+error in handle_read_http_response: 
+error: 
+ferror
+future already retrieved
+got (expected) eof/state error from closed con
+handle_accept error: 
+handle_transport_init received error: 
+incomplete UTF-8 string; last byte: 0x
+invalid comment; expecting '/' or '*' after '/'
+invalid comment; missing closing '*/'
+invalid string: control character U+0006 (ACK) must be escaped to \u0006
+invalid string: forbidden character after backslash
+n tracks: 
+no incoming message buffers
+open handle_open_handshake_timeout error: 
+other_error
+parse error
+parse_error
+perfResult
+promise already satisfied
+readRxFrame::// FT_read frame error
+readRxFrame::// checksum error
+s ! Tracking impossible
+send_close_ack
+sending acknowledgement and closing
+start_thread
+stop
+strerror
+syntax error 
+terminate called on connection that was already terminated
+throw_on_error
+tracks.txt
+type_error
+unknown error
+v/?start_async@InferRequest@ov@@QEAAXXZ
+write_http_response_error called in invalid state
+zip_error_fini
+zip_error_init
+zip_error_strerror
+zip_file_strerror
+zip_strerror
+{"width":1920,"height":1200,"ExposureTime":1422.267,"Gain":1.0, "BlackLevel":1.75 , "BrightnessAutoTarget":170, "BrightnessAutoPercentile":30, "BrightnessAutoTargetTolerance":20 }

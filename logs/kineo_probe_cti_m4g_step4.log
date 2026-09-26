@@ -1,0 +1,472 @@
+[22:00:02.483] [tid=15924] === DllMain PROCESS_ATTACH  probe 0.12-M4g  log=C:\Users\IMV\kineo-bridge-test\m1\m4g\kineo_probe_cti_m4g_step4.log  xml_url=local:kineo_bridge_m4g.xml;10000;35D8 size=13784 ===
+[22:00:02.483] [tid=15924] GCInitLib
+[22:00:02.483] [tid=15924] GCGetInfo(cmd=9, pBuffer=000002e22951d29c, *piSize=4)
+[22:00:02.483] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.483] [tid=15924] GCGetInfo(cmd=10, pBuffer=000002e22951d2a0, *piSize=4)
+[22:00:02.483] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.483] [tid=15924] GCCloseLib
+[22:00:02.483] [tid=15924] GCInitLib
+[22:00:02.484] [tid=15924] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:00:02.484] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.485] [tid=15924] GCGetInfo(cmd=1, pBuffer=000002e234097d10, *piSize=37)
+[22:00:02.485] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.485] [tid=15924] GCCloseLib
+[22:00:02.485] [tid=15924] === final buffer tally: allocated=0 (0 bytes) queued=0 max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:00:02.485] [tid=15924] === DllMain PROCESS_DETACH ===
+[22:00:02.496] [tid=15924] === DllMain PROCESS_ATTACH  probe 0.12-M4g  log=C:\Users\IMV\kineo-bridge-test\m1\m4g\kineo_probe_cti_m4g_step4.log  xml_url=local:kineo_bridge_m4g.xml;10000;35D8 size=13784 ===
+[22:00:02.496] [tid=15924] GCInitLib
+[22:00:02.497] [tid=15924] GCGetInfo(cmd=9, pBuffer=000002e23418836c, *piSize=4)
+[22:00:02.497] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.497] [tid=15924] GCGetInfo(cmd=10, pBuffer=000002e234188370, *piSize=4)
+[22:00:02.497] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.497] [tid=15924] GCCloseLib
+[22:00:02.497] [tid=15924] GCInitLib
+[22:00:02.497] [tid=15924] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:00:02.498] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.498] [tid=15924] GCGetInfo(cmd=1, pBuffer=000002e234937470, *piSize=37)
+[22:00:02.498] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.498] [tid=15924] GCCloseLib
+[22:00:02.498] [tid=15924] === final buffer tally: allocated=0 (0 bytes) queued=0 max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:00:02.498] [tid=15924] === DllMain PROCESS_DETACH ===
+[22:00:02.500] [tid=15924] === DllMain PROCESS_ATTACH  probe 0.12-M4g  log=C:\Users\IMV\kineo-bridge-test\m1\m4g\kineo_probe_cti_m4g_step4.log  xml_url=local:kineo_bridge_m4g.xml;10000;35D8 size=13784 ===
+[22:00:02.500] [tid=15924] GCInitLib
+[22:00:02.500] [tid=15924] GCGetInfo(cmd=9, pBuffer=000002e23418836c, *piSize=4)
+[22:00:02.501] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.501] [tid=15924] GCGetInfo(cmd=10, pBuffer=000002e234188370, *piSize=4)
+[22:00:02.501] [tid=15924]   -> rc=0 piType=6 *piSize=4
+[22:00:02.501] [tid=15924] GCCloseLib
+[22:00:02.501] [tid=15924] GCInitLib
+[22:00:02.501] [tid=15924] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:00:02.501] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.501] [tid=15924] GCGetInfo(cmd=1, pBuffer=000002e23418e750, *piSize=37)
+[22:00:02.502] [tid=15924]   -> rc=0 piType=1 *piSize=37
+[22:00:02.502] [tid=15924] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:00:02.502] [tid=15924]   -> rc=0 piType=1 *piSize=12
+[22:00:02.502] [tid=15924] GCGetInfo(cmd=0, pBuffer=000002e23417a2e0, *piSize=12)
+[22:00:02.502] [tid=15924]   -> rc=0 piType=1 *piSize=12
+[22:00:02.503] [tid=15924] TLOpen
+[22:00:02.503] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:02.503] [tid=20308] TLGetNumInterfaces -> 1
+[22:00:02.504] [tid=20308] TLGetInterfaceID index=0
+[22:00:02.504] [tid=20308] TLGetInterfaceID index=0
+[22:00:02.504] [tid=20308] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:00:02.504] [tid=20308] GCRegisterEvent hEventSrc=00007ffedb1e73f4 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:00:02.505] [tid=13936] IFUpdateDeviceList timeout=300
+[22:00:02.506] [tid=13936] IFGetNumDevices -> 1
+[22:00:02.506] [tid=13936] IFGetDeviceID index=0
+[22:00:02.506] [tid=13936] IFGetDeviceID index=0
+[22:00:02.506] [tid=15924] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:00:02.506] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:00:02.506] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.506] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:00:02.506] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.506] [tid=15924] TLGetInfo cmd=6
+[22:00:02.507] [tid=15924] TLGetInfo cmd=6
+[22:00:02.507] [tid=15924] TLGetInfo cmd=5
+[22:00:02.507] [tid=15924] TLGetInfo cmd=5
+[22:00:02.507] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f2
+[22:00:02.507] [tid=15924]   -> count=0
+[22:00:02.507] [tid=15924] DevGetPort
+[22:00:02.507] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.507] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.507] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.507] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.507] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f1
+[22:00:02.507] [tid=15924]   -> count=1
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.508] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:00:02.508] [tid=15924]   -> rc=0
+[22:00:02.510] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:00:02.510] [tid=15924]   -> rc=0
+[22:00:02.510] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:00:02.510] [tid=15924]   -> rc=0
+[22:00:02.510] [tid=15924] GCReadPort hPort=00007ffedb1e73f1 addr=0x10000 *piSize=13784 [XML]
+[22:00:02.510] [tid=15924]   -> rc=0 copied=13784
+[22:00:02.510] [tid=15924] DevGetInfo cmd=4
+[22:00:02.510] [tid=15924] DevGetInfo cmd=4
+[22:00:02.510] [tid=15924] DevGetInfo cmd=4
+[22:00:02.510] [tid=15924] DevGetInfo cmd=4
+[22:00:02.511] [tid=15924] DevGetNumDataStreams -> 1  [Pass 2]
+[22:00:02.511] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:00:02.511] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:00:02.516] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.517] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.517] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.517] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.517] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.517] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.517] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:00:02.517] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:00:02.518] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:00:02.518] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:00:02.518] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:00:02.518] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:00:02.518] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:00:02.518] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:00:02.518] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:00:02.518] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:00:02.518] [tid=15924] WRITE ExposureTime                 addr=0x20040 <- 1422.267000
+[22:00:02.520] [tid=15924] WRITE Gain                         addr=0x20050 <- 1.000000
+[22:00:02.520] [tid=15924] WRITE BlackLevel                   addr=0x20060 <- 1.750000
+[22:00:02.520] [tid=15924] WRITE AcquisitionFrameRate         addr=0x20110 <- 60.000000
+[22:00:02.520] [tid=15924] READ  Width                        addr=0x20000 -> 1920
+[22:00:02.520] [tid=15924] READ  Height                       addr=0x20010 -> 1200
+[22:00:02.520] [tid=15924] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:00:07.560] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:07.561] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:12.602] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:00:12.603] [tid=13936] IFUpdateDeviceList timeout=300
+[22:00:17.639] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:17.639] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:22.683] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:22.684] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:27.712] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:00:27.712] [tid=13936] IFUpdateDeviceList timeout=300
+[22:00:32.760] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:32.761] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:37.800] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:00:37.800] [tid=13936] IFUpdateDeviceList timeout=300
+[22:00:42.851] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:42.852] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:47.868] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:00:47.868] [tid=13936] IFUpdateDeviceList timeout=300
+[22:00:52.911] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:52.912] [tid=20308] IFUpdateDeviceList timeout=300
+[22:00:57.962] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:00:57.965] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:03.014] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:03.015] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:08.066] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:08.067] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:13.105] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:01:13.105] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:18.146] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:18.149] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:23.188] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:01:23.188] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:28.234] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:28.235] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:33.291] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:01:33.291] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:38.333] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:38.334] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:43.376] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:43.377] [tid=6620] IFUpdateDeviceList timeout=300
+[22:01:48.416] [tid=13936] TLUpdateInterfaceList timeout=100
+[22:01:48.417] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:53.461] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:01:53.465] [tid=13936] IFUpdateDeviceList timeout=300
+[22:01:58.511] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:01:58.512] [tid=20308] IFUpdateDeviceList timeout=300
+[22:02:03.551] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:03.552] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:08.591] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:02:08.592] [tid=20308] IFUpdateDeviceList timeout=300
+[22:02:13.630] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:13.631] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:18.670] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:02:18.671] [tid=20308] IFUpdateDeviceList timeout=300
+[22:02:23.716] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:02:23.717] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:28.762] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:28.763] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:33.802] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:02:33.803] [tid=20308] IFUpdateDeviceList timeout=300
+[22:02:38.852] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:38.854] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:43.905] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:43.906] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:48.946] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:02:48.947] [tid=20308] IFUpdateDeviceList timeout=300
+[22:02:53.985] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:53.986] [tid=6620] IFUpdateDeviceList timeout=300
+[22:02:59.032] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:02:59.032] [tid=6620] IFUpdateDeviceList timeout=300
+[22:03:04.077] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:04.078] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:09.116] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:09.117] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:14.151] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:14.152] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:19.196] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:03:19.197] [tid=6620] IFUpdateDeviceList timeout=300
+[22:03:24.239] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:03:24.239] [tid=6620] IFUpdateDeviceList timeout=300
+[22:03:29.288] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:03:29.289] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:34.332] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:34.332] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:39.374] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:03:39.375] [tid=6008] IFUpdateDeviceList timeout=300
+[22:03:44.417] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:44.418] [tid=20308] IFUpdateDeviceList timeout=300
+[22:03:49.469] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:03:49.470] [tid=6008] IFUpdateDeviceList timeout=300
+[22:03:54.520] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:03:54.521] [tid=6008] IFUpdateDeviceList timeout=300
+[22:03:59.567] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:03:59.567] [tid=20308] IFUpdateDeviceList timeout=300
+[22:04:04.601] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:04.602] [tid=6008] IFUpdateDeviceList timeout=300
+[22:04:09.644] [tid=20308] TLUpdateInterfaceList timeout=100
+[22:04:09.645] [tid=20308] IFUpdateDeviceList timeout=300
+[22:04:14.679] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:14.681] [tid=20308] IFUpdateDeviceList timeout=300
+[22:04:19.724] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:19.724] [tid=6008] IFUpdateDeviceList timeout=300
+[22:04:24.770] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:04:24.770] [tid=6620] IFUpdateDeviceList timeout=300
+[22:04:29.813] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:04:29.813] [tid=6620] IFUpdateDeviceList timeout=300
+[22:04:34.866] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:34.867] [tid=6008] IFUpdateDeviceList timeout=300
+[22:04:39.908] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:39.908] [tid=6008] IFUpdateDeviceList timeout=300
+[22:04:44.948] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:44.948] [tid=6008] IFUpdateDeviceList timeout=300
+[22:04:49.994] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:04:49.995] [tid=6620] IFUpdateDeviceList timeout=300
+[22:04:55.032] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:04:55.033] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:00.069] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:00.069] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:05.109] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:05.110] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:10.162] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:10.163] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:15.212] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:15.218] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:20.265] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:20.266] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:25.306] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:25.307] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:30.347] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:30.347] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:35.383] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:35.383] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:40.437] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:40.437] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:45.470] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:45.470] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:50.484] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:05:50.484] [tid=6620] IFUpdateDeviceList timeout=300
+[22:05:55.514] [tid=6008] TLUpdateInterfaceList timeout=100
+[22:05:55.515] [tid=6008] IFUpdateDeviceList timeout=300
+[22:05:57.327] [tid=6620] WRITE AcquisitionMode              addr=0x20120 <- 0
+[22:05:57.328] [tid=6620] WRITE TriggerSelector              addr=0x20130 <- 2
+[22:05:57.328] [tid=6620] WRITE TriggerMode                  addr=0x200c0 <- 0
+[22:05:57.329] [tid=6620] READ  PayloadSize                  addr=0x20030 -> 2304000
+[22:05:57.329] [tid=6620] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:05:57.331] [tid=6620]   -> rc=0 piType=12 *piSize=8
+[22:05:57.331] [tid=6620] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:05:57.331] [tid=6620]   -> rc=0 piType=12 *piSize=8
+[22:05:57.332] [tid=6620] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=000002e233971da0 base=000002e235931040 (gen=1)
+[22:05:57.332] [tid=6620] DSQueueBuffer #1 handle=000002e233971da0 base=000002e235931040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:05:57.333] [tid=6620] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=000002e23397ef00 base=000002e236623040 (gen=2)
+[22:05:57.333] [tid=6620] DSQueueBuffer #2 handle=000002e23397ef00 base=000002e236623040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:05:57.334] [tid=6620] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=000002e23397ef30 base=000002e236865040 (gen=3)
+[22:05:57.334] [tid=6620] DSQueueBuffer #3 handle=000002e23397ef30 base=000002e236865040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:05:57.337] [tid=6620] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=000002e23397ef60 base=000002e236aa1040 (gen=4)
+[22:05:57.337] [tid=6620] DSQueueBuffer #4 handle=000002e23397ef60 base=000002e236aa1040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:05:57.337] [tid=6620] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=000002e23397ef90 base=000002e236ce8040 (gen=5)
+[22:05:57.338] [tid=6620] DSQueueBuffer #5 handle=000002e23397ef90 base=000002e236ce8040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:05:57.338] [tid=6620] DSAllocAndAnnounceBuffer #6 ... further allocations logged only at checkpoints (16, 32, 64, ...)
+[22:05:57.338] [tid=6620] DSQueueBuffer #6 ... further queues logged only at checkpoints (16, 32, 64, ...)
+[22:05:57.339] [tid=6620] DSAllocAndAnnounceBuffer #16 (checkpoint) total_bytes=36864000 avail_phys=7458 MB
+[22:05:57.339] [tid=6620] DSQueueBuffer #16 (checkpoint) queue_depth=16
+[22:05:57.341] [tid=6620] DSAllocAndAnnounceBuffer #32 (checkpoint) total_bytes=73728000 avail_phys=7458 MB
+[22:05:57.342] [tid=6620] DSQueueBuffer #32 (checkpoint) queue_depth=32
+[22:05:57.344] [tid=6620] DSAllocAndAnnounceBuffer #64 (checkpoint) total_bytes=147456000 avail_phys=7458 MB
+[22:05:57.345] [tid=6620] DSQueueBuffer #64 (checkpoint) queue_depth=64
+[22:05:57.349] [tid=6620] === buffer alloc/queue burst ended: 81 buffer(s) this burst (alloc #1-#81), 186624000 bytes, max queue depth 81 -- next call: GCRegisterEvent(id=1) ===
+[22:05:57.350] [tid=6620] GCRegisterEvent(hEventSrc=DS, EVENT_NEW_BUFFER) -> SUCCESS, handle=000002e234ae3b90
+[22:05:57.350] [tid=6620] DSStartAcquisition iStartFlags=0 iNumToAcquire=18446744073709551615 (looks like INFINITE_NUMBER/continuous) queued_buffers=81 -> SUCCESS, grabbing=TRUE
+[22:05:57.352] [tid=6620] COMMAND AcquisitionStart             addr=0x200e0
+[22:05:57.355] [tid=6620] COMMAND AcquisitionStart             addr=0x200e0
+[22:05:57.877] [tid=6620] EventGetInfo cmd=3  [STUB -> NOT_IMPLEMENTED]
+[22:05:57.878] [tid=6620] GCGetLastError
+[22:05:57.879] [tid=6620] GCGetLastError
+[22:06:00.557] [tid=6976] TLUpdateInterfaceList timeout=100
+[22:06:00.558] [tid=6976] IFUpdateDeviceList timeout=300
+[22:06:00.558] [tid=15924] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:06:00.558] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:06:00.559] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.559] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:06:00.560] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.560] [tid=15924] TLGetInfo cmd=6
+[22:06:00.560] [tid=15924] TLGetInfo cmd=6
+[22:06:00.560] [tid=15924] TLGetInfo cmd=5
+[22:06:00.560] [tid=15924] TLGetInfo cmd=5
+[22:06:00.561] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f2
+[22:06:00.561] [tid=15924]   -> count=0
+[22:06:00.561] [tid=15924] DevGetPort
+[22:06:00.561] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.561] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.562] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.562] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.562] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f1
+[22:06:00.562] [tid=15924]   -> count=1
+[22:06:00.562] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:06:00.562] [tid=15924]   -> rc=0
+[22:06:00.563] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:06:00.563] [tid=15924]   -> rc=0
+[22:06:00.563] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:06:00.563] [tid=15924]   -> rc=0
+[22:06:00.563] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:06:00.564] [tid=15924]   -> rc=0
+[22:06:00.564] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:06:00.564] [tid=15924]   -> rc=0
+[22:06:00.564] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:06:00.564] [tid=15924]   -> rc=0
+[22:06:00.564] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:06:00.565] [tid=15924]   -> rc=0
+[22:06:00.565] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:06:00.565] [tid=15924]   -> rc=0
+[22:06:00.565] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:06:00.565] [tid=15924]   -> rc=0
+[22:06:00.565] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:06:00.566] [tid=15924]   -> rc=0
+[22:06:00.566] [tid=15924] GCReadPort hPort=00007ffedb1e73f1 addr=0x10000 *piSize=13784 [XML]
+[22:06:00.566] [tid=15924]   -> rc=0 copied=13784
+[22:06:00.566] [tid=15924] DevGetInfo cmd=4
+[22:06:00.566] [tid=15924] DevGetInfo cmd=4
+[22:06:00.566] [tid=15924] DevGetInfo cmd=4
+[22:06:00.566] [tid=15924] DevGetInfo cmd=4
+[22:06:00.566] [tid=15924] DevClose
+[22:06:00.568] [tid=15924] GCUnregisterEvent(DS, EVENT_NEW_BUFFER) -> SUCCESS, freed
+[22:06:00.569] [tid=15924] DevGetNumDataStreams -> 1  [Pass 2]
+[22:06:00.569] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:06:00.569] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:06:00.573] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.574] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.574] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.574] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.574] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.574] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.574] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:00.574] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:00.576] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:06:00.576] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:00.576] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:06:00.577] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:00.577] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:06:00.577] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:00.577] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:06:00.577] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:00.577] [tid=15924] WRITE ExposureTime                 addr=0x20040 <- 1422.267000
+[22:06:00.578] [tid=15924] WRITE Gain                         addr=0x20050 <- 1.000000
+[22:06:00.578] [tid=15924] WRITE BlackLevel                   addr=0x20060 <- 1.750000
+[22:06:00.578] [tid=15924] WRITE AcquisitionFrameRate         addr=0x20110 <- 60.000000
+[22:06:00.578] [tid=15924] READ  Width                        addr=0x20000 -> 1920
+[22:06:00.579] [tid=15924] READ  Height                       addr=0x20010 -> 1200
+[22:06:00.579] [tid=15924] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:06:05.619] [tid=6620] TLUpdateInterfaceList timeout=100
+[22:06:05.619] [tid=6620] IFUpdateDeviceList timeout=300
+[22:06:05.619] [tid=15924] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:06:05.619] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:06:05.619] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.619] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f2 cmd=12
+[22:06:05.619] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.621] [tid=15924] TLGetInfo cmd=6
+[22:06:05.621] [tid=15924] TLGetInfo cmd=6
+[22:06:05.621] [tid=15924] TLGetInfo cmd=5
+[22:06:05.621] [tid=15924] TLGetInfo cmd=5
+[22:06:05.621] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f2
+[22:06:05.621] [tid=15924]   -> count=0
+[22:06:05.621] [tid=15924] DevGetPort
+[22:06:05.621] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.621] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.622] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.622] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.622] [tid=15924] GCGetNumPortURLs hPort=00007ffedb1e73f1
+[22:06:05.622] [tid=15924]   -> count=1
+[22:06:05.622] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=0
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=9
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=7
+[22:06:05.623] [tid=15924]   -> rc=0
+[22:06:05.623] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:06:05.624] [tid=15924]   -> rc=0
+[22:06:05.624] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=8
+[22:06:05.624] [tid=15924]   -> rc=0
+[22:06:05.624] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:06:05.624] [tid=15924]   -> rc=0
+[22:06:05.624] [tid=15924] GCGetPortURLInfo hPort=00007ffedb1e73f1 idx=0 cmd=10
+[22:06:05.624] [tid=15924]   -> rc=0
+[22:06:05.624] [tid=15924] GCReadPort hPort=00007ffedb1e73f1 addr=0x10000 *piSize=13784 [XML]
+[22:06:05.624] [tid=15924]   -> rc=0 copied=13784
+[22:06:05.625] [tid=15924] DevGetInfo cmd=4
+[22:06:05.625] [tid=15924] DevGetInfo cmd=4
+[22:06:05.625] [tid=15924] DevGetInfo cmd=4
+[22:06:05.625] [tid=15924] DevGetInfo cmd=4
+[22:06:05.625] [tid=15924] DevClose
+[22:06:05.625] [tid=15924] DevGetNumDataStreams -> 1  [Pass 2]
+[22:06:05.626] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:06:05.626] [tid=15924] DevGetDataStreamID index=0  [Pass 2]
+[22:06:05.627] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.627] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.627] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.627] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.629] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.629] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.629] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=12
+[22:06:05.629] [tid=15924]   -> rc=0 piType=1 *piSize=7
+[22:06:05.629] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:06:05.629] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:05.629] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=7
+[22:06:05.630] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:05.630] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:06:05.630] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:05.630] [tid=15924] GCGetPortInfo hPort=00007ffedb1e73f1 cmd=8
+[22:06:05.630] [tid=15924]   -> rc=0 piType=11 *piSize=1
+[22:06:05.630] [tid=15924] WRITE ExposureTime                 addr=0x20040 <- 1422.267000
+[22:06:05.630] [tid=15924] WRITE Gain                         addr=0x20050 <- 1.000000
+[22:06:05.630] [tid=15924] WRITE BlackLevel                   addr=0x20060 <- 1.750000
+[22:06:05.630] [tid=15924] WRITE AcquisitionFrameRate         addr=0x20110 <- 60.000000
+[22:06:05.631] [tid=15924] READ  Width                        addr=0x20000 -> 1920
+[22:06:05.631] [tid=15924] READ  Height                       addr=0x20010 -> 1200
+[22:06:05.631] [tid=15924] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:06:09.341] [tid=14896] COMMAND AcquisitionStop              addr=0x200f0
+[22:06:09.342] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.342] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.342] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.348] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.348] [tid=14896] DSStopAcquisition -> SUCCESS, grabbing=FALSE
+[22:06:09.348] [tid=14896] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:06:09.348] [tid=14896] GCGetLastError
+[22:06:09.348] [tid=14896] GCGetLastError
+[22:06:09.349] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.349] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.349] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.349] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.349] [tid=14896] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:06:09.349] [tid=14896] GCGetLastError
+[22:06:09.349] [tid=14896] GCGetLastError
+[22:06:09.351] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.351] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.351] [tid=14896] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:06:09.351] [tid=14896]   -> rc=0 piType=11 *piSize=1
+[22:06:09.351] [tid=14896] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:06:09.351] [tid=14896] GCGetLastError
+[22:06:09.351] [tid=14896] GCGetLastError
+[22:06:09.351] [tid=14896] DevClose

@@ -1,0 +1,86 @@
+LIBRARY m4b_standalone.cti
+EXPORTS
+    GCGetInfo
+    GCGetLastError
+    GCInitLib
+    GCCloseLib
+    GCReadPort
+    GCWritePort
+    GCReadPortStacked
+    GCWritePortStacked
+    GCGetPortInfo
+    GCGetPortURL
+    GCGetNumPortURLs
+    GCGetPortURLInfo
+    GCRegisterEvent
+    GCUnregisterEvent
+    EventGetData
+    EventGetInfo
+    EventFlush
+    EventGetDataInfo
+    EventKill
+    TLOpen
+    TLClose
+    TLGetInfo
+    TLGetNumInterfaces
+    TLGetInterfaceID
+    TLGetInterfaceInfo
+    TLOpenInterface
+    TLUpdateInterfaceList
+    IFClose
+    IFGetInfo
+    IFGetNumDevices
+    IFGetDeviceID
+    IFUpdateDeviceList
+    IFGetDeviceInfo
+    IFOpenDevice
+    IFGetParentTL
+    DevGetPort
+    DevGetInfo
+    DevClose
+    DevGetNumDataStreams
+    DevGetDataStreamID
+    DevOpenDataStream
+    DevGetParentIF
+    DSAnnounceBuffer
+    DSAllocAndAnnounceBuffer
+    DSRevokeBuffer
+    DSQueueBuffer
+    DSGetParentDev
+    DSFlushQueue
+    DSStartAcquisition
+    DSStopAcquisition
+    DSGetInfo
+    DSGetBufferID
+    DSGetBufferInfo
+    DSGetBufferChunkData
+    DSClose
+    DSGetNumBufferParts
+    DSGetBufferPartInfo
+    ; -- below: 24 non-GenTL noise exports (23 OS_* + 1 mangled CRT symbol),
+    ; unknown signatures, forwarded natively at the PE level purely for
+    ; exact export-surface parity -- not "ordinary GenTL functions".
+    OS_EventClear = real_target.cti.OS_EventClear
+    OS_EventCreateObject = real_target.cti.OS_EventCreateObject
+    OS_EventDeinitialize = real_target.cti.OS_EventDeinitialize
+    OS_EventDestroyObject = real_target.cti.OS_EventDestroyObject
+    OS_EventGetObjectSize = real_target.cti.OS_EventGetObjectSize
+    OS_EventInitialize = real_target.cti.OS_EventInitialize
+    OS_EventSet = real_target.cti.OS_EventSet
+    OS_EventWait = real_target.cti.OS_EventWait
+    OS_EventWaitMultiple = real_target.cti.OS_EventWaitMultiple
+    OS_MemoryAlloc = real_target.cti.OS_MemoryAlloc
+    OS_MemoryAllocWithTag = real_target.cti.OS_MemoryAllocWithTag
+    OS_MemoryCmp = real_target.cti.OS_MemoryCmp
+    OS_MemoryCompare = real_target.cti.OS_MemoryCompare
+    OS_MemoryCopy = real_target.cti.OS_MemoryCopy
+    OS_MemoryFree = real_target.cti.OS_MemoryFree
+    OS_MemoryGetPageShift = real_target.cti.OS_MemoryGetPageShift
+    OS_MemoryGetPageSize = real_target.cti.OS_MemoryGetPageSize
+    OS_MemoryMove = real_target.cti.OS_MemoryMove
+    OS_MemorySet = real_target.cti.OS_MemorySet
+    OS_MemoryZero = real_target.cti.OS_MemoryZero
+    OS_StrGetCharStringLen = real_target.cti.OS_StrGetCharStringLen
+    OS_StringCopy = real_target.cti.OS_StringCopy
+    OS_StringPrintf = real_target.cti.OS_StringPrintf
+    "??4_Init_locks@std@@QEAAAEAV01@AEBV01@@Z" = real_target.cti."??4_Init_locks@std@@QEAAAEAV01@AEBV01@@Z"

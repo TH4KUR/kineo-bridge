@@ -1,0 +1,660 @@
+[22:32:52.873] [tid=15936] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:32:52.878] [tid=15936] GCInitLib
+[22:32:52.883] [tid=15936] GCGetInfo(cmd=9, pBuffer=000001e0b390188c, *piSize=4)
+[22:32:52.889] [tid=15936]   -> rc=0 piType=6 *piSize=4
+[22:32:52.894] [tid=15936] GCGetInfo(cmd=10, pBuffer=000001e0b3901890, *piSize=4)
+[22:32:52.897] [tid=15936]   -> rc=0 piType=6 *piSize=4
+[22:32:52.899] [tid=15936] GCCloseLib
+[22:32:52.902] [tid=15936] GCInitLib
+[22:32:52.904] [tid=15936] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:32:52.907] [tid=15936]   -> rc=0 piType=1 *piSize=37
+[22:32:52.910] [tid=15936] GCGetInfo(cmd=1, pBuffer=000001e0be39eb50, *piSize=37)
+[22:32:52.911] [tid=15936]   -> rc=0 piType=1 *piSize=37
+[22:32:52.914] [tid=15936] GCCloseLib
+[22:32:52.917] [tid=15936] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:32:52.926] [tid=15936] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:32:52.929] [tid=15936] === DllMain PROCESS_DETACH ===
+[22:32:52.934] [tid=15936] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:32:52.937] [tid=15936] GCInitLib
+[22:32:52.939] [tid=15936] GCGetInfo(cmd=9, pBuffer=000001e0b39005fc, *piSize=4)
+[22:32:52.942] [tid=15936]   -> rc=0 piType=6 *piSize=4
+[22:32:52.946] [tid=15936] GCGetInfo(cmd=10, pBuffer=000001e0b3900600, *piSize=4)
+[22:32:52.949] [tid=15936]   -> rc=0 piType=6 *piSize=4
+[22:32:52.951] [tid=15936] GCCloseLib
+[22:32:52.954] [tid=15936] GCInitLib
+[22:32:52.957] [tid=15936] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:32:52.961] [tid=15936]   -> rc=0 piType=1 *piSize=37
+[22:32:52.964] [tid=15936] GCGetInfo(cmd=1, pBuffer=000001e0be39e700, *piSize=37)
+[22:32:52.966] [tid=15936]   -> rc=0 piType=1 *piSize=37
+[22:32:52.973] [tid=15936] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:32:52.978] [tid=15936]   -> rc=0 piType=1 *piSize=12
+[22:32:52.980] [tid=15936] GCGetInfo(cmd=0, pBuffer=000001e0be36bc30, *piSize=12)
+[22:32:52.982] [tid=15936]   -> rc=0 piType=1 *piSize=12
+[22:32:52.985] [tid=15936] TLOpen
+[22:32:52.987] [tid=15936] TLUpdateInterfaceList timeout=1000
+[22:32:52.990] [tid=15936] TLGetNumInterfaces -> 1
+[22:32:52.992] [tid=15936] TLGetInterfaceID index=0
+[22:32:52.994] [tid=15936] TLGetInterfaceID index=0
+[22:32:53.002] [tid=15936] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:32:53.008] [tid=15936] GCRegisterEvent hEventSrc=00007ffee774a434 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:32:53.011] [tid=15936] IFUpdateDeviceList timeout=1000
+[22:32:53.012] [tid=15936] IFGetNumDevices -> 1
+[22:32:53.015] [tid=15936] IFGetDeviceID index=0
+[22:32:53.017] [tid=15936] IFGetDeviceID index=0
+[22:32:53.018] [tid=15936] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:32:53.020] [tid=15936] GCGetPortInfo hPort=00007ffee774a432 cmd=12
+[22:32:53.023] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.024] [tid=15936] GCGetPortInfo hPort=00007ffee774a432 cmd=12
+[22:32:53.032] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.039] [tid=15936] TLGetInfo cmd=6
+[22:32:53.040] [tid=15936] TLGetInfo cmd=6
+[22:32:53.044] [tid=15936] TLGetInfo cmd=5
+[22:32:53.046] [tid=15936] TLGetInfo cmd=5
+[22:32:53.048] [tid=15936] GCGetNumPortURLs hPort=00007ffee774a432
+[22:32:53.051] [tid=15936]   -> count=0
+[22:32:53.052] [tid=15936] DevGetPort
+[22:32:53.053] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.053] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.060] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.062] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.067] [tid=15936] GCGetNumPortURLs hPort=00007ffee774a431
+[22:32:53.069] [tid=15936]   -> count=1
+[22:32:53.074] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=0
+[22:32:53.076] [tid=15936]   -> rc=0
+[22:32:53.081] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=0
+[22:32:53.088] [tid=15936]   -> rc=0
+[22:32:53.091] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=9
+[22:32:53.096] [tid=15936]   -> rc=0
+[22:32:53.106] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=9
+[22:32:53.110] [tid=15936]   -> rc=0
+[22:32:53.113] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=7
+[22:32:53.118] [tid=15936]   -> rc=0
+[22:32:53.121] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=7
+[22:32:53.124] [tid=15936]   -> rc=0
+[22:32:53.127] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=8
+[22:32:53.130] [tid=15936]   -> rc=0
+[22:32:53.133] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=8
+[22:32:53.135] [tid=15936]   -> rc=0
+[22:32:53.139] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=10
+[22:32:53.142] [tid=15936]   -> rc=0
+[22:32:53.147] [tid=15936] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=10
+[22:32:53.150] [tid=15936]   -> rc=0
+[22:32:53.153] [tid=15936] GCReadPort hPort=00007ffee774a431 addr=0x10000 *piSize=13804 [XML]
+[22:32:53.156] [tid=15936]   -> rc=0 copied=13804
+[22:32:53.160] [tid=15936] DevGetNumDataStreams -> 1  [Pass 2]
+[22:32:53.163] [tid=15936] DevGetDataStreamID index=0  [Pass 2]
+[22:32:53.166] [tid=15936] DevGetDataStreamID index=0  [Pass 2]
+[22:32:53.179] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.181] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.186] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.192] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.196] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.197] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.201] [tid=15936] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:32:53.208] [tid=15936]   -> rc=0 piType=1 *piSize=7
+[22:32:53.216] [tid=15936] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:32:53.221] [tid=15936] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:32:53.224] [tid=15936]   -> rc=0 piType=12 *piSize=8
+[22:32:53.229] [tid=15936] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:32:53.231] [tid=15936]   -> rc=0 piType=12 *piSize=8
+[22:32:53.237] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.241] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.245] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.250] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.254] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.257] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.262] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.267] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.269] [tid=15936] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=000001e0bc3e15e0 base=000001e0beb3d040 (gen=1)
+[22:32:53.274] [tid=15936] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=000001e0bc3e1840 base=000001e0bed8e040 (gen=2)
+[22:32:53.281] [tid=15936] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=000001e0bc3e1890 base=000001e0befd3040 (gen=3)
+[22:32:53.284] [tid=15936] DSQueueBuffer #1 handle=000001e0bc3e15e0 base=000001e0beb3d040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:32:53.290] [tid=15936] DSQueueBuffer handle=000001e0bc3e15e0 -> RESOURCE_IN_USE (already QUEUED, illegal duplicate)
+[22:32:53.295] [tid=15936] GCGetLastError
+[22:32:53.298] [tid=15936] GCGetLastError
+[22:32:53.305] [tid=15936] DSRevokeBuffer handle=000001e0bc3e15e0 -> RESOURCE_IN_USE (buffer is QUEUED, must be flushed/dequeued first)
+[22:32:53.309] [tid=15936] GCGetLastError
+[22:32:53.311] [tid=15936] GCGetLastError
+[22:32:53.316] [tid=15936] DSRevokeBuffer handle=000001e0bc3e1840 base=000001e0bed8e040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:32:53.321] [tid=15936] DSRevokeBuffer handle=000001e0bc3e1890 base=000001e0befd3040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:32:53.328] [tid=15936] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=000001e0bc3e1840 base=000001e0bed8b040 (gen=4)
+[22:32:53.332] [tid=15936] DSRevokeBuffer handle=000001e0bc3e1840 base=000001e0bed8b040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:32:53.337] [tid=15936] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=000001e0bc3e1840 base=000001e0bed82040 (gen=5)
+[22:32:53.342] [tid=15936] DSQueueBuffer #2 handle=000001e0bc3e1840 base=000001e0bed82040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:32:53.346] [tid=15936] DSAllocAndAnnounceBuffer #6 ... further allocations logged only at checkpoints (16, 32, 64, ...)
+[22:32:53.348] [tid=15936] DSQueueBuffer #3 handle=000001e0bc3e1890 base=000001e0befcb040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:32:53.353] [tid=15936] DSQueueBuffer #4 handle=000001e0bc3e1af0 base=000001e0bf20d040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:32:53.357] [tid=15936] DSQueueBuffer #5 handle=000001e0bc3e1b40 base=000001e0bf453040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:32:53.359] [tid=15936] DSQueueBuffer #6 ... further queues logged only at checkpoints (16, 32, 64, ...)
+[22:32:53.365] [tid=15936] DSAllocAndAnnounceBuffer #16 (checkpoint) total_bytes=36864000 avail_phys=8345 MB
+[22:32:53.369] [tid=15936] DSQueueBuffer #16 (checkpoint) queue_depth=16
+[22:32:53.373] [tid=15936] DSAllocAndAnnounceBuffer #32 (checkpoint) total_bytes=73728000 avail_phys=8345 MB
+[22:32:53.375] [tid=15936] DSQueueBuffer #32 (checkpoint) queue_depth=32
+[22:32:53.380] [tid=15936] DSAllocAndAnnounceBuffer #64 (checkpoint) total_bytes=147456000 avail_phys=8345 MB
+[22:32:53.383] [tid=15936] DSQueueBuffer #64 (checkpoint) queue_depth=64
+[22:32:53.387] [tid=15936] DSAllocAndAnnounceBuffer #128 (checkpoint) total_bytes=294912000 avail_phys=8344 MB
+[22:32:53.391] [tid=15936] DSQueueBuffer #128 (checkpoint) queue_depth=128
+[22:32:53.393] [tid=15936] === buffer alloc/queue burst ended: 204 buffer(s) this burst (alloc #1-#204), 470016000 bytes, max queue depth 201 -- next call: DSGetInfo(STREAM_INFO_IS_GRABBING) ===
+[22:32:53.397] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.402] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.404] [tid=15936] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:32:53.409] [tid=15936]   -> rc=0 piType=11 *piSize=1
+[22:32:53.411] [tid=15936] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:32:53.414] [tid=15936] GCGetLastError
+[22:32:53.418] [tid=15936] GCGetLastError
+[22:32:53.426] [tid=15936] DevClose
+[22:32:53.430] [tid=15936] IFClose
+[22:32:53.432] [tid=15936] TLClose
+[22:32:53.436] [tid=15936] GCCloseLib
+[22:32:53.439] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=000001e0db489040 capacity=2304000 (never revoked)
+[22:32:53.441] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=000001e0db24c040 capacity=2304000 (never revoked)
+[22:32:53.444] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=000001e0daffe040 capacity=2304000 (never revoked)
+[22:32:53.446] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=000001e0dadb6040 capacity=2304000 (never revoked)
+[22:32:53.449] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=000001e0dab77040 capacity=2304000 (never revoked)
+[22:32:53.454] [tid=15936]   [defensive cleanup: DllMain PROCESS_DETACH] freed 201 still-announced buffer(s)
+[22:32:53.456] [tid=15936] === final buffer tally: allocated=204 (470016000 bytes) queued=201 (of which requeues=0) max_queue_depth=201 revoked=3 leaked-and-freed-defensively=201 ===
+[22:32:53.460] [tid=15936] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:32:53.466] [tid=15936] === DllMain PROCESS_DETACH ===
+[22:33:13.468] [tid=8676] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:33:13.473] [tid=8676] GCInitLib
+[22:33:13.476] [tid=8676] GCGetInfo(cmd=9, pBuffer=00000266afebcadc, *piSize=4)
+[22:33:13.479] [tid=8676]   -> rc=0 piType=6 *piSize=4
+[22:33:13.482] [tid=8676] GCGetInfo(cmd=10, pBuffer=00000266afebcae0, *piSize=4)
+[22:33:13.485] [tid=8676]   -> rc=0 piType=6 *piSize=4
+[22:33:13.489] [tid=8676] GCCloseLib
+[22:33:13.494] [tid=8676] GCInitLib
+[22:33:13.495] [tid=8676] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:33:13.500] [tid=8676]   -> rc=0 piType=1 *piSize=37
+[22:33:13.504] [tid=8676] GCGetInfo(cmd=1, pBuffer=00000266afe90230, *piSize=37)
+[22:33:13.506] [tid=8676]   -> rc=0 piType=1 *piSize=37
+[22:33:13.509] [tid=8676] GCCloseLib
+[22:33:13.510] [tid=8676] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:33:13.512] [tid=8676] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:33:13.514] [tid=8676] === DllMain PROCESS_DETACH ===
+[22:33:13.516] [tid=8676] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:33:13.517] [tid=8676] GCInitLib
+[22:33:13.519] [tid=8676] GCGetInfo(cmd=9, pBuffer=00000266afebcefc, *piSize=4)
+[22:33:13.522] [tid=8676]   -> rc=0 piType=6 *piSize=4
+[22:33:13.526] [tid=8676] GCGetInfo(cmd=10, pBuffer=00000266afebcf00, *piSize=4)
+[22:33:13.530] [tid=8676]   -> rc=0 piType=6 *piSize=4
+[22:33:13.533] [tid=8676] GCCloseLib
+[22:33:13.536] [tid=8676] GCInitLib
+[22:33:13.542] [tid=8676] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:33:13.547] [tid=8676]   -> rc=0 piType=1 *piSize=37
+[22:33:13.550] [tid=8676] GCGetInfo(cmd=1, pBuffer=00000266afe8fd50, *piSize=37)
+[22:33:13.553] [tid=8676]   -> rc=0 piType=1 *piSize=37
+[22:33:13.556] [tid=8676] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:33:13.557] [tid=8676]   -> rc=0 piType=1 *piSize=12
+[22:33:13.559] [tid=8676] GCGetInfo(cmd=0, pBuffer=00000266afe34770, *piSize=12)
+[22:33:13.560] [tid=8676]   -> rc=0 piType=1 *piSize=12
+[22:33:13.560] [tid=8676] TLOpen
+[22:33:13.566] [tid=8676] TLUpdateInterfaceList timeout=1000
+[22:33:13.566] [tid=8676] TLGetNumInterfaces -> 1
+[22:33:13.570] [tid=8676] TLGetInterfaceID index=0
+[22:33:13.571] [tid=8676] TLGetInterfaceID index=0
+[22:33:13.574] [tid=8676] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:33:13.579] [tid=8676] GCRegisterEvent hEventSrc=00007ffee774a434 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:33:13.584] [tid=8676] IFUpdateDeviceList timeout=1000
+[22:33:13.591] [tid=8676] IFGetNumDevices -> 1
+[22:33:13.595] [tid=8676] IFGetDeviceID index=0
+[22:33:13.600] [tid=8676] IFGetDeviceID index=0
+[22:33:13.600] [tid=8676] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:33:13.604] [tid=8676] GCGetPortInfo hPort=00007ffee774a432 cmd=12
+[22:33:13.606] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.608] [tid=8676] GCGetPortInfo hPort=00007ffee774a432 cmd=12
+[22:33:13.610] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.611] [tid=8676] TLGetInfo cmd=6
+[22:33:13.611] [tid=8676] TLGetInfo cmd=6
+[22:33:13.615] [tid=8676] TLGetInfo cmd=5
+[22:33:13.618] [tid=8676] TLGetInfo cmd=5
+[22:33:13.622] [tid=8676] GCGetNumPortURLs hPort=00007ffee774a432
+[22:33:13.623] [tid=8676]   -> count=0
+[22:33:13.627] [tid=8676] DevGetPort
+[22:33:13.631] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.635] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.638] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.644] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.647] [tid=8676] GCGetNumPortURLs hPort=00007ffee774a431
+[22:33:13.648] [tid=8676]   -> count=1
+[22:33:13.651] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=0
+[22:33:13.652] [tid=8676]   -> rc=0
+[22:33:13.655] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=0
+[22:33:13.658] [tid=8676]   -> rc=0
+[22:33:13.659] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=9
+[22:33:13.660] [tid=8676]   -> rc=0
+[22:33:13.664] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=9
+[22:33:13.664] [tid=8676]   -> rc=0
+[22:33:13.670] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=7
+[22:33:13.670] [tid=8676]   -> rc=0
+[22:33:13.673] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=7
+[22:33:13.675] [tid=8676]   -> rc=0
+[22:33:13.679] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=8
+[22:33:13.683] [tid=8676]   -> rc=0
+[22:33:13.687] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=8
+[22:33:13.690] [tid=8676]   -> rc=0
+[22:33:13.692] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=10
+[22:33:13.695] [tid=8676]   -> rc=0
+[22:33:13.695] [tid=8676] GCGetPortURLInfo hPort=00007ffee774a431 idx=0 cmd=10
+[22:33:13.701] [tid=8676]   -> rc=0
+[22:33:13.703] [tid=8676] GCReadPort hPort=00007ffee774a431 addr=0x10000 *piSize=13804 [XML]
+[22:33:13.707] [tid=8676]   -> rc=0 copied=13804
+[22:33:13.711] [tid=8676] DevGetNumDataStreams -> 1  [Pass 2]
+[22:33:13.714] [tid=8676] DevGetDataStreamID index=0  [Pass 2]
+[22:33:13.717] [tid=8676] DevGetDataStreamID index=0  [Pass 2]
+[22:33:13.720] [tid=8676] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:33:13.723] [tid=8676] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=00000266ade115e0 base=00000266b056d040 (gen=1)
+[22:33:13.727] [tid=8676] DSQueueBuffer #1 handle=00000266ade115e0 base=00000266b056d040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:33:13.730] [tid=8676] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=00000266ade11a50 base=00000266b07b4040 (gen=2)
+[22:33:13.732] [tid=8676] DSQueueBuffer #2 handle=00000266ade11a50 base=00000266b07b4040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:33:13.737] [tid=8676] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=00000266ade11aa0 base=00000266b09ff040 (gen=3)
+[22:33:13.739] [tid=8676] DSQueueBuffer #3 handle=00000266ade11aa0 base=00000266b09ff040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:33:13.742] [tid=8676] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=00000266ade11af0 base=00000266b0c49040 (gen=4)
+[22:33:13.745] [tid=8676] DSQueueBuffer #4 handle=00000266ade11af0 base=00000266b0c49040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:33:13.748] [tid=8676] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=00000266ade11b40 base=00000266b0e82040 (gen=5)
+[22:33:13.752] [tid=8676] DSQueueBuffer #5 handle=00000266ade11b40 base=00000266b0e82040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:33:13.754] [tid=8676] === buffer alloc/queue burst ended: 5 buffer(s) this burst (alloc #1-#5), 11520000 bytes, max queue depth 5 -- next call: GCRegisterEvent(id=1) ===
+[22:33:13.758] [tid=8676] GCRegisterEvent(hEventSrc=DS, EVENT_NEW_BUFFER) -> SUCCESS, handle=00000266ade11b90
+[22:33:13.759] [tid=8676] DSStartAcquisition iStartFlags=0 iNumToAcquire=18446744073709551615 (looks like INFINITE_NUMBER/continuous) queued_buffers=5 -> SUCCESS, grabbing=TRUE
+[22:33:13.765] [tid=9120] [worker] thread started
+[22:33:13.773] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.775] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.778] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.782] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.785] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.788] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.791] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=12
+[22:33:13.797] [tid=8676]   -> rc=0 piType=1 *piSize=7
+[22:33:13.803] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=7
+[22:33:13.807] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:13.811] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=7
+[22:33:13.814] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:13.817] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=8
+[22:33:13.820] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:13.822] [tid=8676] GCGetPortInfo hPort=00007ffee774a431 cmd=8
+[22:33:13.826] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:13.830] [tid=8676] COMMAND AcquisitionStart             addr=0x200e0
+[22:33:13.832] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:13.836] [tid=9120] [worker] frame #1 completed handle=00000266ade115e0 filled=OK bytes=2304000
+[22:33:13.839] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:13.842] [tid=8676] EventGetData handle=00000266ade11b90 timeout=3000 tid=8676
+[22:33:13.845] [tid=8676] EventGetData handle=00000266ade11b90 -> rc=0 (NEW_BUFFER delivered) tid=8676
+[22:33:13.849] [tid=8676] DSQueueBuffer #6 handle=00000266ade115e0 base=00000266b056d040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:33:13.853] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:13.856] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:13.859] [tid=8676] EventGetData handle=00000266ade11b90 timeout=3000 tid=8676
+[22:33:13.971] [tid=8676] EventGetData handle=00000266ade11b90 -> rc=0 (NEW_BUFFER delivered) tid=8676
+[22:33:13.979] [tid=9120] [worker] frame #2 completed handle=00000266ade11a50 filled=OK bytes=2304000
+[22:33:13.986] [tid=8676] DSQueueBuffer #7 handle=00000266ade11a50 base=00000266b07b4040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:33:13.992] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:13.997] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:14.005] [tid=8676] EventGetData handle=00000266ade11b90 timeout=3000 tid=8676
+[22:33:14.114] [tid=8676] EventGetData handle=00000266ade11b90 -> rc=0 (NEW_BUFFER delivered) tid=8676
+[22:33:14.122] [tid=8676] DSQueueBuffer #8 handle=00000266ade11aa0 base=00000266b09ff040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:33:14.132] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:14.137] [tid=9120] [worker] frame #3 completed handle=00000266ade11aa0 filled=OK bytes=2304000
+[22:33:14.142] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:14.147] [tid=8676] EventGetData handle=00000266ade11b90 timeout=3000 tid=8676
+[22:33:14.274] [tid=8676] EventGetData handle=00000266ade11b90 -> rc=0 (NEW_BUFFER delivered) tid=8676
+[22:33:14.280] [tid=9120] [worker] frame #4 completed handle=00000266ade11af0 filled=OK bytes=2304000
+[22:33:14.288] [tid=8676] DSQueueBuffer #9 handle=00000266ade11af0 base=00000266b0c49040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:33:14.294] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:14.300] [tid=8676] EventGetInfo handle=00000266ade11b90 cmd=3 -> rc=0
+[22:33:14.307] [tid=8676] EventGetData handle=00000266ade11b90 timeout=3000 tid=8676
+[22:33:14.416] [tid=8676] EventGetData handle=00000266ade11b90 -> rc=0 (NEW_BUFFER delivered) tid=8676
+[22:33:14.425] [tid=9120] [worker] frame #5 completed handle=00000266ade11b40 filled=OK bytes=2304000
+[22:33:14.432] [tid=8676] DSQueueBuffer #10 handle=00000266ade11b40 base=00000266b0e82040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:33:14.441] [tid=8676] COMMAND AcquisitionStop              addr=0x200f0
+[22:33:14.447] [tid=8676] DSStopAcquisition -> SUCCESS, grabbing=FALSE
+[22:33:14.454] [tid=8676] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:33:14.463] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:14.470] [tid=8676] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:33:14.477] [tid=8676]   -> rc=0 piType=11 *piSize=1
+[22:33:14.487] [tid=8676] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:33:14.495] [tid=8676] GCGetLastError
+[22:33:14.506] [tid=8676] GCGetLastError
+[22:33:14.517] [tid=8676] GCUnregisterEvent(DS, EVENT_NEW_BUFFER) -> SUCCESS, freed
+[22:33:14.529] [tid=8676] DevClose
+[22:33:14.536] [tid=8676] IFClose
+[22:33:14.540] [tid=8676] TLClose
+[22:33:14.546] [tid=8676] GCCloseLib
+[22:33:14.552] [tid=8676]   [DllMain PROCESS_DETACH] waiting for worker thread to exit...
+[22:33:14.561] [tid=9120] [worker] thread exiting, total frames produced this session=5
+[22:33:16.569] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000266b0e82040 capacity=2304000 (never revoked)
+[22:33:16.583] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000266b0c49040 capacity=2304000 (never revoked)
+[22:33:16.590] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000266b09ff040 capacity=2304000 (never revoked)
+[22:33:16.597] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000266b07b4040 capacity=2304000 (never revoked)
+[22:33:16.606] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000266b056d040 capacity=2304000 (never revoked)
+[22:33:16.612] [tid=8676]   [defensive cleanup: DllMain PROCESS_DETACH] freed 5 still-announced buffer(s)
+[22:33:16.616] [tid=8676] === final buffer tally: allocated=5 (11520000 bytes) queued=10 (of which requeues=5) max_queue_depth=5 revoked=0 leaked-and-freed-defensively=5 ===
+[22:33:16.618] [tid=8676] === final acquisition/event tally: frames_produced=5 events_delivered=5 eventgetdata_calls=5 queue_starvation_events=0 acq_starts=1 acq_stops=1 event_registrations=1 event_unregistrations=1 ===
+[22:33:16.625] [tid=8676] === DllMain PROCESS_DETACH ===
+[22:42:57.643] [tid=8400] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:42:57.647] [tid=8400] GCInitLib
+[22:42:57.651] [tid=8400] GCGetInfo(cmd=9, pBuffer=00000214b21a6bec, *piSize=4)
+[22:42:57.656] [tid=8400]   -> rc=0 piType=6 *piSize=4
+[22:42:57.658] [tid=8400] GCGetInfo(cmd=10, pBuffer=00000214b21a6bf0, *piSize=4)
+[22:42:57.662] [tid=8400]   -> rc=0 piType=6 *piSize=4
+[22:42:57.667] [tid=8400] GCCloseLib
+[22:42:57.671] [tid=8400] GCInitLib
+[22:42:57.676] [tid=8400] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:42:57.680] [tid=8400]   -> rc=0 piType=1 *piSize=37
+[22:42:57.685] [tid=8400] GCGetInfo(cmd=1, pBuffer=00000214b2151900, *piSize=37)
+[22:42:57.691] [tid=8400]   -> rc=0 piType=1 *piSize=37
+[22:42:57.697] [tid=8400] GCCloseLib
+[22:42:57.701] [tid=8400] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:42:57.706] [tid=8400] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:42:57.711] [tid=8400] === DllMain PROCESS_DETACH ===
+[22:42:57.716] [tid=8400] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:42:57.721] [tid=8400] GCInitLib
+[22:42:57.725] [tid=8400] GCGetInfo(cmd=9, pBuffer=00000214b21a532c, *piSize=4)
+[22:42:57.728] [tid=8400]   -> rc=0 piType=6 *piSize=4
+[22:42:57.730] [tid=8400] GCGetInfo(cmd=10, pBuffer=00000214b21a5330, *piSize=4)
+[22:42:57.732] [tid=8400]   -> rc=0 piType=6 *piSize=4
+[22:42:57.735] [tid=8400] GCCloseLib
+[22:42:57.740] [tid=8400] GCInitLib
+[22:42:57.743] [tid=8400] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:42:57.747] [tid=8400]   -> rc=0 piType=1 *piSize=37
+[22:42:57.751] [tid=8400] GCGetInfo(cmd=1, pBuffer=00000214b2151660, *piSize=37)
+[22:42:57.755] [tid=8400]   -> rc=0 piType=1 *piSize=37
+[22:42:57.759] [tid=8400] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:42:57.762] [tid=8400]   -> rc=0 piType=1 *piSize=12
+[22:42:57.765] [tid=8400] GCGetInfo(cmd=0, pBuffer=00000214b21a9530, *piSize=12)
+[22:42:57.769] [tid=8400]   -> rc=0 piType=1 *piSize=12
+[22:42:57.773] [tid=8400] TLOpen
+[22:42:57.776] [tid=8400] TLUpdateInterfaceList timeout=1000
+[22:42:57.780] [tid=8400] TLGetNumInterfaces -> 1
+[22:42:57.783] [tid=8400] TLGetInterfaceID index=0
+[22:42:57.787] [tid=8400] TLGetInterfaceID index=0
+[22:42:57.790] [tid=8400] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:42:57.795] [tid=8400] GCRegisterEvent hEventSrc=00007ffee7dca434 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:42:57.798] [tid=8400] IFUpdateDeviceList timeout=1000
+[22:42:57.802] [tid=8400] IFGetNumDevices -> 1
+[22:42:57.805] [tid=8400] IFGetDeviceID index=0
+[22:42:57.809] [tid=8400] IFGetDeviceID index=0
+[22:42:57.813] [tid=8400] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:42:57.816] [tid=8400] GCGetPortInfo hPort=00007ffee7dca432 cmd=12
+[22:42:57.820] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.823] [tid=8400] GCGetPortInfo hPort=00007ffee7dca432 cmd=12
+[22:42:57.827] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.833] [tid=8400] TLGetInfo cmd=6
+[22:42:57.837] [tid=8400] TLGetInfo cmd=6
+[22:42:57.842] [tid=8400] TLGetInfo cmd=5
+[22:42:57.845] [tid=8400] TLGetInfo cmd=5
+[22:42:57.851] [tid=8400] GCGetNumPortURLs hPort=00007ffee7dca432
+[22:42:57.854] [tid=8400]   -> count=0
+[22:42:57.859] [tid=8400] DevGetPort
+[22:42:57.862] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:57.865] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.869] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:57.870] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.876] [tid=8400] GCGetNumPortURLs hPort=00007ffee7dca431
+[22:42:57.880] [tid=8400]   -> count=1
+[22:42:57.884] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=0
+[22:42:57.888] [tid=8400]   -> rc=0
+[22:42:57.891] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=0
+[22:42:57.895] [tid=8400]   -> rc=0
+[22:42:57.898] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=9
+[22:42:57.900] [tid=8400]   -> rc=0
+[22:42:57.905] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=9
+[22:42:57.909] [tid=8400]   -> rc=0
+[22:42:57.912] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=7
+[22:42:57.917] [tid=8400]   -> rc=0
+[22:42:57.921] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=7
+[22:42:57.923] [tid=8400]   -> rc=0
+[22:42:57.925] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=8
+[22:42:57.927] [tid=8400]   -> rc=0
+[22:42:57.929] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=8
+[22:42:57.931] [tid=8400]   -> rc=0
+[22:42:57.933] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=10
+[22:42:57.935] [tid=8400]   -> rc=0
+[22:42:57.940] [tid=8400] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=10
+[22:42:57.944] [tid=8400]   -> rc=0
+[22:42:57.948] [tid=8400] GCReadPort hPort=00007ffee7dca431 addr=0x10000 *piSize=13804 [XML]
+[22:42:57.952] [tid=8400]   -> rc=0 copied=13804
+[22:42:57.959] [tid=8400] DevGetNumDataStreams -> 1  [Pass 2]
+[22:42:57.964] [tid=8400] DevGetDataStreamID index=0  [Pass 2]
+[22:42:57.968] [tid=8400] DevGetDataStreamID index=0  [Pass 2]
+[22:42:57.978] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:57.981] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.984] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:57.986] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.991] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:57.995] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:57.999] [tid=8400] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:58.003] [tid=8400]   -> rc=0 piType=1 *piSize=7
+[22:42:58.009] [tid=8400] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:42:58.012] [tid=8400] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:42:58.017] [tid=8400]   -> rc=0 piType=12 *piSize=8
+[22:42:58.021] [tid=8400] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:42:58.026] [tid=8400]   -> rc=0 piType=12 *piSize=8
+[22:42:58.030] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.034] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.039] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.042] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.046] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.050] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.054] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.058] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.064] [tid=8400] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=00000214b02515e0 base=00000214b2a2d040 (gen=1)
+[22:42:58.068] [tid=8400] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=00000214b0251840 base=00000214b2c75040 (gen=2)
+[22:42:58.072] [tid=8400] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=00000214b0251890 base=00000214b2ebe040 (gen=3)
+[22:42:58.077] [tid=8400] DSQueueBuffer #1 handle=00000214b02515e0 base=00000214b2a2d040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:42:58.081] [tid=8400] DSQueueBuffer handle=00000214b02515e0 -> RESOURCE_IN_USE (already QUEUED, illegal duplicate)
+[22:42:58.085] [tid=8400] GCGetLastError
+[22:42:58.089] [tid=8400] GCGetLastError
+[22:42:58.095] [tid=8400] DSRevokeBuffer handle=00000214b02515e0 -> RESOURCE_IN_USE (buffer is QUEUED, must be flushed/dequeued first)
+[22:42:58.098] [tid=8400] GCGetLastError
+[22:42:58.103] [tid=8400] GCGetLastError
+[22:42:58.109] [tid=8400] DSRevokeBuffer handle=00000214b0251840 base=00000214b2c75040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:42:58.113] [tid=8400] DSRevokeBuffer handle=00000214b0251890 base=00000214b2ebe040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:42:58.117] [tid=8400] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=00000214b0251840 base=00000214b2c7f040 (gen=4)
+[22:42:58.123] [tid=8400] DSRevokeBuffer handle=00000214b0251840 base=00000214b2c7f040 capacity=2304000 (was ANNOUNCED) -> freed, OK
+[22:42:58.127] [tid=8400] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=00000214b0251840 base=00000214b2c7f040 (gen=5)
+[22:42:58.131] [tid=8400] DSQueueBuffer #2 handle=00000214b0251840 base=00000214b2c7f040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:42:58.135] [tid=8400] DSAllocAndAnnounceBuffer #6 ... further allocations logged only at checkpoints (16, 32, 64, ...)
+[22:42:58.140] [tid=8400] DSQueueBuffer #3 handle=00000214b0251890 base=00000214b2ec2040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:42:58.144] [tid=8400] DSQueueBuffer #4 handle=00000214b0251af0 base=00000214b3104040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:42:58.147] [tid=8400] DSQueueBuffer #5 handle=00000214b0251b40 base=00000214b3341040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:42:58.150] [tid=8400] DSQueueBuffer #6 ... further queues logged only at checkpoints (16, 32, 64, ...)
+[22:42:58.153] [tid=8400] DSAllocAndAnnounceBuffer #16 (checkpoint) total_bytes=36864000 avail_phys=7944 MB
+[22:42:58.156] [tid=8400] DSQueueBuffer #16 (checkpoint) queue_depth=16
+[22:42:58.160] [tid=8400] DSAllocAndAnnounceBuffer #32 (checkpoint) total_bytes=73728000 avail_phys=7944 MB
+[22:42:58.162] [tid=8400] DSQueueBuffer #32 (checkpoint) queue_depth=32
+[22:42:58.166] [tid=8400] DSAllocAndAnnounceBuffer #64 (checkpoint) total_bytes=147456000 avail_phys=7945 MB
+[22:42:58.169] [tid=8400] DSQueueBuffer #64 (checkpoint) queue_depth=64
+[22:42:58.173] [tid=8400] DSAllocAndAnnounceBuffer #128 (checkpoint) total_bytes=294912000 avail_phys=7945 MB
+[22:42:58.176] [tid=8400] DSQueueBuffer #128 (checkpoint) queue_depth=128
+[22:42:58.179] [tid=8400] === buffer alloc/queue burst ended: 204 buffer(s) this burst (alloc #1-#204), 470016000 bytes, max queue depth 201 -- next call: DSGetInfo(STREAM_INFO_IS_GRABBING) ===
+[22:42:58.188] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.193] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.196] [tid=8400] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:58.199] [tid=8400]   -> rc=0 piType=11 *piSize=1
+[22:42:58.202] [tid=8400] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:42:58.205] [tid=8400] GCGetLastError
+[22:42:58.208] [tid=8400] GCGetLastError
+[22:42:58.212] [tid=8400] DevClose
+[22:42:58.215] [tid=8400] IFClose
+[22:42:58.218] [tid=8400] TLClose
+[22:42:58.220] [tid=8400] GCCloseLib
+[22:42:58.224] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000214cef6c040 capacity=2304000 (never revoked)
+[22:42:58.227] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000214ced2c040 capacity=2304000 (never revoked)
+[22:42:58.230] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000214ceae4040 capacity=2304000 (never revoked)
+[22:42:58.232] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000214ce8a2040 capacity=2304000 (never revoked)
+[22:42:58.234] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=00000214ce669040 capacity=2304000 (never revoked)
+[22:42:58.243] [tid=8400]   [defensive cleanup: DllMain PROCESS_DETACH] freed 201 still-announced buffer(s)
+[22:42:58.245] [tid=8400] === final buffer tally: allocated=204 (470016000 bytes) queued=201 (of which requeues=0) max_queue_depth=201 revoked=3 leaked-and-freed-defensively=201 ===
+[22:42:58.248] [tid=8400] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:42:58.251] [tid=8400] === DllMain PROCESS_DETACH ===
+[22:42:58.639] [tid=14772] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:42:58.643] [tid=14772] GCInitLib
+[22:42:58.647] [tid=14772] GCGetInfo(cmd=9, pBuffer=0000018f8d4eda2c, *piSize=4)
+[22:42:58.652] [tid=14772]   -> rc=0 piType=6 *piSize=4
+[22:42:58.658] [tid=14772] GCGetInfo(cmd=10, pBuffer=0000018f8d4eda30, *piSize=4)
+[22:42:58.660] [tid=14772]   -> rc=0 piType=6 *piSize=4
+[22:42:58.664] [tid=14772] GCCloseLib
+[22:42:58.666] [tid=14772] GCInitLib
+[22:42:58.671] [tid=14772] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:42:58.674] [tid=14772]   -> rc=0 piType=1 *piSize=37
+[22:42:58.676] [tid=14772] GCGetInfo(cmd=1, pBuffer=0000018f8b9ff0d0, *piSize=37)
+[22:42:58.682] [tid=14772]   -> rc=0 piType=1 *piSize=37
+[22:42:58.686] [tid=14772] GCCloseLib
+[22:42:58.692] [tid=14772] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:42:58.695] [tid=14772] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:42:58.699] [tid=14772] === DllMain PROCESS_DETACH ===
+[22:42:58.704] [tid=14772] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:42:58.709] [tid=14772] GCInitLib
+[22:42:58.716] [tid=14772] GCGetInfo(cmd=9, pBuffer=0000018f8d4ed60c, *piSize=4)
+[22:42:58.722] [tid=14772]   -> rc=0 piType=6 *piSize=4
+[22:42:58.725] [tid=14772] GCGetInfo(cmd=10, pBuffer=0000018f8d4ed610, *piSize=4)
+[22:42:58.726] [tid=14772]   -> rc=0 piType=6 *piSize=4
+[22:42:58.728] [tid=14772] GCCloseLib
+[22:42:58.730] [tid=14772] GCInitLib
+[22:42:58.733] [tid=14772] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:42:58.735] [tid=14772]   -> rc=0 piType=1 *piSize=37
+[22:42:58.740] [tid=14772] GCGetInfo(cmd=1, pBuffer=0000018f8b9febc0, *piSize=37)
+[22:42:58.746] [tid=14772]   -> rc=0 piType=1 *piSize=37
+[22:42:58.755] [tid=14772] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:42:58.762] [tid=14772]   -> rc=0 piType=1 *piSize=12
+[22:42:58.766] [tid=14772] GCGetInfo(cmd=0, pBuffer=0000018f8d5082e0, *piSize=12)
+[22:42:58.771] [tid=14772]   -> rc=0 piType=1 *piSize=12
+[22:42:58.776] [tid=14772] TLOpen
+[22:42:58.780] [tid=14772] TLUpdateInterfaceList timeout=1000
+[22:42:58.784] [tid=14772] TLGetNumInterfaces -> 1
+[22:42:58.790] [tid=14772] TLGetInterfaceID index=0
+[22:42:58.797] [tid=14772] TLGetInterfaceID index=0
+[22:42:58.801] [tid=14772] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:42:58.805] [tid=14772] GCRegisterEvent hEventSrc=00007ffee7dca434 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:42:58.810] [tid=14772] IFUpdateDeviceList timeout=1000
+[22:42:58.814] [tid=14772] IFGetNumDevices -> 1
+[22:42:58.819] [tid=14772] IFGetDeviceID index=0
+[22:42:58.825] [tid=14772] IFGetDeviceID index=0
+[22:42:58.830] [tid=14772] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:42:58.834] [tid=14772] GCGetPortInfo hPort=00007ffee7dca432 cmd=12
+[22:42:58.838] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:58.843] [tid=14772] GCGetPortInfo hPort=00007ffee7dca432 cmd=12
+[22:42:58.847] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:58.853] [tid=14772] TLGetInfo cmd=6
+[22:42:58.861] [tid=14772] TLGetInfo cmd=6
+[22:42:58.866] [tid=14772] TLGetInfo cmd=5
+[22:42:58.869] [tid=14772] TLGetInfo cmd=5
+[22:42:58.872] [tid=14772] GCGetNumPortURLs hPort=00007ffee7dca432
+[22:42:58.875] [tid=14772]   -> count=0
+[22:42:58.879] [tid=14772] DevGetPort
+[22:42:58.884] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:58.891] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:58.896] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:58.900] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:58.903] [tid=14772] GCGetNumPortURLs hPort=00007ffee7dca431
+[22:42:58.907] [tid=14772]   -> count=1
+[22:42:58.910] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=0
+[22:42:58.914] [tid=14772]   -> rc=0
+[22:42:58.920] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=0
+[22:42:58.925] [tid=14772]   -> rc=0
+[22:42:58.928] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=9
+[22:42:58.932] [tid=14772]   -> rc=0
+[22:42:58.935] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=9
+[22:42:58.938] [tid=14772]   -> rc=0
+[22:42:58.942] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=7
+[22:42:58.948] [tid=14772]   -> rc=0
+[22:42:58.954] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=7
+[22:42:58.962] [tid=14772]   -> rc=0
+[22:42:58.967] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=8
+[22:42:58.972] [tid=14772]   -> rc=0
+[22:42:58.976] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=8
+[22:42:58.981] [tid=14772]   -> rc=0
+[22:42:58.985] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=10
+[22:42:58.990] [tid=14772]   -> rc=0
+[22:42:58.996] [tid=14772] GCGetPortURLInfo hPort=00007ffee7dca431 idx=0 cmd=10
+[22:42:59.001] [tid=14772]   -> rc=0
+[22:42:59.005] [tid=14772] GCReadPort hPort=00007ffee7dca431 addr=0x10000 *piSize=13804 [XML]
+[22:42:59.009] [tid=14772]   -> rc=0 copied=13804
+[22:42:59.012] [tid=14772] DevGetNumDataStreams -> 1  [Pass 2]
+[22:42:59.015] [tid=14772] DevGetDataStreamID index=0  [Pass 2]
+[22:42:59.016] [tid=14772] DevGetDataStreamID index=0  [Pass 2]
+[22:42:59.021] [tid=14772] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:42:59.024] [tid=14772] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=0000018f8b5715e0 base=0000018f8dc00040 (gen=1)
+[22:42:59.028] [tid=14772] DSQueueBuffer #1 handle=0000018f8b5715e0 base=0000018f8dc00040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:42:59.030] [tid=14772] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=0000018f8b571a50 base=0000018f8de4e040 (gen=2)
+[22:42:59.033] [tid=14772] DSQueueBuffer #2 handle=0000018f8b571a50 base=0000018f8de4e040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:42:59.036] [tid=14772] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=0000018f8b571aa0 base=0000018f8e092040 (gen=3)
+[22:42:59.039] [tid=14772] DSQueueBuffer #3 handle=0000018f8b571aa0 base=0000018f8e092040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:42:59.042] [tid=14772] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=0000018f8b571af0 base=0000018f8e2de040 (gen=4)
+[22:42:59.046] [tid=14772] DSQueueBuffer #4 handle=0000018f8b571af0 base=0000018f8e2de040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:42:59.049] [tid=14772] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=0000018f8b571b40 base=0000018f8e52d040 (gen=5)
+[22:42:59.052] [tid=14772] DSQueueBuffer #5 handle=0000018f8b571b40 base=0000018f8e52d040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:42:59.057] [tid=14772] === buffer alloc/queue burst ended: 5 buffer(s) this burst (alloc #1-#5), 11520000 bytes, max queue depth 5 -- next call: GCRegisterEvent(id=1) ===
+[22:42:59.063] [tid=14772] GCRegisterEvent(hEventSrc=DS, EVENT_NEW_BUFFER) -> SUCCESS, handle=0000018f8b571b90
+[22:42:59.066] [tid=14772] DSStartAcquisition iStartFlags=0 iNumToAcquire=18446744073709551615 (looks like INFINITE_NUMBER/continuous) queued_buffers=5 -> SUCCESS, grabbing=TRUE
+[22:42:59.069] [tid=15408] [worker] thread started
+[22:42:59.077] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:59.080] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:59.083] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:59.087] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:59.091] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:59.093] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:59.097] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=12
+[22:42:59.100] [tid=14772]   -> rc=0 piType=1 *piSize=7
+[22:42:59.104] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=7
+[22:42:59.107] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.110] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=7
+[22:42:59.112] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.114] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=8
+[22:42:59.118] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.123] [tid=14772] GCGetPortInfo hPort=00007ffee7dca431 cmd=8
+[22:42:59.127] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.135] [tid=14772] COMMAND AcquisitionStart             addr=0x200e0
+[22:42:59.137] [tid=15408] [worker] frame #1 completed handle=0000018f8b5715e0 filled=OK bytes=2304000
+[22:42:59.139] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.141] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.144] [tid=14772] EventGetData handle=0000018f8b571b90 timeout=3000 tid=14772
+[22:42:59.146] [tid=14772] EventGetData handle=0000018f8b571b90 -> rc=0 (NEW_BUFFER delivered) tid=14772
+[22:42:59.149] [tid=14772] DSQueueBuffer #6 handle=0000018f8b5715e0 base=0000018f8dc00040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:42:59.154] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.157] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.160] [tid=14772] EventGetData handle=0000018f8b571b90 timeout=3000 tid=14772
+[22:42:59.254] [tid=15408] [worker] frame #2 completed handle=0000018f8b571a50 filled=OK bytes=2304000
+[22:42:59.260] [tid=14772] EventGetData handle=0000018f8b571b90 -> rc=0 (NEW_BUFFER delivered) tid=14772
+[22:42:59.265] [tid=14772] DSQueueBuffer #7 handle=0000018f8b571a50 base=0000018f8de4e040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:42:59.268] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.274] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.278] [tid=14772] EventGetData handle=0000018f8b571b90 timeout=3000 tid=14772
+[22:42:59.385] [tid=15408] [worker] frame #3 completed handle=0000018f8b571aa0 filled=OK bytes=2304000
+[22:42:59.393] [tid=14772] EventGetData handle=0000018f8b571b90 -> rc=0 (NEW_BUFFER delivered) tid=14772
+[22:42:59.399] [tid=14772] DSQueueBuffer #8 handle=0000018f8b571aa0 base=0000018f8e092040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:42:59.406] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.412] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.418] [tid=14772] EventGetData handle=0000018f8b571b90 timeout=3000 tid=14772
+[22:42:59.506] [tid=15408] [worker] frame #4 completed handle=0000018f8b571af0 filled=OK bytes=2304000
+[22:42:59.514] [tid=14772] EventGetData handle=0000018f8b571b90 -> rc=0 (NEW_BUFFER delivered) tid=14772
+[22:42:59.521] [tid=14772] DSQueueBuffer #9 handle=0000018f8b571af0 base=0000018f8e2de040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:42:59.527] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.533] [tid=14772] EventGetInfo handle=0000018f8b571b90 cmd=3 -> rc=0
+[22:42:59.539] [tid=14772] EventGetData handle=0000018f8b571b90 timeout=3000 tid=14772
+[22:42:59.634] [tid=15408] [worker] frame #5 completed handle=0000018f8b571b40 filled=OK bytes=2304000
+[22:42:59.642] [tid=14772] EventGetData handle=0000018f8b571b90 -> rc=0 (NEW_BUFFER delivered) tid=14772
+[22:42:59.653] [tid=14772] DSQueueBuffer #10 handle=0000018f8b571b40 base=0000018f8e52d040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=5 (REQUEUE)
+[22:42:59.663] [tid=14772] COMMAND AcquisitionStop              addr=0x200f0
+[22:42:59.672] [tid=14772] DSStopAcquisition -> SUCCESS, grabbing=FALSE
+[22:42:59.678] [tid=14772] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:59.683] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.686] [tid=14772] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:42:59.690] [tid=14772]   -> rc=0 piType=11 *piSize=1
+[22:42:59.693] [tid=14772] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:42:59.696] [tid=14772] GCGetLastError
+[22:42:59.702] [tid=14772] GCGetLastError
+[22:42:59.706] [tid=14772] GCUnregisterEvent(DS, EVENT_NEW_BUFFER) -> SUCCESS, freed
+[22:42:59.710] [tid=14772] DevClose
+[22:42:59.714] [tid=14772] IFClose
+[22:42:59.717] [tid=14772] TLClose
+[22:42:59.719] [tid=14772] GCCloseLib
+[22:42:59.722] [tid=14772]   [DllMain PROCESS_DETACH] waiting for worker thread to exit...
+[22:42:59.742] [tid=15408] [worker] thread exiting, total frames produced this session=5
+[22:43:01.749] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=0000018f8e52d040 capacity=2304000 (never revoked)
+[22:43:01.761] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=0000018f8e2de040 capacity=2304000 (never revoked)
+[22:43:01.769] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=0000018f8e092040 capacity=2304000 (never revoked)
+[22:43:01.775] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=0000018f8de4e040 capacity=2304000 (never revoked)
+[22:43:01.783] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freeing buffer base=0000018f8dc00040 capacity=2304000 (never revoked)
+[22:43:01.790] [tid=14772]   [defensive cleanup: DllMain PROCESS_DETACH] freed 5 still-announced buffer(s)
+[22:43:01.797] [tid=14772] === final buffer tally: allocated=5 (11520000 bytes) queued=10 (of which requeues=5) max_queue_depth=5 revoked=0 leaked-and-freed-defensively=5 ===
+[22:43:01.809] [tid=14772] === final acquisition/event tally: frames_produced=5 events_delivered=5 eventgetdata_calls=5 queue_starvation_events=0 acq_starts=1 acq_stops=1 event_registrations=1 event_unregistrations=1 ===
+[22:43:01.816] [tid=14772] === DllMain PROCESS_DETACH ===

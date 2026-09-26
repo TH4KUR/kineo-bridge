@@ -1,0 +1,418 @@
+[15:12:44.486] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:12:44.487] GCInitLib
+[15:12:44.487] GCGetInfo(cmd=9, pBuffer=000001e4ecbc71fc, *piSize=4)
+[15:12:44.487]   -> rc=0 piType=6 *piSize=4
+[15:12:44.487] GCGetInfo(cmd=10, pBuffer=000001e4ecbc7200, *piSize=4)
+[15:12:44.488]   -> rc=0 piType=6 *piSize=4
+[15:12:44.488] GCCloseLib
+[15:12:44.488] GCInitLib
+[15:12:44.488] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:12:44.488]   -> rc=0 piType=1 *piSize=37
+[15:12:44.488] GCGetInfo(cmd=1, pBuffer=000001e4ecbf6740, *piSize=37)
+[15:12:44.488]   -> rc=0 piType=1 *piSize=37
+[15:12:44.488] GCCloseLib
+[15:12:44.489] === DllMain PROCESS_DETACH ===
+[15:12:44.501] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:12:44.501] GCInitLib
+[15:12:44.502] GCGetInfo(cmd=9, pBuffer=000001e4ecc011dc, *piSize=4)
+[15:12:44.502]   -> rc=0 piType=6 *piSize=4
+[15:12:44.502] GCGetInfo(cmd=10, pBuffer=000001e4ecc011e0, *piSize=4)
+[15:12:44.502]   -> rc=0 piType=6 *piSize=4
+[15:12:44.502] GCCloseLib
+[15:12:44.502] GCInitLib
+[15:12:44.503] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:12:44.503]   -> rc=0 piType=1 *piSize=37
+[15:12:44.503] GCGetInfo(cmd=1, pBuffer=000001e4ed3d5dc0, *piSize=37)
+[15:12:44.503]   -> rc=0 piType=1 *piSize=37
+[15:12:44.503] GCCloseLib
+[15:12:44.503] === DllMain PROCESS_DETACH ===
+[15:12:44.505] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:12:44.505] GCInitLib
+[15:12:44.505] GCGetInfo(cmd=9, pBuffer=000001e4ecc011dc, *piSize=4)
+[15:12:44.505]   -> rc=0 piType=6 *piSize=4
+[15:12:44.505] GCGetInfo(cmd=10, pBuffer=000001e4ecc011e0, *piSize=4)
+[15:12:44.505]   -> rc=0 piType=6 *piSize=4
+[15:12:44.505] GCCloseLib
+[15:12:44.505] GCInitLib
+[15:12:44.505] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:12:44.505]   -> rc=0 piType=1 *piSize=37
+[15:12:44.505] GCGetInfo(cmd=1, pBuffer=000001e4ed3d5dc0, *piSize=37)
+[15:12:44.507]   -> rc=0 piType=1 *piSize=37
+[15:12:44.507] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[15:12:44.507]   -> rc=0 piType=1 *piSize=12
+[15:12:44.507] GCGetInfo(cmd=0, pBuffer=000001e4ed794840, *piSize=12)
+[15:12:44.507]   -> rc=0 piType=1 *piSize=12
+[15:12:44.507] TLOpen
+[15:12:44.508] TLUpdateInterfaceList timeout=100
+[15:12:44.509] TLGetNumInterfaces -> 1
+[15:12:44.509] TLGetInterfaceID index=0
+[15:12:44.509] TLGetInterfaceID index=0
+[15:12:44.509] TLOpenInterface id=KineoBridgeU3V-IF0
+[15:12:44.509] GCRegisterEvent id=1000  [STUB -> NOT_IMPLEMENTED]
+[15:12:44.511] IFUpdateDeviceList timeout=300
+[15:12:44.511] IFGetNumDevices -> 1
+[15:12:44.512] IFGetDeviceID index=0
+[15:12:44.512] IFGetDeviceID index=0
+[15:12:44.512] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[15:12:44.512] GCGetPortInfo hPort=00007ff9296c42d2 cmd=12
+[15:12:44.512]   -> rc=0 piType=1 *piSize=7
+[15:12:44.512] GCGetPortInfo hPort=00007ff9296c42d2 cmd=12
+[15:12:44.512]   -> rc=0 piType=1 *piSize=7
+[15:12:44.512] TLGetInfo cmd=6
+[15:12:44.512] TLGetInfo cmd=6
+[15:12:44.512] TLGetInfo cmd=5
+[15:12:44.512] TLGetInfo cmd=5
+[15:12:44.514] GCGetNumPortURLs hPort=00007ff9296c42d2
+[15:12:44.514]   -> count=0
+[15:12:44.514] DevGetPort
+[15:12:44.514] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.514]   -> rc=0 piType=1 *piSize=7
+[15:12:44.514] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.514]   -> rc=0 piType=1 *piSize=7
+[15:12:44.514] GCGetNumPortURLs hPort=00007ff9296c42d1
+[15:12:44.514]   -> count=1
+[15:12:44.514] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=0
+[15:12:44.514]   -> rc=0
+[15:12:44.514] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=0
+[15:12:44.515]   -> rc=0
+[15:12:44.515] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=9
+[15:12:44.515]   -> rc=0
+[15:12:44.515] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=9
+[15:12:44.515]   -> rc=0
+[15:12:44.515] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=7
+[15:12:44.515]   -> rc=0
+[15:12:44.515] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=7
+[15:12:44.515]   -> rc=0
+[15:12:44.515] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=8
+[15:12:44.515]   -> rc=0
+[15:12:44.516] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=8
+[15:12:44.516]   -> rc=0
+[15:12:44.516] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=10
+[15:12:44.516]   -> rc=0
+[15:12:44.516] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=10
+[15:12:44.516]   -> rc=0
+[15:12:44.516] GCReadPort hPort=00007ff9296c42d1 addr=0x10000 *piSize=2366
+[15:12:44.516]   -> rc=0 copied=2366
+[15:12:44.516] DevGetInfo cmd=4
+[15:12:44.516] DevGetInfo cmd=4
+[15:12:44.517] DevGetInfo cmd=4
+[15:12:44.517] DevGetInfo cmd=4
+[15:12:44.517] DevGetNumDataStreams -> 1  [Pass 2]
+[15:12:44.517] DevGetDataStreamID index=0  [Pass 2]
+[15:12:44.517] DevGetDataStreamID index=0  [Pass 2]
+[15:12:44.522] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.522]   -> rc=0 piType=1 *piSize=7
+[15:12:44.522] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.522]   -> rc=0 piType=1 *piSize=7
+[15:12:44.522] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.522]   -> rc=0 piType=1 *piSize=7
+[15:12:44.522] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:12:44.522]   -> rc=0 piType=1 *piSize=7
+[15:12:49.567] TLUpdateInterfaceList timeout=100
+[15:12:49.568] IFUpdateDeviceList timeout=300
+[15:12:54.616] TLUpdateInterfaceList timeout=100
+[15:12:54.616] IFUpdateDeviceList timeout=300
+[15:12:59.659] TLUpdateInterfaceList timeout=100
+[15:12:59.660] IFUpdateDeviceList timeout=300
+[15:13:04.705] TLUpdateInterfaceList timeout=100
+[15:13:04.706] IFUpdateDeviceList timeout=300
+[15:13:09.746] TLUpdateInterfaceList timeout=100
+[15:13:09.746] IFUpdateDeviceList timeout=300
+[15:13:14.798] TLUpdateInterfaceList timeout=100
+[15:13:14.798] IFUpdateDeviceList timeout=300
+[15:13:19.828] TLUpdateInterfaceList timeout=100
+[15:13:19.829] IFUpdateDeviceList timeout=300
+[15:13:24.877] TLUpdateInterfaceList timeout=100
+[15:13:24.878] IFUpdateDeviceList timeout=300
+[15:13:29.920] TLUpdateInterfaceList timeout=100
+[15:13:29.920] IFUpdateDeviceList timeout=300
+[15:13:34.967] TLUpdateInterfaceList timeout=100
+[15:13:34.967] IFUpdateDeviceList timeout=300
+[15:13:39.999] TLUpdateInterfaceList timeout=100
+[15:13:39.999] IFUpdateDeviceList timeout=300
+[15:13:45.046] TLUpdateInterfaceList timeout=100
+[15:13:45.047] IFUpdateDeviceList timeout=300
+[15:13:50.090] TLUpdateInterfaceList timeout=100
+[15:13:50.091] IFUpdateDeviceList timeout=300
+[15:13:55.142] TLUpdateInterfaceList timeout=100
+[15:13:55.143] IFUpdateDeviceList timeout=300
+[15:14:00.185] TLUpdateInterfaceList timeout=100
+[15:14:00.186] IFUpdateDeviceList timeout=300
+[15:14:05.224] TLUpdateInterfaceList timeout=100
+[15:14:05.224] IFUpdateDeviceList timeout=300
+[15:14:10.252] TLUpdateInterfaceList timeout=100
+[15:14:10.253] IFUpdateDeviceList timeout=300
+[15:14:15.297] TLUpdateInterfaceList timeout=100
+[15:14:15.298] IFUpdateDeviceList timeout=300
+[15:14:20.329] TLUpdateInterfaceList timeout=100
+[15:14:20.330] IFUpdateDeviceList timeout=300
+[15:14:25.368] TLUpdateInterfaceList timeout=100
+[15:14:25.371] IFUpdateDeviceList timeout=300
+[15:14:30.421] TLUpdateInterfaceList timeout=100
+[15:14:30.421] IFUpdateDeviceList timeout=300
+[15:14:35.465] TLUpdateInterfaceList timeout=100
+[15:14:35.465] IFUpdateDeviceList timeout=300
+[15:14:40.511] TLUpdateInterfaceList timeout=100
+[15:14:40.512] IFUpdateDeviceList timeout=300
+[15:14:45.554] TLUpdateInterfaceList timeout=100
+[15:14:45.554] IFUpdateDeviceList timeout=300
+[15:14:50.589] TLUpdateInterfaceList timeout=100
+[15:14:50.589] IFUpdateDeviceList timeout=300
+[15:14:55.633] TLUpdateInterfaceList timeout=100
+[15:14:55.633] IFUpdateDeviceList timeout=300
+[15:15:00.660] TLUpdateInterfaceList timeout=100
+[15:15:00.660] IFUpdateDeviceList timeout=300
+[15:15:05.683] TLUpdateInterfaceList timeout=100
+[15:15:05.684] IFUpdateDeviceList timeout=300
+[15:15:14.087] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:15:14.087] GCInitLib
+[15:15:14.087] GCGetInfo(cmd=9, pBuffer=0000016d5837ee0c, *piSize=4)
+[15:15:14.087]   -> rc=0 piType=6 *piSize=4
+[15:15:14.088] GCGetInfo(cmd=10, pBuffer=0000016d5837ee10, *piSize=4)
+[15:15:14.088]   -> rc=0 piType=6 *piSize=4
+[15:15:14.088] GCCloseLib
+[15:15:14.088] GCInitLib
+[15:15:14.088] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:15:14.088]   -> rc=0 piType=1 *piSize=37
+[15:15:14.088] GCGetInfo(cmd=1, pBuffer=0000016d583518a0, *piSize=37)
+[15:15:14.088]   -> rc=0 piType=1 *piSize=37
+[15:15:14.088] GCCloseLib
+[15:15:14.088] === DllMain PROCESS_DETACH ===
+[15:15:14.098] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:15:14.098] GCInitLib
+[15:15:14.098] GCGetInfo(cmd=9, pBuffer=0000016d58294bec, *piSize=4)
+[15:15:14.098]   -> rc=0 piType=6 *piSize=4
+[15:15:14.098] GCGetInfo(cmd=10, pBuffer=0000016d58294bf0, *piSize=4)
+[15:15:14.098]   -> rc=0 piType=6 *piSize=4
+[15:15:14.098] GCCloseLib
+[15:15:14.098] GCInitLib
+[15:15:14.099] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:15:14.099]   -> rc=0 piType=1 *piSize=37
+[15:15:14.099] GCGetInfo(cmd=1, pBuffer=0000016d637b9360, *piSize=37)
+[15:15:14.099]   -> rc=0 piType=1 *piSize=37
+[15:15:14.099] GCCloseLib
+[15:15:14.099] === DllMain PROCESS_DETACH ===
+[15:15:14.100] === DllMain PROCESS_ATTACH  probe 0.2-M1  log=C:\Users\IMV\kineo-bridge-test\m1\workflow-trace-pass2\pass2_trace.log  xml_url=local:kineo_bridge.xml;10000;93E size=2366 ===
+[15:15:14.100] GCInitLib
+[15:15:14.100] GCGetInfo(cmd=9, pBuffer=0000016d62ffe76c, *piSize=4)
+[15:15:14.100]   -> rc=0 piType=6 *piSize=4
+[15:15:14.100] GCGetInfo(cmd=10, pBuffer=0000016d62ffe770, *piSize=4)
+[15:15:14.100]   -> rc=0 piType=6 *piSize=4
+[15:15:14.100] GCCloseLib
+[15:15:14.100] GCInitLib
+[15:15:14.101] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[15:15:14.101]   -> rc=0 piType=1 *piSize=37
+[15:15:14.101] GCGetInfo(cmd=1, pBuffer=0000016d637b9360, *piSize=37)
+[15:15:14.101]   -> rc=0 piType=1 *piSize=37
+[15:15:14.101] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[15:15:14.101]   -> rc=0 piType=1 *piSize=12
+[15:15:14.101] GCGetInfo(cmd=0, pBuffer=0000016d5836bb60, *piSize=12)
+[15:15:14.101]   -> rc=0 piType=1 *piSize=12
+[15:15:14.102] TLOpen
+[15:15:14.104] TLUpdateInterfaceList timeout=100
+[15:15:14.104] TLGetNumInterfaces -> 1
+[15:15:14.104] TLGetInterfaceID index=0
+[15:15:14.104] TLGetInterfaceID index=0
+[15:15:14.104] TLOpenInterface id=KineoBridgeU3V-IF0
+[15:15:14.105] GCRegisterEvent id=1000  [STUB -> NOT_IMPLEMENTED]
+[15:15:14.106] IFUpdateDeviceList timeout=300
+[15:15:14.106] IFGetNumDevices -> 1
+[15:15:14.106] IFGetDeviceID index=0
+[15:15:14.107] IFGetDeviceID index=0
+[15:15:14.107] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[15:15:14.107] GCGetPortInfo hPort=00007ff9296c42d2 cmd=12
+[15:15:14.107]   -> rc=0 piType=1 *piSize=7
+[15:15:14.107] GCGetPortInfo hPort=00007ff9296c42d2 cmd=12
+[15:15:14.107]   -> rc=0 piType=1 *piSize=7
+[15:15:14.107] TLGetInfo cmd=6
+[15:15:14.107] TLGetInfo cmd=6
+[15:15:14.107] TLGetInfo cmd=5
+[15:15:14.107] TLGetInfo cmd=5
+[15:15:14.107] GCGetNumPortURLs hPort=00007ff9296c42d2
+[15:15:14.108]   -> count=0
+[15:15:14.108] DevGetPort
+[15:15:14.108] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.108]   -> rc=0 piType=1 *piSize=7
+[15:15:14.108] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.108]   -> rc=0 piType=1 *piSize=7
+[15:15:14.108] GCGetNumPortURLs hPort=00007ff9296c42d1
+[15:15:14.108]   -> count=1
+[15:15:14.108] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=0
+[15:15:14.108]   -> rc=0
+[15:15:14.108] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=0
+[15:15:14.108]   -> rc=0
+[15:15:14.108] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=9
+[15:15:14.108]   -> rc=0
+[15:15:14.109] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=9
+[15:15:14.109]   -> rc=0
+[15:15:14.109] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=7
+[15:15:14.109]   -> rc=0
+[15:15:14.109] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=7
+[15:15:14.109]   -> rc=0
+[15:15:14.109] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=8
+[15:15:14.109]   -> rc=0
+[15:15:14.109] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=8
+[15:15:14.109]   -> rc=0
+[15:15:14.110] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=10
+[15:15:14.110]   -> rc=0
+[15:15:14.110] GCGetPortURLInfo hPort=00007ff9296c42d1 idx=0 cmd=10
+[15:15:14.110]   -> rc=0
+[15:15:14.110] GCReadPort hPort=00007ff9296c42d1 addr=0x10000 *piSize=2366
+[15:15:14.110]   -> rc=0 copied=2366
+[15:15:14.110] DevGetInfo cmd=4
+[15:15:14.110] DevGetInfo cmd=4
+[15:15:14.110] DevGetInfo cmd=4
+[15:15:14.110] DevGetInfo cmd=4
+[15:15:14.111] DevGetNumDataStreams -> 1  [Pass 2]
+[15:15:14.111] DevGetDataStreamID index=0  [Pass 2]
+[15:15:14.111] DevGetDataStreamID index=0  [Pass 2]
+[15:15:14.115] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.115]   -> rc=0 piType=1 *piSize=7
+[15:15:14.115] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.115]   -> rc=0 piType=1 *piSize=7
+[15:15:14.116] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.116]   -> rc=0 piType=1 *piSize=7
+[15:15:14.116] GCGetPortInfo hPort=00007ff9296c42d1 cmd=12
+[15:15:14.116]   -> rc=0 piType=1 *piSize=7
+[15:15:19.162] TLUpdateInterfaceList timeout=100
+[15:15:19.163] IFUpdateDeviceList timeout=300
+[15:15:24.214] TLUpdateInterfaceList timeout=100
+[15:15:24.215] IFUpdateDeviceList timeout=300
+[15:15:29.275] TLUpdateInterfaceList timeout=100
+[15:15:29.276] IFUpdateDeviceList timeout=300
+[15:15:34.329] TLUpdateInterfaceList timeout=100
+[15:15:34.329] IFUpdateDeviceList timeout=300
+[15:15:39.387] TLUpdateInterfaceList timeout=100
+[15:15:39.388] IFUpdateDeviceList timeout=300
+[15:15:44.425] TLUpdateInterfaceList timeout=100
+[15:15:44.425] IFUpdateDeviceList timeout=300
+[15:15:49.466] TLUpdateInterfaceList timeout=100
+[15:15:49.466] IFUpdateDeviceList timeout=300
+[15:15:54.503] TLUpdateInterfaceList timeout=100
+[15:15:54.505] IFUpdateDeviceList timeout=300
+[15:15:59.546] TLUpdateInterfaceList timeout=100
+[15:15:59.546] IFUpdateDeviceList timeout=300
+[15:16:04.602] TLUpdateInterfaceList timeout=100
+[15:16:04.603] IFUpdateDeviceList timeout=300
+[15:16:09.651] TLUpdateInterfaceList timeout=100
+[15:16:09.651] IFUpdateDeviceList timeout=300
+[15:16:14.697] TLUpdateInterfaceList timeout=100
+[15:16:14.698] IFUpdateDeviceList timeout=300
+[15:16:19.748] TLUpdateInterfaceList timeout=100
+[15:16:19.749] IFUpdateDeviceList timeout=300
+[15:16:24.798] TLUpdateInterfaceList timeout=100
+[15:16:24.799] IFUpdateDeviceList timeout=300
+[15:16:29.851] TLUpdateInterfaceList timeout=100
+[15:16:29.852] IFUpdateDeviceList timeout=300
+[15:16:34.892] TLUpdateInterfaceList timeout=100
+[15:16:34.895] IFUpdateDeviceList timeout=300
+[15:16:39.949] TLUpdateInterfaceList timeout=100
+[15:16:39.950] IFUpdateDeviceList timeout=300
+[15:16:45.004] TLUpdateInterfaceList timeout=100
+[15:16:45.005] IFUpdateDeviceList timeout=300
+[15:16:50.064] TLUpdateInterfaceList timeout=100
+[15:16:50.064] IFUpdateDeviceList timeout=300
+[15:16:55.119] TLUpdateInterfaceList timeout=100
+[15:16:55.119] IFUpdateDeviceList timeout=300
+[15:17:00.175] TLUpdateInterfaceList timeout=100
+[15:17:00.177] IFUpdateDeviceList timeout=300
+[15:17:05.223] TLUpdateInterfaceList timeout=100
+[15:17:05.223] IFUpdateDeviceList timeout=300
+[15:17:10.266] TLUpdateInterfaceList timeout=100
+[15:17:10.266] IFUpdateDeviceList timeout=300
+[15:17:15.313] TLUpdateInterfaceList timeout=100
+[15:17:15.314] IFUpdateDeviceList timeout=300
+[15:17:20.365] TLUpdateInterfaceList timeout=100
+[15:17:20.366] IFUpdateDeviceList timeout=300
+[15:17:25.408] TLUpdateInterfaceList timeout=100
+[15:17:25.408] IFUpdateDeviceList timeout=300
+[15:17:30.455] TLUpdateInterfaceList timeout=100
+[15:17:30.456] IFUpdateDeviceList timeout=300
+[15:17:35.502] TLUpdateInterfaceList timeout=100
+[15:17:35.502] IFUpdateDeviceList timeout=300
+[15:17:40.545] TLUpdateInterfaceList timeout=100
+[15:17:40.546] IFUpdateDeviceList timeout=300
+[15:17:45.602] TLUpdateInterfaceList timeout=100
+[15:17:45.602] IFUpdateDeviceList timeout=300
+[15:17:50.655] TLUpdateInterfaceList timeout=100
+[15:17:50.656] IFUpdateDeviceList timeout=300
+[15:17:55.699] TLUpdateInterfaceList timeout=100
+[15:17:55.700] IFUpdateDeviceList timeout=300
+[15:18:00.749] TLUpdateInterfaceList timeout=100
+[15:18:00.749] IFUpdateDeviceList timeout=300
+[15:18:05.797] TLUpdateInterfaceList timeout=100
+[15:18:05.798] IFUpdateDeviceList timeout=300
+[15:18:10.841] TLUpdateInterfaceList timeout=100
+[15:18:10.842] IFUpdateDeviceList timeout=300
+[15:18:15.882] TLUpdateInterfaceList timeout=100
+[15:18:15.882] IFUpdateDeviceList timeout=300
+[15:18:20.937] TLUpdateInterfaceList timeout=100
+[15:18:20.938] IFUpdateDeviceList timeout=300
+[15:18:25.985] TLUpdateInterfaceList timeout=100
+[15:18:25.985] IFUpdateDeviceList timeout=300
+[15:18:31.037] TLUpdateInterfaceList timeout=100
+[15:18:31.037] IFUpdateDeviceList timeout=300
+[15:18:36.073] TLUpdateInterfaceList timeout=100
+[15:18:36.074] IFUpdateDeviceList timeout=300
+[15:18:41.131] TLUpdateInterfaceList timeout=100
+[15:18:41.132] IFUpdateDeviceList timeout=300
+[15:18:46.188] TLUpdateInterfaceList timeout=100
+[15:18:46.189] IFUpdateDeviceList timeout=300
+[15:18:51.229] TLUpdateInterfaceList timeout=100
+[15:18:51.230] IFUpdateDeviceList timeout=300
+[15:18:56.270] TLUpdateInterfaceList timeout=100
+[15:18:56.271] IFUpdateDeviceList timeout=300
+[15:19:01.316] TLUpdateInterfaceList timeout=100
+[15:19:01.317] IFUpdateDeviceList timeout=300
+[15:19:06.363] TLUpdateInterfaceList timeout=100
+[15:19:06.364] IFUpdateDeviceList timeout=300
+[15:19:11.403] TLUpdateInterfaceList timeout=100
+[15:19:11.403] IFUpdateDeviceList timeout=300
+[15:19:16.455] TLUpdateInterfaceList timeout=100
+[15:19:16.457] IFUpdateDeviceList timeout=300
+[15:19:21.508] TLUpdateInterfaceList timeout=100
+[15:19:21.509] IFUpdateDeviceList timeout=300
+[15:19:26.558] TLUpdateInterfaceList timeout=100
+[15:19:26.558] IFUpdateDeviceList timeout=300
+[15:19:31.600] TLUpdateInterfaceList timeout=100
+[15:19:31.600] IFUpdateDeviceList timeout=300
+[15:19:36.641] TLUpdateInterfaceList timeout=100
+[15:19:36.642] IFUpdateDeviceList timeout=300
+[15:19:41.683] TLUpdateInterfaceList timeout=100
+[15:19:41.684] IFUpdateDeviceList timeout=300
+[15:19:46.731] TLUpdateInterfaceList timeout=100
+[15:19:46.731] IFUpdateDeviceList timeout=300
+[15:19:51.790] TLUpdateInterfaceList timeout=100
+[15:19:51.791] IFUpdateDeviceList timeout=300
+[15:19:56.845] TLUpdateInterfaceList timeout=100
+[15:19:56.846] IFUpdateDeviceList timeout=300
+[15:20:01.900] TLUpdateInterfaceList timeout=100
+[15:20:01.901] IFUpdateDeviceList timeout=300
+[15:20:06.947] TLUpdateInterfaceList timeout=100
+[15:20:06.948] IFUpdateDeviceList timeout=300
+[15:20:11.998] TLUpdateInterfaceList timeout=100
+[15:20:11.999] IFUpdateDeviceList timeout=300
+[15:20:17.053] TLUpdateInterfaceList timeout=100
+[15:20:17.053] IFUpdateDeviceList timeout=300
+[15:20:22.100] TLUpdateInterfaceList timeout=100
+[15:20:22.101] IFUpdateDeviceList timeout=300
+[15:20:27.145] TLUpdateInterfaceList timeout=100
+[15:20:27.147] IFUpdateDeviceList timeout=300
+[15:20:32.199] TLUpdateInterfaceList timeout=100
+[15:20:32.199] IFUpdateDeviceList timeout=300
+[15:20:37.246] TLUpdateInterfaceList timeout=100
+[15:20:37.246] IFUpdateDeviceList timeout=300
+[15:20:42.307] TLUpdateInterfaceList timeout=100
+[15:20:42.309] IFUpdateDeviceList timeout=300
+[15:20:47.353] TLUpdateInterfaceList timeout=100
+[15:20:47.354] IFUpdateDeviceList timeout=300
+[15:20:52.406] TLUpdateInterfaceList timeout=100
+[15:20:52.406] IFUpdateDeviceList timeout=300
+[15:20:57.458] TLUpdateInterfaceList timeout=100
+[15:20:57.459] IFUpdateDeviceList timeout=300
+[15:21:02.502] TLUpdateInterfaceList timeout=100
+[15:21:02.503] IFUpdateDeviceList timeout=300
+[15:21:07.551] TLUpdateInterfaceList timeout=100
+[15:21:07.552] IFUpdateDeviceList timeout=300
+[15:21:16.719] TLUpdateInterfaceList timeout=100
+[15:21:16.719] IFUpdateDeviceList timeout=300

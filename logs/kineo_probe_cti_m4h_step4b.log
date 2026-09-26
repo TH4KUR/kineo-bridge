@@ -1,0 +1,1067 @@
+[22:43:22.972] [tid=8956] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=C:\Users\IMV\kineo-bridge-test\m1\m4h\kineo_probe_cti_m4h_step4b.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:43:22.972] [tid=8956] GCInitLib
+[22:43:22.972] [tid=8956] GCGetInfo(cmd=9, pBuffer=000001a6d08b8f4c, *piSize=4)
+[22:43:22.972] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.972] [tid=8956] GCGetInfo(cmd=10, pBuffer=000001a6d08b8f50, *piSize=4)
+[22:43:22.973] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.973] [tid=8956] GCCloseLib
+[22:43:22.973] [tid=8956] GCInitLib
+[22:43:22.973] [tid=8956] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:43:22.973] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.973] [tid=8956] GCGetInfo(cmd=1, pBuffer=000001a6db5114e0, *piSize=37)
+[22:43:22.974] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.974] [tid=8956] GCCloseLib
+[22:43:22.974] [tid=8956] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:43:22.974] [tid=8956] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:43:22.974] [tid=8956] === DllMain PROCESS_DETACH ===
+[22:43:22.985] [tid=8956] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=C:\Users\IMV\kineo-bridge-test\m1\m4h\kineo_probe_cti_m4h_step4b.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:43:22.985] [tid=8956] GCInitLib
+[22:43:22.985] [tid=8956] GCGetInfo(cmd=9, pBuffer=000001a6db5f7f9c, *piSize=4)
+[22:43:22.985] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.985] [tid=8956] GCGetInfo(cmd=10, pBuffer=000001a6db5f7fa0, *piSize=4)
+[22:43:22.985] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.985] [tid=8956] GCCloseLib
+[22:43:22.985] [tid=8956] GCInitLib
+[22:43:22.986] [tid=8956] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:43:22.986] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.986] [tid=8956] GCGetInfo(cmd=1, pBuffer=000001a6db528590, *piSize=37)
+[22:43:22.986] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.986] [tid=8956] GCCloseLib
+[22:43:22.986] [tid=8956] === final buffer tally: allocated=0 (0 bytes) queued=0 (of which requeues=0) max_queue_depth=0 revoked=0 leaked-and-freed-defensively=0 ===
+[22:43:22.986] [tid=8956] === final acquisition/event tally: frames_produced=0 events_delivered=0 eventgetdata_calls=0 queue_starvation_events=0 acq_starts=0 acq_stops=0 event_registrations=0 event_unregistrations=0 ===
+[22:43:22.986] [tid=8956] === DllMain PROCESS_DETACH ===
+[22:43:22.987] [tid=8956] === DllMain PROCESS_ATTACH  probe 0.13-M4h  log=C:\Users\IMV\kineo-bridge-test\m1\m4h\kineo_probe_cti_m4h_step4b.log  xml_url=local:kineo_bridge_m4h.xml;10000;35EC size=13804 ===
+[22:43:22.987] [tid=8956] GCInitLib
+[22:43:22.988] [tid=8956] GCGetInfo(cmd=9, pBuffer=000001a6db5f7f9c, *piSize=4)
+[22:43:22.988] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.988] [tid=8956] GCGetInfo(cmd=10, pBuffer=000001a6db5f7fa0, *piSize=4)
+[22:43:22.988] [tid=8956]   -> rc=0 piType=6 *piSize=4
+[22:43:22.988] [tid=8956] GCCloseLib
+[22:43:22.988] [tid=8956] GCInitLib
+[22:43:22.988] [tid=8956] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[22:43:22.988] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.988] [tid=8956] GCGetInfo(cmd=1, pBuffer=000001a6db528590, *piSize=37)
+[22:43:22.988] [tid=8956]   -> rc=0 piType=1 *piSize=37
+[22:43:22.989] [tid=8956] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[22:43:22.989] [tid=8956]   -> rc=0 piType=1 *piSize=12
+[22:43:22.989] [tid=8956] GCGetInfo(cmd=0, pBuffer=000001a6db5cb130, *piSize=12)
+[22:43:22.989] [tid=8956]   -> rc=0 piType=1 *piSize=12
+[22:43:22.989] [tid=8956] TLOpen
+[22:43:22.991] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:43:22.991] [tid=10952] TLGetNumInterfaces -> 1
+[22:43:22.991] [tid=10952] TLGetInterfaceID index=0
+[22:43:22.991] [tid=10952] TLGetInterfaceID index=0
+[22:43:22.991] [tid=10952] TLOpenInterface id=KineoBridgeU3V-IF0
+[22:43:22.991] [tid=10952] GCRegisterEvent hEventSrc=00007ffee6c2a434 id=1000  [STUB -> NOT_IMPLEMENTED] (unsupported module/event combination)
+[22:43:22.993] [tid=5728] IFUpdateDeviceList timeout=300
+[22:43:22.993] [tid=5728] IFGetNumDevices -> 1
+[22:43:22.993] [tid=5728] IFGetDeviceID index=0
+[22:43:22.993] [tid=5728] IFGetDeviceID index=0
+[22:43:22.994] [tid=8956] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[22:43:22.994] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a432 cmd=12
+[22:43:22.994] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:22.994] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a432 cmd=12
+[22:43:22.994] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:22.994] [tid=8956] TLGetInfo cmd=6
+[22:43:22.994] [tid=8956] TLGetInfo cmd=6
+[22:43:22.994] [tid=8956] TLGetInfo cmd=5
+[22:43:22.994] [tid=8956] TLGetInfo cmd=5
+[22:43:22.994] [tid=8956] GCGetNumPortURLs hPort=00007ffee6c2a432
+[22:43:22.995] [tid=8956]   -> count=0
+[22:43:22.995] [tid=8956] DevGetPort
+[22:43:22.995] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:22.995] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:22.995] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:22.995] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:22.995] [tid=8956] GCGetNumPortURLs hPort=00007ffee6c2a431
+[22:43:22.995] [tid=8956]   -> count=1
+[22:43:22.995] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=0
+[22:43:22.995] [tid=8956]   -> rc=0
+[22:43:22.995] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=0
+[22:43:22.995] [tid=8956]   -> rc=0
+[22:43:22.995] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=9
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=9
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=7
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=7
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=8
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=8
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=10
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.996] [tid=8956] GCGetPortURLInfo hPort=00007ffee6c2a431 idx=0 cmd=10
+[22:43:22.996] [tid=8956]   -> rc=0
+[22:43:22.997] [tid=8956] GCReadPort hPort=00007ffee6c2a431 addr=0x10000 *piSize=13804 [XML]
+[22:43:22.997] [tid=8956]   -> rc=0 copied=13804
+[22:43:22.997] [tid=8956] DevGetInfo cmd=4
+[22:43:22.998] [tid=8956] DevGetInfo cmd=4
+[22:43:22.998] [tid=8956] DevGetInfo cmd=4
+[22:43:22.998] [tid=8956] DevGetInfo cmd=4
+[22:43:22.998] [tid=8956] DevGetNumDataStreams -> 1  [Pass 2]
+[22:43:22.998] [tid=8956] DevGetDataStreamID index=0  [Pass 2]
+[22:43:22.998] [tid=8956] DevGetDataStreamID index=0  [Pass 2]
+[22:43:23.005] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:23.005] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:23.005] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:23.005] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:23.005] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:23.005] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:23.005] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=12
+[22:43:23.005] [tid=8956]   -> rc=0 piType=1 *piSize=7
+[22:43:23.006] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=7
+[22:43:23.006] [tid=8956]   -> rc=0 piType=11 *piSize=1
+[22:43:23.006] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=7
+[22:43:23.007] [tid=8956]   -> rc=0 piType=11 *piSize=1
+[22:43:23.007] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=8
+[22:43:23.007] [tid=8956]   -> rc=0 piType=11 *piSize=1
+[22:43:23.007] [tid=8956] GCGetPortInfo hPort=00007ffee6c2a431 cmd=8
+[22:43:23.007] [tid=8956]   -> rc=0 piType=11 *piSize=1
+[22:43:23.008] [tid=8956] WRITE ExposureTime                 addr=0x20040 <- 1422.267000
+[22:43:23.009] [tid=8956] WRITE Gain                         addr=0x20050 <- 1.000000
+[22:43:23.009] [tid=8956] WRITE BlackLevel                   addr=0x20060 <- 1.750000
+[22:43:23.009] [tid=8956] WRITE AcquisitionFrameRate         addr=0x20110 <- 60.000000
+[22:43:23.010] [tid=8956] READ  Width                        addr=0x20000 -> 1920
+[22:43:23.010] [tid=8956] READ  Height                       addr=0x20010 -> 1200
+[22:43:23.010] [tid=8956] DevOpenDataStream id=KineoStream0  [Pass 2]
+[22:43:28.050] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:43:28.050] [tid=10952] IFUpdateDeviceList timeout=300
+[22:43:33.103] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:43:33.104] [tid=5728] IFUpdateDeviceList timeout=300
+[22:43:38.151] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:43:38.159] [tid=5728] IFUpdateDeviceList timeout=300
+[22:43:43.187] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:43:43.188] [tid=5728] IFUpdateDeviceList timeout=300
+[22:43:48.225] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:43:48.227] [tid=14176] IFUpdateDeviceList timeout=300
+[22:43:53.275] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:43:53.275] [tid=14176] IFUpdateDeviceList timeout=300
+[22:43:58.313] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:43:58.314] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:03.351] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:44:03.352] [tid=14176] IFUpdateDeviceList timeout=300
+[22:44:08.401] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:08.402] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:13.449] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:44:13.449] [tid=14176] IFUpdateDeviceList timeout=300
+[22:44:16.437] [tid=14176] WRITE AcquisitionMode              addr=0x20120 <- 0
+[22:44:16.437] [tid=14176] WRITE TriggerSelector              addr=0x20130 <- 2
+[22:44:16.438] [tid=14176] WRITE TriggerMode                  addr=0x200c0 <- 0
+[22:44:16.441] [tid=14176] READ  PayloadSize                  addr=0x20030 -> 2304000
+[22:44:16.444] [tid=14176] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:44:16.444] [tid=14176]   -> rc=0 piType=12 *piSize=8
+[22:44:16.446] [tid=14176] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:44:16.446] [tid=14176]   -> rc=0 piType=12 *piSize=8
+[22:44:16.446] [tid=14176] DSAllocAndAnnounceBuffer #1 size=2304000 pPrivate=0000000000000000 -> handle=000001a6dae2ed40 base=000001a6dce6c040 (gen=1)
+[22:44:16.447] [tid=14176] DSQueueBuffer #1 handle=000001a6dae2ed40 base=000001a6dce6c040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=1
+[22:44:16.448] [tid=14176] DSAllocAndAnnounceBuffer #2 size=2304000 pPrivate=0000000000000000 -> handle=000001a6dae26db0 base=000001a6ddaa3040 (gen=2)
+[22:44:16.448] [tid=14176] DSQueueBuffer #2 handle=000001a6dae26db0 base=000001a6ddaa3040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=2
+[22:44:16.448] [tid=14176] DSAllocAndAnnounceBuffer #3 size=2304000 pPrivate=0000000000000000 -> handle=000001a6dae26e00 base=000001a6ddcef040 (gen=3)
+[22:44:16.449] [tid=14176] DSQueueBuffer #3 handle=000001a6dae26e00 base=000001a6ddcef040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=3
+[22:44:16.451] [tid=14176] DSAllocAndAnnounceBuffer #4 size=2304000 pPrivate=0000000000000000 -> handle=000001a6dbf63f50 base=000001a6ddf38040 (gen=4)
+[22:44:16.452] [tid=14176] DSQueueBuffer #4 handle=000001a6dbf63f50 base=000001a6ddf38040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=4
+[22:44:16.453] [tid=14176] DSAllocAndAnnounceBuffer #5 size=2304000 pPrivate=0000000000000000 -> handle=000001a6dbf63fa0 base=000001a6de174040 (gen=5)
+[22:44:16.453] [tid=14176] DSQueueBuffer #5 handle=000001a6dbf63fa0 base=000001a6de174040 capacity=2304000 old_state=ANNOUNCED new_state=QUEUED queue_depth=5
+[22:44:16.454] [tid=14176] DSAllocAndAnnounceBuffer #6 ... further allocations logged only at checkpoints (16, 32, 64, ...)
+[22:44:16.454] [tid=14176] DSQueueBuffer #6 ... further queues logged only at checkpoints (16, 32, 64, ...)
+[22:44:16.455] [tid=14176] DSAllocAndAnnounceBuffer #16 (checkpoint) total_bytes=36864000 avail_phys=7425 MB
+[22:44:16.456] [tid=14176] DSQueueBuffer #16 (checkpoint) queue_depth=16
+[22:44:16.456] [tid=14176] DSAllocAndAnnounceBuffer #32 (checkpoint) total_bytes=73728000 avail_phys=7425 MB
+[22:44:16.457] [tid=14176] DSQueueBuffer #32 (checkpoint) queue_depth=32
+[22:44:16.458] [tid=14176] DSAllocAndAnnounceBuffer #64 (checkpoint) total_bytes=147456000 avail_phys=7425 MB
+[22:44:16.459] [tid=14176] DSQueueBuffer #64 (checkpoint) queue_depth=64
+[22:44:16.462] [tid=14176] === buffer alloc/queue burst ended: 81 buffer(s) this burst (alloc #1-#81), 186624000 bytes, max queue depth 81 -- next call: GCRegisterEvent(id=1) ===
+[22:44:16.463] [tid=14176] GCRegisterEvent(hEventSrc=DS, EVENT_NEW_BUFFER) -> SUCCESS, handle=000001a6dae26e50
+[22:44:16.463] [tid=14176] DSStartAcquisition iStartFlags=0 iNumToAcquire=18446744073709551615 (looks like INFINITE_NUMBER/continuous) queued_buffers=81 -> SUCCESS, grabbing=TRUE
+[22:44:16.464] [tid=14176] COMMAND AcquisitionStart             addr=0x200e0
+[22:44:16.464] [tid=4000] [worker] thread started
+[22:44:16.465] [tid=14176] COMMAND AcquisitionStart             addr=0x200e0
+[22:44:16.475] [tid=4000] [worker] frame #1 completed handle=000001a6dae2ed40 filled=OK bytes=2304000
+[22:44:16.608] [tid=4000] [worker] frame #2 completed handle=000001a6dae26db0 filled=OK bytes=2304000
+[22:44:16.729] [tid=4000] [worker] frame #3 completed handle=000001a6dae26e00 filled=OK bytes=2304000
+[22:44:16.857] [tid=4000] [worker] frame #4 completed handle=000001a6dbf63f50 filled=OK bytes=2304000
+[22:44:16.970] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:16.970] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:16.971] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:16.971] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:16.974] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=17 -> rc=0
+[22:44:16.980] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=17 -> rc=0
+[22:44:16.980] [tid=4000] [worker] frame #5 completed handle=000001a6dbf63fa0 filled=OK bytes=2304000
+[22:44:16.981] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=11 -> rc=0
+[22:44:16.981] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=11 -> rc=0
+[22:44:16.982] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=10 -> rc=0
+[22:44:16.982] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=10 -> rc=0
+[22:44:16.984] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=1 -> rc=0
+[22:44:16.984] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=1 -> rc=0
+[22:44:16.985] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=18 -> rc=0
+[22:44:16.986] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=18 -> rc=0
+[22:44:16.989] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=0 -> rc=0
+[22:44:16.989] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=0 -> rc=0
+[22:44:16.990] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=18 -> rc=0
+[22:44:16.991] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=18 -> rc=0
+[22:44:16.992] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=30 -> rc=0
+[22:44:16.992] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=30 -> rc=0
+[22:44:16.993] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=28 -> rc=0
+[22:44:16.993] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=28 -> rc=0
+[22:44:16.993] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=20 -> rc=0
+[22:44:16.993] [tid=14176] DSGetBufferInfo handle=000001a6dae2ed40 cmd=20 -> rc=0
+[22:44:17.001] [tid=14176] DSQueueBuffer #82 handle=000001a6dae2ed40 base=000001a6dce6c040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=77 (REQUEUE)
+[22:44:17.015] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.015] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.015] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.015] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.015] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=17 -> rc=0
+[22:44:17.016] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=17 -> rc=0
+[22:44:17.017] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=11 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=11 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=10 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=10 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=1 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=1 -> rc=0
+[22:44:17.018] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=18 -> rc=0
+[22:44:17.020] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=18 -> rc=0
+[22:44:17.020] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=0 -> rc=0
+[22:44:17.020] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=0 -> rc=0
+[22:44:17.020] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=18 -> rc=0
+[22:44:17.020] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=18 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=30 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=30 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=28 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=28 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=20 -> rc=0
+[22:44:17.021] [tid=14176] DSGetBufferInfo handle=000001a6dae26db0 cmd=20 -> rc=0
+[22:44:17.022] [tid=14176] DSQueueBuffer #83 handle=000001a6dae26db0 base=000001a6ddaa3040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=78 (REQUEUE)
+[22:44:17.031] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.031] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.032] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.032] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.032] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=17 -> rc=0
+[22:44:17.032] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=17 -> rc=0
+[22:44:17.033] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=11 -> rc=0
+[22:44:17.033] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=11 -> rc=0
+[22:44:17.034] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=10 -> rc=0
+[22:44:17.035] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=10 -> rc=0
+[22:44:17.035] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=1 -> rc=0
+[22:44:17.035] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=1 -> rc=0
+[22:44:17.035] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=18 -> rc=0
+[22:44:17.036] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=18 -> rc=0
+[22:44:17.036] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=0 -> rc=0
+[22:44:17.037] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=0 -> rc=0
+[22:44:17.037] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=18 -> rc=0
+[22:44:17.037] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=18 -> rc=0
+[22:44:17.037] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=30 -> rc=0
+[22:44:17.038] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=30 -> rc=0
+[22:44:17.038] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=28 -> rc=0
+[22:44:17.038] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=28 -> rc=0
+[22:44:17.038] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=20 -> rc=0
+[22:44:17.039] [tid=14176] DSGetBufferInfo handle=000001a6dae26e00 cmd=20 -> rc=0
+[22:44:17.039] [tid=14176] DSQueueBuffer #84 handle=000001a6dae26e00 base=000001a6ddcef040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=79 (REQUEUE)
+[22:44:17.046] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.046] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.046] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.046] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.046] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=17 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=17 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=11 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=11 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=10 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=10 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=1 -> rc=0
+[22:44:17.048] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=1 -> rc=0
+[22:44:17.049] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=18 -> rc=0
+[22:44:17.049] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=18 -> rc=0
+[22:44:17.049] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=0 -> rc=0
+[22:44:17.049] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=0 -> rc=0
+[22:44:17.049] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=18 -> rc=0
+[22:44:17.050] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=18 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=30 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=30 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=28 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=28 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=20 -> rc=0
+[22:44:17.051] [tid=14176] DSGetBufferInfo handle=000001a6dbf63f50 cmd=20 -> rc=0
+[22:44:17.052] [tid=14176] DSQueueBuffer #85 handle=000001a6dbf63f50 base=000001a6ddf38040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=80 (REQUEUE)
+[22:44:17.062] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.062] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.062] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.062] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.062] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=17 -> rc=0
+[22:44:17.062] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=17 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=11 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=11 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=10 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=10 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=1 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=1 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=18 -> rc=0
+[22:44:17.063] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=18 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=0 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=0 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=18 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=18 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=30 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=30 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=28 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=28 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=20 -> rc=0
+[22:44:17.064] [tid=14176] DSGetBufferInfo handle=000001a6dbf63fa0 cmd=20 -> rc=0
+[22:44:17.065] [tid=14176] DSQueueBuffer #86 handle=000001a6dbf63fa0 base=000001a6de174040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.078] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.078] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.078] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.102] [tid=4000] [worker] frame #6 completed handle=000001a6dbf63ff0 filled=OK bytes=2304000
+[22:44:17.102] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=17 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=17 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=11 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=11 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=10 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=10 -> rc=0
+[22:44:17.103] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=1 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=1 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=18 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=18 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=0 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=0 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=18 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=18 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=30 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=30 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=28 -> rc=0
+[22:44:17.104] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=28 -> rc=0
+[22:44:17.106] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=20 -> rc=0
+[22:44:17.106] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=20 -> rc=0
+[22:44:17.112] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=28 -> rc=0
+[22:44:17.112] [tid=14176] DSGetBufferInfo handle=000001a6dbf63ff0 cmd=28 -> rc=0
+[22:44:17.112] [tid=14176] DSQueueBuffer #87 handle=000001a6dbf63ff0 base=000001a6de3b2040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.124] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.124] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.124] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.238] [tid=4000] [worker] frame #7 completed handle=000001a6dbf64040 filled=OK bytes=2304000
+[22:44:17.240] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.241] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=17 -> rc=0
+[22:44:17.241] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=17 -> rc=0
+[22:44:17.241] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=11 -> rc=0
+[22:44:17.241] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=11 -> rc=0
+[22:44:17.241] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=10 -> rc=0
+[22:44:17.242] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=10 -> rc=0
+[22:44:17.242] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=1 -> rc=0
+[22:44:17.242] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=1 -> rc=0
+[22:44:17.243] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=18 -> rc=0
+[22:44:17.243] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=18 -> rc=0
+[22:44:17.243] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=0 -> rc=0
+[22:44:17.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=0 -> rc=0
+[22:44:17.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=18 -> rc=0
+[22:44:17.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=18 -> rc=0
+[22:44:17.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=30 -> rc=0
+[22:44:17.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=30 -> rc=0
+[22:44:17.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=28 -> rc=0
+[22:44:17.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=28 -> rc=0
+[22:44:17.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=20 -> rc=0
+[22:44:17.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=20 -> rc=0
+[22:44:17.248] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=28 -> rc=0
+[22:44:17.248] [tid=14176] DSGetBufferInfo handle=000001a6dbf64040 cmd=28 -> rc=0
+[22:44:17.248] [tid=14176] DSQueueBuffer #88 handle=000001a6dbf64040 base=000001a6de5fb040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.265] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.265] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.265] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.357] [tid=4000] [worker] frame #8 completed handle=000001a6dbf64090 filled=OK bytes=2304000
+[22:44:17.357] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.358] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=17 -> rc=0
+[22:44:17.358] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=17 -> rc=0
+[22:44:17.358] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=11 -> rc=0
+[22:44:17.359] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=11 -> rc=0
+[22:44:17.359] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=10 -> rc=0
+[22:44:17.360] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=10 -> rc=0
+[22:44:17.360] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=1 -> rc=0
+[22:44:17.360] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=1 -> rc=0
+[22:44:17.360] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=18 -> rc=0
+[22:44:17.360] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=18 -> rc=0
+[22:44:17.361] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=0 -> rc=0
+[22:44:17.361] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=0 -> rc=0
+[22:44:17.361] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=18 -> rc=0
+[22:44:17.361] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=18 -> rc=0
+[22:44:17.361] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=30 -> rc=0
+[22:44:17.363] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=30 -> rc=0
+[22:44:17.363] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=28 -> rc=0
+[22:44:17.363] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=28 -> rc=0
+[22:44:17.363] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=20 -> rc=0
+[22:44:17.364] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=20 -> rc=0
+[22:44:17.367] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=28 -> rc=0
+[22:44:17.368] [tid=14176] DSGetBufferInfo handle=000001a6dbf64090 cmd=28 -> rc=0
+[22:44:17.369] [tid=14176] DSQueueBuffer #89 handle=000001a6dbf64090 base=000001a6de835040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.376] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.376] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.376] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.478] [tid=4000] [worker] frame #9 completed handle=000001a6dbf640e0 filled=OK bytes=2304000
+[22:44:17.478] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.479] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=17 -> rc=0
+[22:44:17.479] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=17 -> rc=0
+[22:44:17.479] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=11 -> rc=0
+[22:44:17.479] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=11 -> rc=0
+[22:44:17.480] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=10 -> rc=0
+[22:44:17.480] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=10 -> rc=0
+[22:44:17.480] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=1 -> rc=0
+[22:44:17.480] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=1 -> rc=0
+[22:44:17.481] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=18 -> rc=0
+[22:44:17.481] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=18 -> rc=0
+[22:44:17.481] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=0 -> rc=0
+[22:44:17.481] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=0 -> rc=0
+[22:44:17.482] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=18 -> rc=0
+[22:44:17.482] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=18 -> rc=0
+[22:44:17.482] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=30 -> rc=0
+[22:44:17.482] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=30 -> rc=0
+[22:44:17.482] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=28 -> rc=0
+[22:44:17.483] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=28 -> rc=0
+[22:44:17.485] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=20 -> rc=0
+[22:44:17.485] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=20 -> rc=0
+[22:44:17.489] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=28 -> rc=0
+[22:44:17.489] [tid=14176] DSGetBufferInfo handle=000001a6dbf640e0 cmd=28 -> rc=0
+[22:44:17.489] [tid=14176] DSQueueBuffer #90 handle=000001a6dbf640e0 base=000001a6dea75040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.501] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.502] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.502] [tid=14176] EventGetData handle=000001a6dae26e50 timeout=150 tid=14176
+[22:44:17.594] [tid=4000] [worker] frame #10 completed handle=000001a6dbf64130 filled=OK bytes=2304000
+[22:44:17.596] [tid=14176] EventGetData handle=000001a6dae26e50 -> rc=0 (NEW_BUFFER delivered) tid=14176
+[22:44:17.597] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=17 -> rc=0
+[22:44:17.597] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=17 -> rc=0
+[22:44:17.597] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=11 -> rc=0
+[22:44:17.598] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=11 -> rc=0
+[22:44:17.598] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=10 -> rc=0
+[22:44:17.599] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=10 -> rc=0
+[22:44:17.599] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=1 -> rc=0
+[22:44:17.599] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=1 -> rc=0
+[22:44:17.602] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=18 -> rc=0
+[22:44:17.603] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=18 -> rc=0
+[22:44:17.603] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=0 -> rc=0
+[22:44:17.603] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=0 -> rc=0
+[22:44:17.604] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=18 -> rc=0
+[22:44:17.604] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=18 -> rc=0
+[22:44:17.604] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=30 -> rc=0
+[22:44:17.605] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=30 -> rc=0
+[22:44:17.605] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=28 -> rc=0
+[22:44:17.605] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=28 -> rc=0
+[22:44:17.605] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=20 -> rc=0
+[22:44:17.605] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=20 -> rc=0
+[22:44:17.608] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=28 -> rc=0
+[22:44:17.608] [tid=14176] DSGetBufferInfo handle=000001a6dbf64130 cmd=28 -> rc=0
+[22:44:17.608] [tid=14176] DSQueueBuffer #91 handle=000001a6dbf64130 base=000001a6decbe040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.613] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.613] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.715] [tid=4000] [worker] further frame completions logged only in the final tally
+[22:44:17.720] [tid=14176] EventGetData ... further calls logged only in the final tally
+[22:44:17.721] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=17 -> rc=0
+[22:44:17.722] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=17 -> rc=0
+[22:44:17.722] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=11 -> rc=0
+[22:44:17.723] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=11 -> rc=0
+[22:44:17.723] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=10 -> rc=0
+[22:44:17.723] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=10 -> rc=0
+[22:44:17.724] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=1 -> rc=0
+[22:44:17.724] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=1 -> rc=0
+[22:44:17.724] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=18 -> rc=0
+[22:44:17.725] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=18 -> rc=0
+[22:44:17.725] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=0 -> rc=0
+[22:44:17.726] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=0 -> rc=0
+[22:44:17.726] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=18 -> rc=0
+[22:44:17.726] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=18 -> rc=0
+[22:44:17.727] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=30 -> rc=0
+[22:44:17.727] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=30 -> rc=0
+[22:44:17.727] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=28 -> rc=0
+[22:44:17.728] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=28 -> rc=0
+[22:44:17.728] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=20 -> rc=0
+[22:44:17.728] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=20 -> rc=0
+[22:44:17.730] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=28 -> rc=0
+[22:44:17.730] [tid=14176] DSGetBufferInfo handle=000001a6dbf64180 cmd=28 -> rc=0
+[22:44:17.731] [tid=14176] DSQueueBuffer #92 handle=000001a6dbf64180 base=000001a6def0c040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.736] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.737] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.844] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=17 -> rc=0
+[22:44:17.845] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=17 -> rc=0
+[22:44:17.845] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=11 -> rc=0
+[22:44:17.845] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=11 -> rc=0
+[22:44:17.846] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=10 -> rc=0
+[22:44:17.846] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=10 -> rc=0
+[22:44:17.848] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=1 -> rc=0
+[22:44:17.848] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=1 -> rc=0
+[22:44:17.853] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=18 -> rc=0
+[22:44:17.853] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=18 -> rc=0
+[22:44:17.854] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=0 -> rc=0
+[22:44:17.854] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=0 -> rc=0
+[22:44:17.854] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=18 -> rc=0
+[22:44:17.855] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=18 -> rc=0
+[22:44:17.855] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=30 -> rc=0
+[22:44:17.855] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=30 -> rc=0
+[22:44:17.856] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=28 -> rc=0
+[22:44:17.856] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=28 -> rc=0
+[22:44:17.856] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=20 -> rc=0
+[22:44:17.856] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=20 -> rc=0
+[22:44:17.859] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=28 -> rc=0
+[22:44:17.859] [tid=14176] DSGetBufferInfo handle=000001a6dbf641d0 cmd=28 -> rc=0
+[22:44:17.859] [tid=14176] DSQueueBuffer #93 handle=000001a6dbf641d0 base=000001a6df146040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:17.862] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.863] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:44:17.971] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=17 -> rc=0
+[22:44:17.972] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=17 -> rc=0
+[22:44:17.972] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=11 -> rc=0
+[22:44:17.973] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=11 -> rc=0
+[22:44:17.973] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=10 -> rc=0
+[22:44:17.973] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=10 -> rc=0
+[22:44:17.974] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=1 -> rc=0
+[22:44:17.974] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=1 -> rc=0
+[22:44:17.974] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=18 -> rc=0
+[22:44:17.975] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=18 -> rc=0
+[22:44:17.975] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=0 -> rc=0
+[22:44:17.976] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=0 -> rc=0
+[22:44:17.977] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=18 -> rc=0
+[22:44:17.977] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=18 -> rc=0
+[22:44:17.978] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=30 -> rc=0
+[22:44:17.978] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=30 -> rc=0
+[22:44:17.978] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=28 -> rc=0
+[22:44:17.979] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=28 -> rc=0
+[22:44:17.979] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=20 -> rc=0
+[22:44:17.979] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=20 -> rc=0
+[22:44:17.986] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=28 -> rc=0
+[22:44:17.986] [tid=14176] DSGetBufferInfo handle=000001a6dbf64220 cmd=28 -> rc=0
+[22:44:17.986] [tid=14176] DSQueueBuffer #94 handle=000001a6dbf64220 base=000001a6df38a040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=81 (REQUEUE)
+[22:44:18.003] [tid=14176] COMMAND AcquisitionStop              addr=0x200f0
+[22:44:18.004] [tid=14176] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:44:18.004] [tid=14176]   -> rc=0 piType=11 *piSize=1
+[22:44:18.004] [tid=14176] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:44:18.005] [tid=14176]   -> rc=0 piType=11 *piSize=1
+[22:44:18.005] [tid=14176] DSStopAcquisition -> SUCCESS, grabbing=FALSE
+[22:44:18.005] [tid=14176] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:44:18.005] [tid=14176] GCGetLastError
+[22:44:18.006] [tid=14176] GCGetLastError
+[22:44:18.115] [tid=14176] READ  ExposureTime                 addr=0x20040 -> 1422.267000
+[22:44:18.115] [tid=14176] READ  Gain                         addr=0x20050 -> 1.000000
+[22:44:18.116] [tid=14176] READ  BlackLevel                   addr=0x20060 -> 1.750000
+[22:44:23.483] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:23.484] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:28.508] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:44:28.509] [tid=10952] IFUpdateDeviceList timeout=300
+[22:44:33.531] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:33.531] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:38.546] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:44:38.546] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:43.572] [tid=10952] TLUpdateInterfaceList timeout=100
+[22:44:43.573] [tid=10952] IFUpdateDeviceList timeout=300
+[22:44:48.606] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:48.607] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:53.651] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:53.652] [tid=5728] IFUpdateDeviceList timeout=300
+[22:44:58.690] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:44:58.690] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:03.720] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:45:03.720] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:08.735] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:08.735] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:13.767] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:45:13.767] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:18.819] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:45:18.820] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:23.865] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:23.866] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:28.932] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:45:28.933] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:33.952] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:33.952] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:38.976] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:38.977] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:44.006] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:45:44.007] [tid=5728] IFUpdateDeviceList timeout=300
+[22:45:49.057] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:49.060] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:54.095] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:54.096] [tid=14176] IFUpdateDeviceList timeout=300
+[22:45:59.147] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:45:59.147] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:04.178] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:46:04.178] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:09.204] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:46:09.205] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:14.229] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:46:14.229] [tid=5728] IFUpdateDeviceList timeout=300
+[22:46:19.264] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:46:19.264] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:24.323] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:46:24.324] [tid=5728] IFUpdateDeviceList timeout=300
+[22:46:29.355] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:46:29.355] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:34.391] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:46:34.392] [tid=5728] IFUpdateDeviceList timeout=300
+[22:46:39.426] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:46:39.426] [tid=14176] IFUpdateDeviceList timeout=300
+[22:46:42.722] [tid=14176] WRITE AcquisitionMode              addr=0x20120 <- 0
+[22:46:42.724] [tid=14176] WRITE TriggerSelector              addr=0x20130 <- 2
+[22:46:42.724] [tid=14176] WRITE TriggerMode                  addr=0x200c0 <- 0
+[22:46:42.725] [tid=14176] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:46:42.725] [tid=14176]   -> rc=0 piType=12 *piSize=8
+[22:46:42.726] [tid=14176] DSGetInfo cmd=12 (STREAM_INFO_BUF_ANNOUNCE_MIN)
+[22:46:42.726] [tid=14176]   -> rc=0 piType=12 *piSize=8
+[22:46:42.731] [tid=14176] DSQueueBuffer #128 (checkpoint) queue_depth=115
+[22:46:42.733] [tid=14176] DSAllocAndAnnounceBuffer #128 (checkpoint) total_bytes=294912000 avail_phys=5722 MB
+[22:46:42.737] [tid=14176] === buffer alloc/queue burst ended: 81 buffer(s) this burst (alloc #82-#162), 186624000 bytes, max queue depth 162 -- next call: DSStartAcquisition ===
+[22:46:42.737] [tid=14176] DSStartAcquisition iStartFlags=0 iNumToAcquire=18446744073709551615 (looks like INFINITE_NUMBER/continuous) queued_buffers=162 -> SUCCESS, grabbing=TRUE
+[22:46:42.738] [tid=14176] COMMAND AcquisitionStart             addr=0x200e0
+[22:46:42.738] [tid=14176] COMMAND AcquisitionStart             addr=0x200e0
+[22:46:43.252] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.254] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.255] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=17 -> rc=0
+[22:46:43.256] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=17 -> rc=0
+[22:46:43.256] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=11 -> rc=0
+[22:46:43.257] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=11 -> rc=0
+[22:46:43.257] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=10 -> rc=0
+[22:46:43.257] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=10 -> rc=0
+[22:46:43.259] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=1 -> rc=0
+[22:46:43.259] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=1 -> rc=0
+[22:46:43.259] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=18 -> rc=0
+[22:46:43.260] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=18 -> rc=0
+[22:46:43.260] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=0 -> rc=0
+[22:46:43.260] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=0 -> rc=0
+[22:46:43.260] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=18 -> rc=0
+[22:46:43.261] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=18 -> rc=0
+[22:46:43.261] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=30 -> rc=0
+[22:46:43.263] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=30 -> rc=0
+[22:46:43.263] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=28 -> rc=0
+[22:46:43.264] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=28 -> rc=0
+[22:46:43.264] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=20 -> rc=0
+[22:46:43.264] [tid=14176] DSGetBufferInfo handle=000001a6dbf64270 cmd=20 -> rc=0
+[22:46:43.264] [tid=14176] DSQueueBuffer #176 handle=000001a6dbf64270 base=000001a6df5c7040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=158 (REQUEUE)
+[22:46:43.268] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.268] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.268] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=17 -> rc=0
+[22:46:43.269] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=17 -> rc=0
+[22:46:43.269] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=11 -> rc=0
+[22:46:43.269] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=11 -> rc=0
+[22:46:43.269] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=10 -> rc=0
+[22:46:43.270] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=10 -> rc=0
+[22:46:43.270] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=1 -> rc=0
+[22:46:43.270] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=1 -> rc=0
+[22:46:43.270] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=18 -> rc=0
+[22:46:43.271] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=18 -> rc=0
+[22:46:43.271] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=0 -> rc=0
+[22:46:43.271] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=0 -> rc=0
+[22:46:43.271] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=18 -> rc=0
+[22:46:43.271] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=18 -> rc=0
+[22:46:43.272] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=30 -> rc=0
+[22:46:43.272] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=30 -> rc=0
+[22:46:43.272] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=28 -> rc=0
+[22:46:43.273] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=28 -> rc=0
+[22:46:43.273] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=20 -> rc=0
+[22:46:43.273] [tid=14176] DSGetBufferInfo handle=000001a6dbf642c0 cmd=20 -> rc=0
+[22:46:43.274] [tid=14176] DSQueueBuffer #177 handle=000001a6dbf642c0 base=000001a6df80a040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=159 (REQUEUE)
+[22:46:43.283] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.283] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.283] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=17 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=17 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=11 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=11 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=10 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=10 -> rc=0
+[22:46:43.284] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=1 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=1 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=18 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=18 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=0 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=0 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=18 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=18 -> rc=0
+[22:46:43.285] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=30 -> rc=0
+[22:46:43.286] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=30 -> rc=0
+[22:46:43.286] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=28 -> rc=0
+[22:46:43.286] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=28 -> rc=0
+[22:46:43.286] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=20 -> rc=0
+[22:46:43.286] [tid=14176] DSGetBufferInfo handle=000001a6dbf64310 cmd=20 -> rc=0
+[22:46:43.286] [tid=14176] DSQueueBuffer #178 handle=000001a6dbf64310 base=000001a6e80f2040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=160 (REQUEUE)
+[22:46:43.298] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.298] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.298] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=17 -> rc=0
+[22:46:43.299] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=17 -> rc=0
+[22:46:43.299] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=11 -> rc=0
+[22:46:43.299] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=11 -> rc=0
+[22:46:43.299] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=10 -> rc=0
+[22:46:43.299] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=10 -> rc=0
+[22:46:43.300] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=1 -> rc=0
+[22:46:43.300] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=1 -> rc=0
+[22:46:43.300] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=18 -> rc=0
+[22:46:43.300] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=18 -> rc=0
+[22:46:43.300] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=0 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=0 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=18 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=18 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=30 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=30 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=28 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=28 -> rc=0
+[22:46:43.301] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=20 -> rc=0
+[22:46:43.303] [tid=14176] DSGetBufferInfo handle=000001a6dbf64360 cmd=20 -> rc=0
+[22:46:43.303] [tid=14176] DSQueueBuffer #179 handle=000001a6dbf64360 base=000001a6e833a040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=161 (REQUEUE)
+[22:46:43.314] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.314] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.314] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=17 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=17 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=11 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=11 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=10 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=10 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=1 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=1 -> rc=0
+[22:46:43.315] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=18 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=18 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=0 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=0 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=18 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=18 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=30 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=30 -> rc=0
+[22:46:43.316] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=28 -> rc=0
+[22:46:43.317] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=28 -> rc=0
+[22:46:43.317] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=20 -> rc=0
+[22:46:43.317] [tid=14176] DSGetBufferInfo handle=000001a6dbf648b0 cmd=20 -> rc=0
+[22:46:43.317] [tid=14176] DSQueueBuffer #180 handle=000001a6dbf648b0 base=000001a6e8571040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.330] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.330] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.369] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=17 -> rc=0
+[22:46:43.370] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=17 -> rc=0
+[22:46:43.370] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=11 -> rc=0
+[22:46:43.370] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=11 -> rc=0
+[22:46:43.370] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=10 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=10 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=1 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=1 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=18 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=18 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=0 -> rc=0
+[22:46:43.371] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=0 -> rc=0
+[22:46:43.372] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=18 -> rc=0
+[22:46:43.372] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=18 -> rc=0
+[22:46:43.372] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=30 -> rc=0
+[22:46:43.372] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=30 -> rc=0
+[22:46:43.373] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=28 -> rc=0
+[22:46:43.373] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=28 -> rc=0
+[22:46:43.373] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=20 -> rc=0
+[22:46:43.373] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=20 -> rc=0
+[22:46:43.375] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=28 -> rc=0
+[22:46:43.376] [tid=14176] DSGetBufferInfo handle=000001a6dbf649a0 cmd=28 -> rc=0
+[22:46:43.376] [tid=14176] DSQueueBuffer #181 handle=000001a6dbf649a0 base=000001a6e87b1040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.393] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.393] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.500] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=17 -> rc=0
+[22:46:43.501] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=17 -> rc=0
+[22:46:43.502] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=11 -> rc=0
+[22:46:43.502] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=11 -> rc=0
+[22:46:43.502] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=10 -> rc=0
+[22:46:43.503] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=10 -> rc=0
+[22:46:43.503] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=1 -> rc=0
+[22:46:43.503] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=1 -> rc=0
+[22:46:43.503] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=18 -> rc=0
+[22:46:43.504] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=18 -> rc=0
+[22:46:43.504] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=0 -> rc=0
+[22:46:43.504] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=0 -> rc=0
+[22:46:43.504] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=18 -> rc=0
+[22:46:43.505] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=18 -> rc=0
+[22:46:43.505] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=30 -> rc=0
+[22:46:43.505] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=30 -> rc=0
+[22:46:43.506] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=28 -> rc=0
+[22:46:43.506] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=28 -> rc=0
+[22:46:43.506] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=20 -> rc=0
+[22:46:43.506] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=20 -> rc=0
+[22:46:43.510] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=28 -> rc=0
+[22:46:43.510] [tid=14176] DSGetBufferInfo handle=000001a6dbf64630 cmd=28 -> rc=0
+[22:46:43.510] [tid=14176] DSQueueBuffer #182 handle=000001a6dbf64630 base=000001a6e89f1040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.517] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.517] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.622] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=17 -> rc=0
+[22:46:43.622] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=17 -> rc=0
+[22:46:43.623] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=11 -> rc=0
+[22:46:43.624] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=11 -> rc=0
+[22:46:43.624] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=10 -> rc=0
+[22:46:43.625] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=10 -> rc=0
+[22:46:43.625] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=1 -> rc=0
+[22:46:43.626] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=1 -> rc=0
+[22:46:43.626] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=18 -> rc=0
+[22:46:43.626] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=18 -> rc=0
+[22:46:43.627] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=0 -> rc=0
+[22:46:43.627] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=0 -> rc=0
+[22:46:43.631] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=18 -> rc=0
+[22:46:43.631] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=18 -> rc=0
+[22:46:43.632] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=30 -> rc=0
+[22:46:43.632] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=30 -> rc=0
+[22:46:43.632] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=28 -> rc=0
+[22:46:43.633] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=28 -> rc=0
+[22:46:43.633] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=20 -> rc=0
+[22:46:43.633] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=20 -> rc=0
+[22:46:43.636] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=28 -> rc=0
+[22:46:43.636] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a90 cmd=28 -> rc=0
+[22:46:43.637] [tid=14176] DSQueueBuffer #183 handle=000001a6dbf64a90 base=000001a6e8c3e040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.641] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.641] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.747] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=17 -> rc=0
+[22:46:43.748] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=17 -> rc=0
+[22:46:43.748] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=11 -> rc=0
+[22:46:43.749] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=11 -> rc=0
+[22:46:43.749] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=10 -> rc=0
+[22:46:43.750] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=10 -> rc=0
+[22:46:43.750] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=1 -> rc=0
+[22:46:43.750] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=1 -> rc=0
+[22:46:43.751] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=18 -> rc=0
+[22:46:43.751] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=18 -> rc=0
+[22:46:43.753] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=0 -> rc=0
+[22:46:43.753] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=0 -> rc=0
+[22:46:43.754] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=18 -> rc=0
+[22:46:43.754] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=18 -> rc=0
+[22:46:43.754] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=30 -> rc=0
+[22:46:43.755] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=30 -> rc=0
+[22:46:43.755] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=28 -> rc=0
+[22:46:43.756] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=28 -> rc=0
+[22:46:43.756] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=20 -> rc=0
+[22:46:43.756] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=20 -> rc=0
+[22:46:43.759] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=28 -> rc=0
+[22:46:43.759] [tid=14176] DSGetBufferInfo handle=000001a6dbf649f0 cmd=28 -> rc=0
+[22:46:43.759] [tid=14176] DSQueueBuffer #184 handle=000001a6dbf649f0 base=000001a6e8e86040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.765] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.765] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.875] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=17 -> rc=0
+[22:46:43.876] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=17 -> rc=0
+[22:46:43.876] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=11 -> rc=0
+[22:46:43.877] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=11 -> rc=0
+[22:46:43.877] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=10 -> rc=0
+[22:46:43.880] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=10 -> rc=0
+[22:46:43.881] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=1 -> rc=0
+[22:46:43.881] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=1 -> rc=0
+[22:46:43.881] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=18 -> rc=0
+[22:46:43.882] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=18 -> rc=0
+[22:46:43.882] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=0 -> rc=0
+[22:46:43.883] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=0 -> rc=0
+[22:46:43.883] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=18 -> rc=0
+[22:46:43.883] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=18 -> rc=0
+[22:46:43.884] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=30 -> rc=0
+[22:46:43.884] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=30 -> rc=0
+[22:46:43.884] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=28 -> rc=0
+[22:46:43.885] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=28 -> rc=0
+[22:46:43.885] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=20 -> rc=0
+[22:46:43.887] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=20 -> rc=0
+[22:46:43.890] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=28 -> rc=0
+[22:46:43.890] [tid=14176] DSGetBufferInfo handle=000001a6dbf64950 cmd=28 -> rc=0
+[22:46:43.890] [tid=14176] DSQueueBuffer #185 handle=000001a6dbf64950 base=000001a6e90c5040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:43.906] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:43.907] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:44.000] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=17 -> rc=0
+[22:46:44.000] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=17 -> rc=0
+[22:46:44.001] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=11 -> rc=0
+[22:46:44.001] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=11 -> rc=0
+[22:46:44.001] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=10 -> rc=0
+[22:46:44.001] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=10 -> rc=0
+[22:46:44.002] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=1 -> rc=0
+[22:46:44.002] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=1 -> rc=0
+[22:46:44.002] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=18 -> rc=0
+[22:46:44.002] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=18 -> rc=0
+[22:46:44.003] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=0 -> rc=0
+[22:46:44.003] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=0 -> rc=0
+[22:46:44.003] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=18 -> rc=0
+[22:46:44.004] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=18 -> rc=0
+[22:46:44.004] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=30 -> rc=0
+[22:46:44.004] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=30 -> rc=0
+[22:46:44.004] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=28 -> rc=0
+[22:46:44.004] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=28 -> rc=0
+[22:46:44.005] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=20 -> rc=0
+[22:46:44.005] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=20 -> rc=0
+[22:46:44.007] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=28 -> rc=0
+[22:46:44.007] [tid=14176] DSGetBufferInfo handle=000001a6dbf64a40 cmd=28 -> rc=0
+[22:46:44.007] [tid=14176] DSQueueBuffer #186 handle=000001a6dbf64a40 base=000001a6e930b040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:44.015] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:44.015] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:44.125] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=17 -> rc=0
+[22:46:44.126] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=17 -> rc=0
+[22:46:44.126] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=11 -> rc=0
+[22:46:44.127] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=11 -> rc=0
+[22:46:44.127] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=10 -> rc=0
+[22:46:44.128] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=10 -> rc=0
+[22:46:44.128] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=1 -> rc=0
+[22:46:44.130] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=1 -> rc=0
+[22:46:44.130] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=18 -> rc=0
+[22:46:44.131] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=18 -> rc=0
+[22:46:44.131] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=0 -> rc=0
+[22:46:44.131] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=0 -> rc=0
+[22:46:44.131] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=18 -> rc=0
+[22:46:44.132] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=18 -> rc=0
+[22:46:44.132] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=30 -> rc=0
+[22:46:44.132] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=30 -> rc=0
+[22:46:44.132] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=28 -> rc=0
+[22:46:44.132] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=28 -> rc=0
+[22:46:44.133] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=20 -> rc=0
+[22:46:44.133] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=20 -> rc=0
+[22:46:44.135] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=28 -> rc=0
+[22:46:44.136] [tid=14176] DSGetBufferInfo handle=000001a6dbf64ae0 cmd=28 -> rc=0
+[22:46:44.136] [tid=14176] DSQueueBuffer #187 handle=000001a6dbf64ae0 base=000001a6e9547040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:44.142] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:44.142] [tid=14176] EventGetInfo handle=000001a6dae26e50 cmd=3 -> rc=0
+[22:46:44.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=17 -> rc=0
+[22:46:44.244] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=17 -> rc=0
+[22:46:44.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=11 -> rc=0
+[22:46:44.245] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=11 -> rc=0
+[22:46:44.246] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=10 -> rc=0
+[22:46:44.246] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=10 -> rc=0
+[22:46:44.246] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=1 -> rc=0
+[22:46:44.247] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=1 -> rc=0
+[22:46:44.247] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=18 -> rc=0
+[22:46:44.247] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=18 -> rc=0
+[22:46:44.247] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=0 -> rc=0
+[22:46:44.248] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=0 -> rc=0
+[22:46:44.248] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=18 -> rc=0
+[22:46:44.248] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=18 -> rc=0
+[22:46:44.249] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=30 -> rc=0
+[22:46:44.249] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=30 -> rc=0
+[22:46:44.249] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=28 -> rc=0
+[22:46:44.250] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=28 -> rc=0
+[22:46:44.250] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=20 -> rc=0
+[22:46:44.250] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=20 -> rc=0
+[22:46:44.256] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=28 -> rc=0
+[22:46:44.256] [tid=14176] DSGetBufferInfo handle=000001a6dbf64400 cmd=28 -> rc=0
+[22:46:44.256] [tid=14176] DSQueueBuffer #188 handle=000001a6dbf64400 base=000001a6e978a040 capacity=2304000 old_state=COMPLETED new_state=QUEUED queue_depth=162 (REQUEUE)
+[22:46:44.266] [tid=14176] COMMAND AcquisitionStop              addr=0x200f0
+[22:46:44.267] [tid=14176] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:46:44.267] [tid=14176]   -> rc=0 piType=11 *piSize=1
+[22:46:44.267] [tid=14176] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:46:44.267] [tid=14176]   -> rc=0 piType=11 *piSize=1
+[22:46:44.267] [tid=14176] DSStopAcquisition -> SUCCESS, grabbing=FALSE
+[22:46:44.268] [tid=14176] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:46:44.268] [tid=14176] GCGetLastError
+[22:46:44.269] [tid=14176] GCGetLastError
+[22:46:49.470] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:46:49.474] [tid=5728] IFUpdateDeviceList timeout=300
+[22:46:54.506] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:46:54.513] [tid=5728] IFUpdateDeviceList timeout=300
+[22:46:59.552] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:46:59.552] [tid=5728] IFUpdateDeviceList timeout=300
+[22:47:04.582] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:47:04.583] [tid=5728] IFUpdateDeviceList timeout=300
+[22:47:09.620] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:47:09.620] [tid=5728] IFUpdateDeviceList timeout=300
+[22:47:14.654] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:47:14.656] [tid=2496] IFUpdateDeviceList timeout=300
+[22:47:19.703] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:47:19.704] [tid=14176] IFUpdateDeviceList timeout=300
+[22:47:24.742] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:47:24.743] [tid=2496] IFUpdateDeviceList timeout=300
+[22:47:29.787] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:47:29.788] [tid=14176] IFUpdateDeviceList timeout=300
+[22:47:34.815] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:47:34.816] [tid=14176] IFUpdateDeviceList timeout=300
+[22:47:39.860] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:47:39.860] [tid=14176] IFUpdateDeviceList timeout=300
+[22:47:44.898] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:47:44.898] [tid=5728] IFUpdateDeviceList timeout=300
+[22:47:49.944] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:47:49.950] [tid=5728] IFUpdateDeviceList timeout=300
+[22:47:55.010] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:47:55.010] [tid=14176] IFUpdateDeviceList timeout=300
+[22:48:00.065] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:48:00.066] [tid=14176] IFUpdateDeviceList timeout=300
+[22:48:05.120] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:48:05.120] [tid=2496] IFUpdateDeviceList timeout=300
+[22:48:10.163] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:48:10.164] [tid=2496] IFUpdateDeviceList timeout=300
+[22:48:15.205] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:48:15.206] [tid=2496] IFUpdateDeviceList timeout=300
+[22:48:20.242] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:48:20.243] [tid=2496] IFUpdateDeviceList timeout=300
+[22:48:25.294] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:48:25.295] [tid=2496] IFUpdateDeviceList timeout=300
+[22:48:30.336] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:48:30.337] [tid=5728] IFUpdateDeviceList timeout=300
+[22:48:35.377] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:48:35.378] [tid=5728] IFUpdateDeviceList timeout=300
+[22:48:40.413] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:48:40.413] [tid=5728] IFUpdateDeviceList timeout=300
+[22:48:45.447] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:48:45.448] [tid=14176] IFUpdateDeviceList timeout=300
+[22:48:50.482] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:48:50.483] [tid=5728] IFUpdateDeviceList timeout=300
+[22:48:55.523] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:48:55.524] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:00.559] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:00.561] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:05.610] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:05.611] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:10.674] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:10.676] [tid=5728] IFUpdateDeviceList timeout=300
+[22:49:15.713] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:49:15.714] [tid=5728] IFUpdateDeviceList timeout=300
+[22:49:20.764] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:49:20.765] [tid=5728] IFUpdateDeviceList timeout=300
+[22:49:25.811] [tid=5728] TLUpdateInterfaceList timeout=100
+[22:49:25.812] [tid=5728] IFUpdateDeviceList timeout=300
+[22:49:30.861] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:30.862] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:35.902] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:35.903] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:40.951] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:49:40.952] [tid=2496] IFUpdateDeviceList timeout=300
+[22:49:45.987] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:49:45.988] [tid=14176] IFUpdateDeviceList timeout=300
+[22:49:51.035] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:49:51.036] [tid=2496] IFUpdateDeviceList timeout=300
+[22:49:56.074] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:49:56.075] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:01.112] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:50:01.113] [tid=14176] IFUpdateDeviceList timeout=300
+[22:50:06.148] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:06.149] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:11.187] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:11.188] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:16.235] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:50:16.235] [tid=14176] IFUpdateDeviceList timeout=300
+[22:50:21.280] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:21.282] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:26.315] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:26.316] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:31.361] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:50:31.362] [tid=14176] IFUpdateDeviceList timeout=300
+[22:50:36.402] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:36.404] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:41.418] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:41.418] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:46.467] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:46.467] [tid=2496] IFUpdateDeviceList timeout=300
+[22:50:51.507] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:50:51.508] [tid=14176] IFUpdateDeviceList timeout=300
+[22:50:56.544] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:50:56.545] [tid=2496] IFUpdateDeviceList timeout=300
+[22:51:01.593] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:51:01.594] [tid=14176] IFUpdateDeviceList timeout=300
+[22:51:06.644] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:51:06.645] [tid=14176] IFUpdateDeviceList timeout=300
+[22:51:11.680] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:51:11.681] [tid=2496] IFUpdateDeviceList timeout=300
+[22:51:16.718] [tid=14176] TLUpdateInterfaceList timeout=100
+[22:51:16.718] [tid=14176] IFUpdateDeviceList timeout=300
+[22:51:21.753] [tid=2496] TLUpdateInterfaceList timeout=100
+[22:51:21.753] [tid=2496] IFUpdateDeviceList timeout=300
+[22:51:21.915] [tid=13436] COMMAND AcquisitionStop              addr=0x200f0
+[22:51:21.916] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.916] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.916] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.917] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.917] [tid=13436] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:51:21.918] [tid=13436] GCGetLastError
+[22:51:21.918] [tid=13436] GCGetLastError
+[22:51:21.919] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.919] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.920] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.920] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.920] [tid=13436] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:51:21.921] [tid=13436] GCGetLastError
+[22:51:21.921] [tid=13436] GCGetLastError
+[22:51:21.921] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.922] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.922] [tid=13436] DSGetInfo cmd=8 (STREAM_INFO_IS_GRABBING)
+[22:51:21.922] [tid=13436]   -> rc=0 piType=11 *piSize=1
+[22:51:21.922] [tid=13436] DSFlushQueue  [STUB -> NOT_IMPLEMENTED]
+[22:51:21.923] [tid=13436] GCGetLastError
+[22:51:21.923] [tid=13436] GCGetLastError
+[22:51:21.924] [tid=13436] GCUnregisterEvent(DS, EVENT_NEW_BUFFER) -> SUCCESS, freed
+[22:51:21.929] [tid=13436] DevClose

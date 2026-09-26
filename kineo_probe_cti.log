@@ -1,0 +1,138 @@
+[16:31:46.405] === DllMain PROCESS_ATTACH  probe 0.3-M3g  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m3g.xml;10000;2C86 size=11398 ===
+[16:31:46.409] GCInitLib
+[16:31:46.410] GCGetInfo(cmd=9, pBuffer=000002dbc2926dbc, *piSize=4)
+[16:31:46.415]   -> rc=0 piType=6 *piSize=4
+[16:31:46.417] GCGetInfo(cmd=10, pBuffer=000002dbc2926dc0, *piSize=4)
+[16:31:46.419]   -> rc=0 piType=6 *piSize=4
+[16:31:46.421] GCCloseLib
+[16:31:46.425] GCInitLib
+[16:31:46.427] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[16:31:46.430]   -> rc=0 piType=1 *piSize=37
+[16:31:46.433] GCGetInfo(cmd=1, pBuffer=000002dbc0eb5c90, *piSize=37)
+[16:31:46.435]   -> rc=0 piType=1 *piSize=37
+[16:31:46.438] GCCloseLib
+[16:31:46.439] === DllMain PROCESS_DETACH ===
+[16:31:46.444] === DllMain PROCESS_ATTACH  probe 0.3-M3g  log=kineo_probe_cti.log  xml_url=local:kineo_bridge_m3g.xml;10000;2C86 size=11398 ===
+[16:31:46.447] GCInitLib
+[16:31:46.450] GCGetInfo(cmd=9, pBuffer=000002dbc292570c, *piSize=4)
+[16:31:46.451]   -> rc=0 piType=6 *piSize=4
+[16:31:46.455] GCGetInfo(cmd=10, pBuffer=000002dbc2925710, *piSize=4)
+[16:31:46.456]   -> rc=0 piType=6 *piSize=4
+[16:31:46.459] GCCloseLib
+[16:31:46.461] GCInitLib
+[16:31:46.463] GCGetInfo(cmd=1, pBuffer=0000000000000000, *piSize=0)
+[16:31:46.464]   -> rc=0 piType=1 *piSize=37
+[16:31:46.467] GCGetInfo(cmd=1, pBuffer=000002dbc0eb5930, *piSize=37)
+[16:31:46.468]   -> rc=0 piType=1 *piSize=37
+[16:31:46.471] GCGetInfo(cmd=0, pBuffer=0000000000000000, *piSize=0)
+[16:31:46.473]   -> rc=0 piType=1 *piSize=12
+[16:31:46.475] GCGetInfo(cmd=0, pBuffer=000002dbc292edc0, *piSize=12)
+[16:31:46.479]   -> rc=0 piType=1 *piSize=12
+[16:31:46.481] TLOpen
+[16:31:46.483] TLUpdateInterfaceList timeout=1000
+[16:31:46.483] TLGetNumInterfaces -> 1
+[16:31:46.486] TLGetInterfaceID index=0
+[16:31:46.488] TLGetInterfaceID index=0
+[16:31:46.491] TLOpenInterface id=KineoBridgeU3V-IF0
+[16:31:46.494] GCRegisterEvent id=1000  [STUB -> NOT_IMPLEMENTED]
+[16:31:46.495] IFUpdateDeviceList timeout=1000
+[16:31:46.497] IFGetNumDevices -> 1
+[16:31:46.499] IFGetDeviceID index=0
+[16:31:46.501] IFGetDeviceID index=0
+[16:31:46.505] IFOpenDevice id=KineoBridgeDevice0 flags=3
+[16:31:46.507] GCGetPortInfo hPort=00007ff932cc42d2 cmd=12
+[16:31:46.510]   -> rc=0 piType=1 *piSize=7
+[16:31:46.512] GCGetPortInfo hPort=00007ff932cc42d2 cmd=12
+[16:31:46.514]   -> rc=0 piType=1 *piSize=7
+[16:31:46.516] TLGetInfo cmd=6
+[16:31:46.518] TLGetInfo cmd=6
+[16:31:46.521] TLGetInfo cmd=5
+[16:31:46.523] TLGetInfo cmd=5
+[16:31:46.527] GCGetNumPortURLs hPort=00007ff932cc42d2
+[16:31:46.530]   -> count=0
+[16:31:46.531] DevGetPort
+[16:31:46.534] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.536]   -> rc=0 piType=1 *piSize=7
+[16:31:46.538] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.542]   -> rc=0 piType=1 *piSize=7
+[16:31:46.544] GCGetNumPortURLs hPort=00007ff932cc42d1
+[16:31:46.547]   -> count=1
+[16:31:46.549] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=0
+[16:31:46.551]   -> rc=0
+[16:31:46.552] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=0
+[16:31:46.553]   -> rc=0
+[16:31:46.557] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=9
+[16:31:46.559]   -> rc=0
+[16:31:46.561] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=9
+[16:31:46.565]   -> rc=0
+[16:31:46.567] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=7
+[16:31:46.567]   -> rc=0
+[16:31:46.571] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=7
+[16:31:46.572]   -> rc=0
+[16:31:46.576] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=8
+[16:31:46.577]   -> rc=0
+[16:31:46.580] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=8
+[16:31:46.582]   -> rc=0
+[16:31:46.584] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=10
+[16:31:46.586]   -> rc=0
+[16:31:46.588] GCGetPortURLInfo hPort=00007ff932cc42d1 idx=0 cmd=10
+[16:31:46.592]   -> rc=0
+[16:31:46.594] GCReadPort hPort=00007ff932cc42d1 addr=0x10000 *piSize=11398 [XML]
+[16:31:46.596]   -> rc=0 copied=11398
+[16:31:46.596] DevGetNumDataStreams -> 1  [Pass 2]
+[16:31:46.601] DevGetDataStreamID index=0  [Pass 2]
+[16:31:46.602] DevGetDataStreamID index=0  [Pass 2]
+[16:31:46.609] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.613]   -> rc=0 piType=1 *piSize=7
+[16:31:46.614] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.617]   -> rc=0 piType=1 *piSize=7
+[16:31:46.619] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.620]   -> rc=0 piType=1 *piSize=7
+[16:31:46.620] GCGetPortInfo hPort=00007ff932cc42d1 cmd=12
+[16:31:46.625]   -> rc=0 piType=1 *piSize=7
+[16:31:46.629] GCGetPortInfo hPort=00007ff932cc42d1 cmd=7
+[16:31:46.631]   -> rc=0 piType=11 *piSize=1
+[16:31:46.633] GCGetPortInfo hPort=00007ff932cc42d1 cmd=7
+[16:31:46.636]   -> rc=0 piType=11 *piSize=1
+[16:31:46.638] GCGetPortInfo hPort=00007ff932cc42d1 cmd=8
+[16:31:46.640]   -> rc=0 piType=11 *piSize=1
+[16:31:46.642] GCGetPortInfo hPort=00007ff932cc42d1 cmd=8
+[16:31:46.645]   -> rc=0 piType=11 *piSize=1
+[16:31:46.648] READ  Width                        addr=0x20000 -> 1920
+[16:31:46.650] READ  Height                       addr=0x20010 -> 1200
+[16:31:46.654] READ  PixelFormat                  addr=0x20020 -> 17301505
+[16:31:46.654] READ  PayloadSize                  addr=0x20030 -> 2304000
+[16:31:46.657] READ  ExposureTime                 addr=0x20040 -> 1422.267000
+[16:31:46.663] READ  Gain                         addr=0x20050 -> 1.000000
+[16:31:46.665] READ  BlackLevel                   addr=0x20060 -> 1.750000
+[16:31:46.668] READ  BrightnessAutoTarget         addr=0x20070 -> 170
+[16:31:46.670] READ  BrightnessAutoPercentile     addr=0x20080 -> 30
+[16:31:46.672] READ  BrightnessAutoTargetTolerance addr=0x20090 -> 20
+[16:31:46.675] READ  OffsetX                      addr=0x200a0 -> 0
+[16:31:46.678] READ  OffsetY                      addr=0x200b0 -> 0
+[16:31:46.678] READ  TriggerMode                  addr=0x200c0 -> 0
+[16:31:46.680] READ  TLParamsLocked               addr=0x200d0 -> 0
+[16:31:46.684] READ  AcquisitionFrameRate         addr=0x20110 -> 30.000000
+[16:31:46.686] WRITE ExposureTime                 addr=0x20040 <- 2000.000000
+[16:31:46.688] READ  ExposureTime                 addr=0x20040 -> 2000.000000
+[16:31:46.690] WRITE Gain                         addr=0x20050 <- 2.500000
+[16:31:46.691] READ  Gain                         addr=0x20050 -> 2.500000
+[16:31:46.693] WRITE BlackLevel                   addr=0x20060 <- 3.000000
+[16:31:46.696] READ  BlackLevel                   addr=0x20060 -> 3.000000
+[16:31:46.698] WRITE BrightnessAutoTarget         addr=0x20070 <- 180
+[16:31:46.700] WRITE Width                        addr=0x20000 <- 1920
+[16:31:46.703] WRITE Height                       addr=0x20010 <- 1200
+[16:31:46.705] WRITE TLParamsLocked               addr=0x200d0 <- 1
+[16:31:46.706] WRITE AcquisitionFrameRate         addr=0x20110 <- 15.000000
+[16:31:46.708] READ  AcquisitionFrameRate         addr=0x20110 -> 15.000000
+[16:31:46.711] COMMAND AcquisitionStart             addr=0x200e0
+[16:31:46.713] COMMAND AcquisitionStart             addr=0x200e0
+[16:31:46.715] COMMAND AcquisitionStop              addr=0x200f0
+[16:31:46.718] COMMAND AcquisitionStop              addr=0x200f0
+[16:31:46.720] COMMAND ExposureStart                addr=0x20100
+[16:31:46.722] COMMAND ExposureStart                addr=0x20100
+[16:31:46.724] DevClose
+[16:31:46.728] IFClose
+[16:31:46.729] TLClose
+[16:31:46.731] GCCloseLib
+[16:31:46.734] === DllMain PROCESS_DETACH ===

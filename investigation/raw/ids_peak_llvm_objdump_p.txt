@@ -1,0 +1,870 @@
+
+/mnt/c/IMVapps/Kineo Software/resources/chiron-cpp-module/ExternalDependencies/IDS/ids_peak.dll:	file format coff-x86-64
+Characteristics 0x2022
+	executable
+	large address aware
+	DLL
+
+Time/Date               Wed Aug 28 07:31:32 2024
+Magic                   020b	(PE32+)
+MajorLinkerVersion      14
+MinorLinkerVersion      29
+SizeOfCode              00000000002cb800
+SizeOfInitializedData   0000000000107e00
+SizeOfUninitializedData 0000000000000000
+AddressOfEntryPoint     000000000011ef08
+BaseOfCode              0000000000001000
+ImageBase               0000000180000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     6
+MinorOSystemVersion     0
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   6
+MinorSubsystemVersion   0
+Win32Version            00000000
+SizeOfImage             003d7000
+SizeOfHeaders           00000400
+CheckSum                003d69f0
+Subsystem               00000003	(Windows CUI)
+DllCharacteristics      00000160
+					HIGH_ENTROPY_VA
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      0000000000100000
+SizeOfStackCommit       0000000000001000
+SizeOfHeapReserve       0000000000100000
+SizeOfHeapCommit        0000000000001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000000000392360 00004a74 Export Directory [.edata (or where ever we found it)]
+Entry 1 0000000000396dd4 00000140 Import Directory [parts of .idata]
+Entry 2 00000000003d5000 000005d8 Resource Directory [.rsrc]
+Entry 3 00000000003a4000 0002f7a8 Exception Directory [.pdata]
+Entry 4 00000000003d3200 000029a8 Security Directory
+Entry 5 00000000003d6000 00000e2c Base Relocation Directory [.reloc]
+Entry 6 00000000002d4b78 00000054 Debug Directory
+Entry 7 0000000000000000 00000000 Description Directory
+Entry 8 0000000000000000 00000000 Special Directory
+Entry 9 00000000002d4d90 00000028 Thread Storage Directory [.tls]
+Entry a 00000000002d4bd0 00000138 Load Configuration Directory
+Entry b 0000000000000000 00000000 Bound Import Directory
+Entry c 00000000002cd000 00000a28 Import Address Table Directory
+Entry d 0000000000000000 00000000 Delay Import Directory
+Entry e 0000000000000000 00000000 CLR Runtime Header
+Entry f 0000000000000000 00000000 Reserved
+TLS directory:
+  StartAddressOfRawData: 0x000001802ea940
+  EndAddressOfRawData: 0x000001802eaac0
+  AddressOfIndex: 0x000001803a2bb8
+  AddressOfCallBacks: 0x000001802cdab8
+  SizeOfZeroFill: 0
+  Characteristics: 5242880
+  Alignment: 16
+
+
+The Import Tables:
+  lookup 00396f18 time 00000000 fwd 00000000 name 00397c2c addr 002cd000
+
+    DLL Name: FirmwareUpdate_MD_VC141_v3_4.dll
+    Hint/Ord  Name
+           0  ??0CFirmwareUpdateInfo@GenApi_3_4@@QEAA@AEBV01@@Z
+          19  ??1CFirmwareUpdateInfo@GenApi_3_4@@QEAA@XZ
+          48  ?IsValid@CFirmwareUpdateInfo@GenApi_3_4@@QEBA_NXZ
+          47  ?GetUpdateFilename@CFirmwareUpdateInfo@GenApi_3_4@@QEBAPEBDXZ
+          42  ?GetInfo@CFirmwareUpdateInfo@GenApi_3_4@@QEBAPEBDPEBD@Z
+           2  ??0CFirmwareUpdater@GenApi_3_4@@QEAA@XZ
+          20  ??1CFirmwareUpdater@GenApi_3_4@@QEAA@XZ
+          39  ?FirmwareUpdateMatchesDevice@CFirmwareUpdater@GenApi_3_4@@QEBA_NPEAUINodeMap@2@AEBVCFirmwareUpdateInfo@2@@Z
+          49  ?ReadFirmwareUpdateInfos@CFirmwareUpdater@GenApi_3_4@@QEBAXAEBVgcstring@GenICam_3_4@@AEAVIFirmwareUpdateInfoCollector@2@PEBD@Z
+          36  ?ApplyUpdate@CFirmwareUpdater@GenApi_3_4@@QEAAXPEAVIFirmwareUpdatableDevice@2@AEBVCFirmwareUpdateInfo@2@PEAVIFirmwareUpdateProgressObserver@2@PEBD@Z
+
+  lookup 00396f70 time 00000000 fwd 00000000 name 00398178 addr 002cd058
+
+    DLL Name: GCBase_MD_VC141_v3_4.dll
+    Hint/Ord  Name
+          56  ??0gcstring@GenICam_3_4@@QEAA@PEBD@Z
+          82  ??1gcstring@GenICam_3_4@@UEAA@XZ
+          32  ??0LogicalErrorException@GenICam_3_4@@QEAA@PEBD0H0@Z
+          20  ??0GenericException@GenICam_3_4@@QEAA@AEBV01@@Z
+          30  ??0LogicalErrorException@GenICam_3_4@@QEAA@AEBV01@@Z
+          77  ??1LogicalErrorException@GenICam_3_4@@UEAA@XZ
+          60  ??0gcstring@GenICam_3_4@@QEAA@XZ
+          57  ??0gcstring@GenICam_3_4@@QEAA@PEBD_K@Z
+          55  ??0gcstring@GenICam_3_4@@QEAA@AEBV01@@Z
+         233  ?c_str@gcstring@GenICam_3_4@@UEBAPEBDXZ
+         239  ?empty@gcstring@GenICam_3_4@@UEBA_NXZ
+         247  ?find@gcstring@GenICam_3_4@@UEBA_KAEBV12@_K@Z
+         268  ?reserve@gcstring@GenICam_3_4@@UEAAX_K@Z
+         274  ?substr@gcstring@GenICam_3_4@@UEBA?AV12@_K0@Z
+         256  ?find_last_of@gcstring@GenICam_3_4@@UEBA_KD_K@Z
+         216  ?_npos@gcstring@GenICam_3_4@@SA_KXZ
+         114  ??4gcstring@GenICam_3_4@@QEAAAEAV01@AEBV01@@Z
+         130  ??Bgcstring@GenICam_3_4@@QEBAPEBDXZ
+         207  ?ThrowBadAlloc@GenICam_3_4@@YAXPEBDH@Z
+          63  ??0gcstring_vector@GenICam_3_4@@QEAA@XZ
+          83  ??1gcstring_vector@GenICam_3_4@@UEAA@XZ
+         227  ?at@gcstring_vector@GenICam_3_4@@UEAAAEAVgcstring@2@_K@Z
+         240  ?empty@gcstring_vector@GenICam_3_4@@UEBA_NXZ
+          47  ??0RuntimeException@GenICam_3_4@@QEAA@PEBD0H0@Z
+           3  ??0AccessException@GenICam_3_4@@QEAA@PEBD0H0@Z
+           1  ??0AccessException@GenICam_3_4@@QEAA@AEBV01@@Z
+          45  ??0RuntimeException@GenICam_3_4@@QEAA@AEBV01@@Z
+          68  ??1AccessException@GenICam_3_4@@UEAA@XZ
+          80  ??1RuntimeException@GenICam_3_4@@UEAA@XZ
+
+  lookup 00397060 time 00000000 fwd 00000000 name 003992b0 addr 002cd148
+
+    DLL Name: GenApi_MD_VC141_v3_4.dll
+    Hint/Ord  Name
+         422  ?Lock@CLock@GenApi_3_4@@QEAAXXZ
+         491  ?Unlock@CLock@GenApi_3_4@@QEAAXXZ
+         145  ??9const_iterator@value_vector@GenApi_3_4@@QEBA_NAEBV012@@Z
+         166  ??Diterator@value_vector@GenApi_3_4@@QEBAAEAPEAUIValue@2@XZ
+         178  ??Eiterator@value_vector@GenApi_3_4@@QEAAAEAV012@XZ
+          52  ??0value_vector@GenApi_3_4@@QEAA@XZ
+          84  ??1value_vector@GenApi_3_4@@UEAA@XZ
+         144  ??9const_iterator@node_vector@GenApi_3_4@@QEBA_NAEBV012@@Z
+         165  ??Diterator@node_vector@GenApi_3_4@@QEBAAEAPEAUINode@2@XZ
+         176  ??Eiterator@node_vector@GenApi_3_4@@QEAAAEAV012@XZ
+          49  ??0node_vector@GenApi_3_4@@QEAA@XZ
+          83  ??1node_vector@GenApi_3_4@@UEAA@XZ
+          81  ??1double_autovector_t@GenApi_3_4@@UEAA@XZ
+         148  ??Adouble_autovector_t@GenApi_3_4@@QEAAAEAN_K@Z
+         568  ?size@double_autovector_t@GenApi_3_4@@QEBA_KXZ
+          82  ??1int64_autovector_t@GenApi_3_4@@UEAA@XZ
+         150  ??Aint64_autovector_t@GenApi_3_4@@QEAAAEA_J_K@Z
+         569  ?size@int64_autovector_t@GenApi_3_4@@QEBA_KXZ
+         359  ?Deregister@GenApi_3_4@@YAX_J@Z
+         361  ?DetachBuffer@CChunkAdapter@GenApi_3_4@@QEAAXXZ
+         492  ?UpdateBuffer@CChunkAdapter@GenApi_3_4@@QEAAXPEAE@Z
+          23  ??0CNodeMapFactory@GenApi_3_4@@QEAA@XZ
+          73  ??1CNodeMapFactory@GenApi_3_4@@UEAA@XZ
+          21  ??0CNodeMapFactory@GenApi_3_4@@QEAA@W4EContentType_t@1@AEBVgcstring@GenICam_3_4@@W4ECacheUsage_t@1@_N@Z
+          22  ??0CNodeMapFactory@GenApi_3_4@@QEAA@W4EContentType_t@1@PEBX_KW4ECacheUsage_t@1@_N@Z
+         341  ?CreateNodeMap@CNodeMapFactory@GenApi_3_4@@QEAAPEAUINodeMap@2@AEBVgcstring@GenICam_3_4@@_N@Z
+         407  ?GetSupportedSchemaVersions@CNodeMapFactory@GenApi_3_4@@QEBAXAEAVgcstring_vector@GenICam_3_4@@@Z
+           1  ??0CChunkAdapterDcam@GenApi_3_4@@QEAA@PEAUINodeMap@1@_J@Z
+          55  ??1CChunkAdapterDcam@GenApi_3_4@@UEAA@XZ
+         410  ?HasCRC@CChunkAdapterDcam@GenApi_3_4@@QEAA_NPEAE_J@Z
+         328  ?CheckCRC@CChunkAdapterDcam@GenApi_3_4@@QEAA_NPEAE_J@Z
+           2  ??0CChunkAdapterGEV@GenApi_3_4@@QEAA@PEAUINodeMap@1@_J@Z
+          56  ??1CChunkAdapterGEV@GenApi_3_4@@UEAA@XZ
+           5  ??0CChunkAdapterU3V@GenApi_3_4@@QEAA@PEAUINodeMap@1@_J@Z
+          59  ??1CChunkAdapterU3V@GenApi_3_4@@UEAA@XZ
+           8  ??0CEventAdapter1394@GenApi_3_4@@QEAA@PEAUINodeMap@1@@Z
+          62  ??1CEventAdapter1394@GenApi_3_4@@UEAA@XZ
+          10  ??0CEventAdapterCL@GenApi_3_4@@QEAA@PEAUINodeMap@1@@Z
+          64  ??1CEventAdapterCL@GenApi_3_4@@UEAA@XZ
+          11  ??0CEventAdapterGEV@GenApi_3_4@@QEAA@PEAUINodeMap@1@@Z
+          65  ??1CEventAdapterGEV@GenApi_3_4@@UEAA@XZ
+          13  ??0CEventAdapterU3V@GenApi_3_4@@QEAA@PEAUINodeMap@1@@Z
+          67  ??1CEventAdapterU3V@GenApi_3_4@@UEAA@XZ
+         439  ?SetFirst@CSelectorState@GenApi_3_4@@QEAA_NXZ
+         443  ?SetNext@CSelectorState@GenApi_3_4@@QEAA_NXZ
+         294  ?AddSelector@CSelectorState@GenApi_3_4@@QEAAXVgcstring@GenICam_3_4@@0@Z
+         399  ?GetNodeName@CSelectorState@GenApi_3_4@@QEAA?AVgcstring@GenICam_3_4@@XZ
+         401  ?GetNodeValue@CSelectorState@GenApi_3_4@@QEAA?AVgcstring@GenICam_3_4@@XZ
+         416  ?IsEmpty@CSelectorState@GenApi_3_4@@QEAA_NXZ
+         420  ?LoadFromBag@CFeatureBag@GenApi_3_4@@QEAA_NPEAUINodeMap@2@_NPEAVgcstring_vector@GenICam_3_4@@@Z
+         448  ?StoreToBag@CFeatureBag@GenApi_3_4@@QEAA_JPEAUINodeMap@2@HPEAVgcstring_vector@GenICam_3_4@@@Z
+          16  ??0CFeatureBag@GenApi_3_4@@QEAA@XZ
+          69  ??1CFeatureBag@GenApi_3_4@@UEAA@XZ
+         295  ?AllocateSelector@CFeatureBag@GenApi_3_4@@AEAAPEAVCSelectorState@2@XZ
+         343  ?DeleteSelector@CFeatureBag@GenApi_3_4@@AEAAXAEAPEAVCSelectorState@2@@Z
+         333  ?Clear@CFeatureBag@GenApi_3_4@@AEAAXXZ
+         425  ?Push@CFeatureBag@GenApi_3_4@@AEAAXPEBD0PEAVCSelectorState@2@@Z
+         394  ?GetInfo@CFeatureBag@GenApi_3_4@@AEBAAEBVgcstring@GenICam_3_4@@XZ
+         159  ??Cconst_iterator@CFeatureBag@GenApi_3_4@@QEBAPEBUTriplet@12@XZ
+         168  ??Econst_iterator@CFeatureBag@GenApi_3_4@@QEAAAEAV012@XZ
+         142  ??9const_iterator@CFeatureBag@GenApi_3_4@@QEBA_NAEBV012@@Z
+         388  ?GetBegin@CFeatureBag@GenApi_3_4@@AEBA?AVconst_iterator@12@XZ
+         392  ?GetEnd@CFeatureBag@GenApi_3_4@@AEBA?AVconst_iterator@12@XZ
+         297  ?AttachBuffer@CChunkAdapterDcam@GenApi_3_4@@UEAAXPEAE_JPEAUAttachStatistics_t@2@@Z
+         298  ?AttachBuffer@CChunkAdapterGEV@GenApi_3_4@@UEAAXPEAE_JPEAUAttachStatistics_t@2@@Z
+         302  ?AttachBuffer@CChunkAdapterU3V@GenApi_3_4@@UEAAXPEAE_JPEAUAttachStatistics_t@2@@Z
+         316  ?AttachNodeMap@CEventAdapter@GenApi_3_4@@UEAAXPEAUINodeMap@2@@Z
+         321  ?CheckBufferLayout@CChunkAdapterDcam@GenApi_3_4@@UEAA_NPEAE_J@Z
+         322  ?CheckBufferLayout@CChunkAdapterGEV@GenApi_3_4@@UEAA_NPEAE_J@Z
+         324  ?CheckBufferLayout@CChunkAdapterU3V@GenApi_3_4@@UEAA_NPEAE_J@Z
+         352  ?DeliverMessage@CEventAdapter1394@GenApi_3_4@@UEAAXQEBEI@Z
+         353  ?DeliverMessage@CEventAdapterCL@GenApi_3_4@@UEAAXQEBEI@Z
+         354  ?DeliverMessage@CEventAdapterGEV@GenApi_3_4@@UEAAXQEBEI@Z
+         358  ?DeliverMessage@CEventAdapterU3V@GenApi_3_4@@UEAAXQEBEI@Z
+         366  ?DetachNodeMap@CEventAdapter@GenApi_3_4@@UEAAXXZ
+
+  lookup 003972c0 time 00000000 fwd 00000000 name 003993c8 addr 002cd3a8
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         211  CreateFileW
+         598  GetFileAttributesExW
+         142  CloseHandle
+         628  GetLastError
+         299  DeviceIoControl
+        1000  LocalFree
+         441  FormatMessageW
+         547  GetCurrentDirectoryW
+         621  GetFullPathNameW
+         391  FindClose
+         395  FindFirstFileA
+         412  FindNextFileA
+         445  FreeLibrary
+         708  GetProcAddress
+         986  LoadLibraryA
+         300  DisableThreadLibraryCalls
+         769  GetSystemTimeAsFileTime
+         555  GetCurrentProcessId
+        1124  QueryPerformanceCounter
+        1462  TerminateProcess
+         554  GetCurrentProcess
+         926  IsProcessorFeaturePresent
+         744  GetStartupInfoW
+        1431  SetUnhandledExceptionFilter
+        1496  UnhandledExceptionFilter
+         919  IsDebuggerPresent
+        1272  RtlVirtualUnwind
+        1265  RtlLookupFunctionEntry
+        1257  RtlCaptureContext
+         652  GetModuleHandleW
+         199  CreateEventW
+        1539  WaitForSingleObjectEx
+        1248  ResetEvent
+        1340  SetEvent
+         283  DeleteCriticalSection
+         893  InitializeCriticalSectionAndSpinCount
+         982  LeaveCriticalSection
+         321  EnterCriticalSection
+         559  GetCurrentThreadId
+         886  InitOnceComplete
+         885  InitOnceBeginInitialize
+         440  FormatMessageA
+         897  InitializeSListHead
+
+  lookup 00397420 time 00000000 fwd 00000000 name 0039a646 addr 002cd508
+
+    DLL Name: MSVCP140.dll
+    Hint/Ord  Name
+         872  ?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ
+         255  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z
+         128  ??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+         552  ?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+         639  ?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+        1014  ?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z
+        1205  ?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAPEAV12@PEAD_J@Z
+        1237  ?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ
+        1277  ?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+        1307  ?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+        1347  ?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z
+        1350  ?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z
+         653  ?_Xinvalid_argument@std@@YAXPEBD@Z
+         627  ?_Syserror_map@std@@YAPEBDH@Z
+         645  ?_Winerror_map@std@@YAHH@Z
+         651  ?_Xbad_alloc@std@@YAXXZ
+        1165  ?read@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@PEAD_J@Z
+         267  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_J@Z
+        1405  _Mbrtowc
+         456  ?_Getcvt@_Locinfo@std@@QEBA?AU_Cvtvec@@XZ
+         642  ?_W_Getdays@_Locinfo@std@@QEBAPEBGXZ
+         643  ?_W_Getmonths@_Locinfo@std@@QEBAPEBGXZ
+         109  ??0_Lockit@std@@QEAA@H@Z
+         165  ??1_Lockit@std@@QEAA@XZ
+         305  ??Bid@locale@std@@QEAA_KXZ
+         469  ?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ
+         669  ?always_noconv@codecvt_base@std@@QEBA_NXZ
+         438  ?_Getcat@?$ctype@D@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+        1018  ?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+        1075  ?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+        1319  ?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z
+         433  ?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+         963  ?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
+         960  ?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ
+        1173  ?sbumpc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+        1231  ?sgetc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+        1240  ?snextc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHXZ
+         501  ?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ
+          37  ??0?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z
+         134  ??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+         265  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z
+          26  ??0?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z
+         131  ??1?$basic_istream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+         537  ?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAA_N_N@Z
+        1008  ?ignore@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@_JH@Z
+        1092  ?peek@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAHXZ
+        1182  ?seekg@?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@V?$fpos@U_Mbstatet@@@2@@Z
+         364  ??_D?$basic_istream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+         427  ?_Fiopen@std@@YAPEAU_iobuf@@PEBDHH@Z
+         975  ?id@?$ctype@D@std@@2V0locale@2@A
+         969  ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A
+         663  ?__ExceptionPtrCreate@@YAXPEAX@Z
+         665  ?__ExceptionPtrDestroy@@YAXPEAX@Z
+         661  ?__ExceptionPtrCopy@@YAXPEAXPEBX@Z
+         659  ?__ExceptionPtrAssign@@YAXPEAXPEBX@Z
+         668  ?__ExceptionPtrToBool@@YA_NPEBX@Z
+         662  ?__ExceptionPtrCopyException@@YAXPEAXPEBX1@Z
+        1360  _Cnd_init_in_situ
+        1357  _Cnd_destroy_in_situ
+        1365  _Cnd_wait
+        1355  _Cnd_broadcast
+        1361  _Cnd_register_at_thread_exit
+        1364  _Cnd_unregister_at_thread_exit
+         630  ?_Throw_future_error@std@@YAXAEBVerror_code@1@@Z
+         613  ?_Rethrow_future_exception@std@@YAXVexception_ptr@1@@Z
+         268  ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@_K@Z
+        1412  _Mtx_init_in_situ
+        1409  _Mtx_destroy_in_situ
+         654  ?_Xlength_error@std@@YAXPEBD@Z
+         655  ?_Xout_of_range@std@@YAXPEBD@Z
+        1484  _Xtime_get_ticks
+        1424  _Query_perf_counter
+        1425  _Query_perf_frequency
+        1461  _Thrd_join
+        1462  _Thrd_sleep
+        1460  _Thrd_id
+        1413  _Mtx_lock
+        1417  _Mtx_unlock
+        1358  _Cnd_do_broadcast_at_thread_exit
+         628  ?_Throw_C_error@std@@YAXH@Z
+         629  ?_Throw_Cpp_error@std@@YAXH@Z
+          19  ??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z
+         652  ?_Xbad_function_call@std@@YAXXZ
+        1310  ?uncaught_exception@std@@YA_NXZ
+          47  ??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ
+         137  ??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ
+        1246  ?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z
+        1249  ?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z
+         586  ?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+         125  ??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ
+        1221  ?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+          12  ??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ
+         580  ?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+
+  lookup 00397710 time 00000000 fwd 00000000 name 0039a79a addr 002cd7f8
+
+    DLL Name: VCRUNTIME140.dll
+    Hint/Ord  Name
+          28  __current_exception_context
+          35  __std_terminate
+          33  __std_exception_copy
+          34  __std_exception_destroy
+          36  __std_type_info_compare
+           1  _CxxThrowException
+          37  __std_type_info_destroy_list
+          24  __RTDynamicCast
+          59  memcmp
+          60  memcpy
+          61  memmove
+          62  memset
+          54  _purecall
+          58  memchr
+           8  __C_specific_handler
+          27  __current_exception
+
+  lookup 00397798 time 00000000 fwd 00000000 name 0039a7ac addr 002cd880
+
+    DLL Name: VCRUNTIME140_1.dll
+    Hint/Ord  Name
+           0  __CxxFrameHandler4
+
+  lookup 00397820 time 00000000 fwd 00000000 name 0039aa40 addr 002cd908
+
+    DLL Name: api-ms-win-crt-runtime-l1-1-0.dll
+    Hint/Ord  Name
+          29  _crt_at_quick_exit
+          55  _initterm_e
+          54  _initterm
+          30  _crt_atexit
+          63  _seh_filter_dll
+          34  _execute_onexit_table
+          60  _register_onexit_function
+          24  _configure_narrow_argv
+          84  abort
+          33  _errno
+          52  _initialize_onexit_table
+          51  _initialize_narrow_environment
+          22  _cexit
+          20  _beginthreadex
+         103  terminate
+          57  _invalid_parameter_noinfo_noreturn
+
+  lookup 00397810 time 00000000 fwd 00000000 name 0039aa62 addr 002cd8f8
+
+    DLL Name: api-ms-win-crt-math-l1-1-0.dll
+    Hint/Ord  Name
+         125  ceilf
+
+  lookup 003977e8 time 00000000 fwd 00000000 name 0039aa82 addr 002cd8d0
+
+    DLL Name: api-ms-win-crt-heap-l1-1-0.dll
+    Hint/Ord  Name
+          24  free
+          23  calloc
+          25  malloc
+           8  _callnewh
+
+  lookup 003977a8 time 00000000 fwd 00000000 name 0039aaa2 addr 002cd890
+
+    DLL Name: api-ms-win-crt-convert-l1-1-0.dll
+    Hint/Ord  Name
+         101  strtoull
+
+  lookup 00397918 time 00000000 fwd 00000000 name 0039aac4 addr 002cda00
+
+    DLL Name: api-ms-win-crt-string-l1-1-0.dll
+    Hint/Ord  Name
+         108  isprint
+         152  toupper
+          42  _stricmp
+         151  tolower
+
+  lookup 003977c8 time 00000000 fwd 00000000 name 0039aae6 addr 002cd8b0
+
+    DLL Name: api-ms-win-crt-filesystem-l1-1-0.dll
+    Hint/Ord  Name
+          22  _lock_file
+          32  _stat64i32
+          36  _unlock_file
+
+  lookup 003977b8 time 00000000 fwd 00000000 name 0039ab0c addr 002cd8a0
+
+    DLL Name: api-ms-win-crt-environment-l1-1-0.dll
+    Hint/Ord  Name
+           2  _dupenv_s
+
+  lookup 003978a8 time 00000000 fwd 00000000 name 0039ab32 addr 002cd990
+
+    DLL Name: api-ms-win-crt-stdio-l1-1-0.dll
+    Hint/Ord  Name
+         152  setvbuf
+         138  fwrite
+          47  _fseeki64
+         136  fsetpos
+         131  fread
+         127  fputc
+         121  fgetpos
+         120  fgetc
+         119  fflush
+         116  fclose
+          57  _get_stream_buffer_pointers
+          11  __stdio_common_vsnprintf_s
+         157  ungetc
+
+Export Table:
+ DLL name: ids_peak.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1  0x57010  PEAK_BooleanNode_GetValue
+       2  0x57060  PEAK_BooleanNode_SetValue
+       3  0x570a0  PEAK_BooleanNode_ToNode
+       4  0x57110  PEAK_BufferChunk_GetBasePtr
+       5  0x57150  PEAK_BufferChunk_GetID
+       6  0x57190  PEAK_BufferChunk_GetParentBuffer
+       7  0x571d0  PEAK_BufferChunk_GetSize
+       8  0x57240  PEAK_BufferPart_GetBasePtr
+       9  0x57280  PEAK_BufferPart_GetDeliveredImageHeight
+      10  0x572c0  PEAK_BufferPart_GetFormat
+      11  0x57300  PEAK_BufferPart_GetFormatNamespace
+      12  0x57340  PEAK_BufferPart_GetHeight
+      13  0x57380  PEAK_BufferPart_GetInfo
+      14  0x573f0  PEAK_BufferPart_GetParentBuffer
+      15  0x57430  PEAK_BufferPart_GetSize
+      16  0x57470  PEAK_BufferPart_GetSourceID
+      17  0x574b0  PEAK_BufferPart_GetType
+      18  0x574f0  PEAK_BufferPart_GetWidth
+      19  0x57530  PEAK_BufferPart_GetXOffset
+      20  0x57570  PEAK_BufferPart_GetXPadding
+      21  0x575b0  PEAK_BufferPart_GetYOffset
+      22  0x575f0  PEAK_Buffer_GetBasePtr
+      23  0x57630  PEAK_Buffer_GetChunk
+      24  0x57680  PEAK_Buffer_GetChunkLayoutID
+      25  0x576c0  PEAK_Buffer_GetDeliveredChunkPayloadSize
+      26  0x57700  PEAK_Buffer_GetDeliveredDataSize
+      27  0x57740  PEAK_Buffer_GetDeliveredImageHeight
+      28  0x57780  PEAK_Buffer_GetExpectedDataSize
+      29  0x577c0  PEAK_Buffer_GetFileName
+      30  0x57810  PEAK_Buffer_GetFrameID
+      31  0x57850  PEAK_Buffer_GetHasChunks
+      32  0x57890  PEAK_Buffer_GetHasImage
+      33  0x578d0  PEAK_Buffer_GetHasNewData
+      34  0x57950  PEAK_Buffer_GetHeight
+      35  0x57990  PEAK_Buffer_GetImageOffset
+      36  0x579d0  PEAK_Buffer_GetInfo
+      37  0x57a40  PEAK_Buffer_GetIsAcquiring
+      38  0x57a80  PEAK_Buffer_GetIsIncomplete
+      39  0x57ac0  PEAK_Buffer_GetIsQueued
+      40  0x57b00  PEAK_Buffer_GetNumChunks
+      41  0x57b40  PEAK_Buffer_GetNumParts
+      42  0x57b80  PEAK_Buffer_GetPart
+      43  0x57bd0  PEAK_Buffer_GetPayloadType
+      44  0x57c10  PEAK_Buffer_GetPixelEndianness
+      45  0x57c50  PEAK_Buffer_GetPixelFormat
+      46  0x57c90  PEAK_Buffer_GetPixelFormatNamespace
+      47  0x57cd0  PEAK_Buffer_GetSize
+      48  0x57d10  PEAK_Buffer_GetTLType
+      49  0x57d60  PEAK_Buffer_GetTimestamp_ns
+      50  0x57da0  PEAK_Buffer_GetTimestamp_ticks
+      51  0x57de0  PEAK_Buffer_GetUserPtr
+      52  0x57e20  PEAK_Buffer_GetWidth
+      53  0x57e60  PEAK_Buffer_GetXOffset
+      54  0x57ea0  PEAK_Buffer_GetXPadding
+      55  0x57ee0  PEAK_Buffer_GetYOffset
+      56  0x57f20  PEAK_Buffer_GetYPadding
+      57  0x57f60  PEAK_Buffer_ToEventSupportingModule
+      58  0x57fa0  PEAK_Buffer_ToModule
+      59  0x57fe0  PEAK_Buffer_UpdateChunks
+      60  0x58010  PEAK_Buffer_UpdateParts
+      61  0x58040  PEAK_CategoryNode_GetNumSubNodes
+      62  0x58080  PEAK_CategoryNode_GetSubNode
+      63  0x580d0  PEAK_CategoryNode_ToNode
+      64  0x58110  PEAK_CommandNode_Execute
+      65  0x58140  PEAK_CommandNode_GetIsDone
+      66  0x58180  PEAK_CommandNode_ToNode
+      67  0x581c0  PEAK_CommandNode_WaitUntilDone
+      68  0x58200  PEAK_CommandNode_WaitUntilDoneInfinite
+      69  0x58240  PEAK_DataStreamDescriptor_GetKey
+      70  0x58290  PEAK_DataStreamDescriptor_GetParentDevice
+      71  0x582d0  PEAK_DataStreamDescriptor_OpenDataStream
+      72  0x58310  PEAK_DataStreamDescriptor_ToModuleDescriptor
+      73  0x58350  PEAK_DataStream_AllocAndAnnounceBuffer
+      74  0x583c0  PEAK_DataStream_AnnounceBuffer
+      75  0x58450  PEAK_DataStream_Destruct
+      76  0x58480  PEAK_DataStream_Flush
+      77  0x584c0  PEAK_DataStream_GetBufferAlignment
+      78  0x58500  PEAK_DataStream_GetDefinesPayloadSize
+      79  0x58540  PEAK_DataStream_GetID
+      80  0x58590  PEAK_DataStream_GetInfo
+      81  0x58600  PEAK_DataStream_GetIsGrabbing
+      82  0x58640  PEAK_DataStream_GetKey
+      83  0x58690  PEAK_DataStream_GetNumBuffersAnnounced
+      84  0x586d0  PEAK_DataStream_GetNumBuffersAnnouncedMinRequired
+      85  0x58710  PEAK_DataStream_GetNumBuffersAwaitDelivery
+      86  0x58750  PEAK_DataStream_GetNumBuffersDelivered
+      87  0x58790  PEAK_DataStream_GetNumBuffersQueued
+      88  0x587d0  PEAK_DataStream_GetNumBuffersStarted
+      89  0x58810  PEAK_DataStream_GetNumChunksPerBufferMax
+      90  0x58850  PEAK_DataStream_GetNumUnderruns
+      91  0x58890  PEAK_DataStream_GetParentDevice
+      92  0x588d0  PEAK_DataStream_GetPayloadSize
+      93  0x58910  PEAK_DataStream_GetTLType
+      94  0x58960  PEAK_DataStream_KillWait
+      95  0x58990  PEAK_DataStream_QueueBuffer
+      96  0x589d0  PEAK_DataStream_RevokeBuffer
+      97  0x58a10  PEAK_DataStream_StartAcquisition
+      98  0x58a60  PEAK_DataStream_StartAcquisitionInfinite
+      99  0x58ab0  PEAK_DataStream_StopAcquisition
+     100  0x58af0  PEAK_DataStream_ToEventSupportingModule
+     101  0x58b30  PEAK_DataStream_ToModule
+     102  0x58b70  PEAK_DataStream_WaitForFinishedBuffer
+     103  0x58bc0  PEAK_DeviceDescriptor_AddInformationRoleToMonitoring
+     104  0x58c00  PEAK_DeviceDescriptor_GetAccessStatus
+     105  0x58c40  PEAK_DeviceDescriptor_GetDisplayName
+     106  0x58c90  PEAK_DeviceDescriptor_GetInfo
+     107  0x58d00  PEAK_DeviceDescriptor_GetIsOpenable
+     108  0x58d50  PEAK_DeviceDescriptor_GetIsOpenableExclusive
+     109  0x58da0  PEAK_DeviceDescriptor_GetKey
+     110  0x58df0  PEAK_DeviceDescriptor_GetModelName
+     111  0x58e40  PEAK_DeviceDescriptor_GetMonitoringUpdateInterval
+     112  0x58e80  PEAK_DeviceDescriptor_GetParentInterface
+     113  0x58ec0  PEAK_DeviceDescriptor_GetSerialNumber
+     114  0x58f10  PEAK_DeviceDescriptor_GetTLType
+     115  0x58f60  PEAK_DeviceDescriptor_GetTimestampTickFrequency
+     116  0x58fa0  PEAK_DeviceDescriptor_GetUserDefinedName
+     117  0x58ff0  PEAK_DeviceDescriptor_GetVendorName
+     118  0x59040  PEAK_DeviceDescriptor_GetVersion
+     119  0x59090  PEAK_DeviceDescriptor_IsInformationRoleMonitored
+     120  0x590e0  PEAK_DeviceDescriptor_OpenDevice
+     121  0x59130  PEAK_DeviceDescriptor_RegisterInformationChangedCallback
+     122  0x591a0  PEAK_DeviceDescriptor_RemoveInformationRoleFromMonitoring
+     123  0x591e0  PEAK_DeviceDescriptor_SetMonitoringUpdateInterval
+     124  0x59220  PEAK_DeviceDescriptor_ToModuleDescriptor
+     125  0x59260  PEAK_DeviceDescriptor_UnregisterInformationChangedCallback
+     126  0x59290  PEAK_Device_Destruct
+     127  0x592c0  PEAK_Device_GetAccessStatus
+     128  0x59300  PEAK_Device_GetDataStream
+     129  0x59350  PEAK_Device_GetDisplayName
+     130  0x593a0  PEAK_Device_GetID
+     131  0x593f0  PEAK_Device_GetInfo
+     132  0x59460  PEAK_Device_GetKey
+     133  0x594b0  PEAK_Device_GetModelName
+     134  0x59500  PEAK_Device_GetNumDataStreams
+     135  0x59540  PEAK_Device_GetParentInterface
+     136  0x59580  PEAK_Device_GetRemoteDevice
+     137  0x595c0  PEAK_Device_GetSerialNumber
+     138  0x59610  PEAK_Device_GetTLType
+     139  0x59660  PEAK_Device_GetTimestampTickFrequency
+     140  0x596a0  PEAK_Device_GetUserDefinedName
+     141  0x596f0  PEAK_Device_GetVendorName
+     142  0x59740  PEAK_Device_GetVersion
+     143  0x59790  PEAK_Device_ToEventSupportingModule
+     144  0x597d0  PEAK_Device_ToModule
+     145  0x59810  PEAK_EnumerationEntryNode_GetIsSelfClearing
+     146  0x59850  PEAK_EnumerationEntryNode_GetSymbolicValue
+     147  0x598a0  PEAK_EnumerationEntryNode_GetValue
+     148  0x598e0  PEAK_EnumerationEntryNode_ToNode
+     149  0x59920  PEAK_EnumerationNode_FindEntryBySymbolicValue
+     150  0x59990  PEAK_EnumerationNode_FindEntryByValue
+     151  0x599e0  PEAK_EnumerationNode_GetCurrentEntry
+     152  0x59a30  PEAK_EnumerationNode_GetEntry
+     153  0x59a80  PEAK_EnumerationNode_GetNumEntries
+     154  0x59ac0  PEAK_EnumerationNode_SetCurrentEntry
+     155  0x59b00  PEAK_EnumerationNode_SetCurrentEntryBySymbolicValue
+     156  0x59b50  PEAK_EnumerationNode_SetCurrentEntryByValue
+     157  0x59b90  PEAK_EnumerationNode_ToNode
+     158  0x59bd0  PEAK_EnvironmentInspector_GetCTIPath
+     159  0x59c20  PEAK_EnvironmentInspector_GetNumCTIPaths
+     160  0x59c50  PEAK_EnvironmentInspector_UpdateCTIPaths
+     161  0x59c70  PEAK_EventController_Destruct
+     162  0x59ca0  PEAK_EventController_FlushEvents
+     163  0x59cd0  PEAK_EventController_GetControlledEventType
+     164  0x59d10  PEAK_EventController_GetEventDataMaxSize
+     165  0x59d50  PEAK_EventController_GetEventMaxSize
+     166  0x59d90  PEAK_EventController_GetInfo
+     167  0x59e00  PEAK_EventController_GetNumEventsFired
+     168  0x59e40  PEAK_EventController_GetNumEventsInQueue
+     169  0x59e80  PEAK_EventController_KillWait
+     170  0x59eb0  PEAK_EventController_WaitForEvent
+     171  0x59f00  PEAK_EventSupportingModule_EnableEvents
+     172  0x59f50  PEAK_Event_Destruct
+     173  0x59f80  PEAK_Event_GetData
+     174  0x59fd0  PEAK_Event_GetID
+     175  0x5a010  PEAK_Event_GetInfo
+     176  0x5a080  PEAK_Event_GetRawData
+     177  0x5a0d0  PEAK_Event_GetType
+     178  0x5a110  PEAK_FirmwareUpdateInformation_GetDescription
+     179  0x5a160  PEAK_FirmwareUpdateInformation_GetFileName
+     180  0x5a1b0  PEAK_FirmwareUpdateInformation_GetIsValid
+     181  0x5a1f0  PEAK_FirmwareUpdateInformation_GetReleaseNotes
+     182  0x5a240  PEAK_FirmwareUpdateInformation_GetReleaseNotesURL
+     183  0x5a290  PEAK_FirmwareUpdateInformation_GetSequencerSetPersistence
+     184  0x5a2d0  PEAK_FirmwareUpdateInformation_GetUserSetPersistence
+     185  0x5a310  PEAK_FirmwareUpdateInformation_GetVersion
+     186  0x5a360  PEAK_FirmwareUpdateInformation_GetVersionExtractionPattern
+     187  0x5a3b0  PEAK_FirmwareUpdateInformation_GetVersionStyle
+     188  0x5a3f0  PEAK_FirmwareUpdateProgressObserver_Construct
+     189  0x5a420  PEAK_FirmwareUpdateProgressObserver_Destruct
+     190  0x5a450  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateFailedCallback
+     191  0x5a4c0  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateFinishedCallback
+     192  0x5a530  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateStartedCallback
+     193  0x5a5a0  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateStepFinishedCallback
+     194  0x5a610  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateStepProgressChangedCallback
+     195  0x5a680  PEAK_FirmwareUpdateProgressObserver_RegisterUpdateStepStartedCallback
+     196  0x5a6f0  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateFailedCallback
+     197  0x5a730  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateFinishedCallback
+     198  0x5a770  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateStartedCallback
+     199  0x5a7b0  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateStepFinishedCallback
+     200  0x5a7f0  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateStepProgressChangedCallback
+     201  0x5a830  PEAK_FirmwareUpdateProgressObserver_UnregisterUpdateStepStartedCallback
+     202  0x5a870  PEAK_FirmwareUpdater_CollectAllFirmwareUpdateInformation
+     203  0x5a8c0  PEAK_FirmwareUpdater_CollectFirmwareUpdateInformation
+     204  0x5a930  PEAK_FirmwareUpdater_Construct
+     205  0x5a960  PEAK_FirmwareUpdater_Destruct
+     206  0x5a990  PEAK_FirmwareUpdater_GetFirmwareUpdateInformation
+     207  0x5a9e0  PEAK_FirmwareUpdater_GetNumFirmwareUpdateInformation
+     208  0x5aa20  PEAK_FirmwareUpdater_UpdateDevice
+     209  0x5aa90  PEAK_FirmwareUpdater_UpdateDeviceWithResetTimeout
+     210  0x5ab00  PEAK_FloatNode_GetDisplayNotation
+     211  0x5ab40  PEAK_FloatNode_GetDisplayPrecision
+     212  0x5ab80  PEAK_FloatNode_GetHasConstantIncrement
+     213  0x5abc0  PEAK_FloatNode_GetIncrement
+     214  0x5ac00  PEAK_FloatNode_GetIncrementType
+     215  0x5ac40  PEAK_FloatNode_GetMaximum
+     216  0x5ac80  PEAK_FloatNode_GetMinimum
+     217  0x5acc0  PEAK_FloatNode_GetRepresentation
+     218  0x5ad00  PEAK_FloatNode_GetUnit
+     219  0x5ad50  PEAK_FloatNode_GetValidValues
+     220  0x5ada0  PEAK_FloatNode_GetValue
+     221  0x5adf0  PEAK_FloatNode_SetValue
+     222  0x5ae30  PEAK_FloatNode_ToNode
+     223  0x5ae70  PEAK_IntegerNode_GetIncrement
+     224  0x5aeb0  PEAK_IntegerNode_GetIncrementType
+     225  0x5aef0  PEAK_IntegerNode_GetMaximum
+     226  0x5af30  PEAK_IntegerNode_GetMinimum
+     227  0x5af70  PEAK_IntegerNode_GetRepresentation
+     228  0x5afb0  PEAK_IntegerNode_GetUnit
+     229  0x5b000  PEAK_IntegerNode_GetValidValues
+     230  0x5b050  PEAK_IntegerNode_GetValue
+     231  0x5b0a0  PEAK_IntegerNode_SetValue
+     232  0x5b0e0  PEAK_IntegerNode_ToNode
+     233  0x5b120  PEAK_InterfaceDescriptor_GetDisplayName
+     234  0x5b170  PEAK_InterfaceDescriptor_GetInfo
+     235  0x5b1e0  PEAK_InterfaceDescriptor_GetKey
+     236  0x5b230  PEAK_InterfaceDescriptor_GetParentSystem
+     237  0x5b270  PEAK_InterfaceDescriptor_GetTLType
+     238  0x5b2c0  PEAK_InterfaceDescriptor_OpenInterface
+     239  0x5b300  PEAK_InterfaceDescriptor_ToModuleDescriptor
+     240  0x5b340  PEAK_Interface_Destruct
+     241  0x5b370  PEAK_Interface_GetDevice
+     242  0x5b3c0  PEAK_Interface_GetDisplayName
+     243  0x5b410  PEAK_Interface_GetID
+     244  0x5b460  PEAK_Interface_GetInfo
+     245  0x5b4d0  PEAK_Interface_GetKey
+     246  0x5b520  PEAK_Interface_GetNumDevices
+     247  0x5b560  PEAK_Interface_GetParentSystem
+     248  0x5b5a0  PEAK_Interface_GetTLType
+     249  0x5b660  PEAK_Interface_RegisterDeviceFoundCallback
+     250  0x5b740  PEAK_Interface_RegisterDeviceLostCallback
+     251  0x5b820  PEAK_Interface_ToEventSupportingModule
+     252  0x5b860  PEAK_Interface_ToModule
+     253  0x5b8e0  PEAK_Interface_UnregisterDeviceFoundCallback
+     254  0x5b960  PEAK_Interface_UnregisterDeviceLostCallback
+     255  0x5b9e0  PEAK_Interface_UpdateDevices
+     256  0x5ba20  PEAK_Library_Close
+     257  0x5ba50  PEAK_Library_GetLastError
+     258  0x5bab0  PEAK_Library_GetVersionMajor
+     259  0x5bae0  PEAK_Library_GetVersionMinor
+     260  0x5bb10  PEAK_Library_GetVersionSubminor
+     261  0x5bb40  PEAK_Library_Initialize
+     262  0x5bb70  PEAK_Library_IsInitialized
+     263  0x5bba0  PEAK_ModuleDescriptor_GetID
+     264  0x5bbf0  PEAK_Module_GetNodeMap
+     265  0x5bc40  PEAK_Module_GetNumNodeMaps
+     266  0x5bc80  PEAK_Module_GetPort
+     267  0x5bcc0  PEAK_NodeMap_FindNode
+     268  0x5bd30  PEAK_NodeMap_GetHasBufferSupportedChunks
+     269  0x5bd80  PEAK_NodeMap_GetHasEventSupportedData
+     270  0x5bdd0  PEAK_NodeMap_GetHasNode
+     271  0x5be40  PEAK_NodeMap_GetNode
+     272  0x5be90  PEAK_NodeMap_GetNumNodes
+     273  0x5bed0  PEAK_NodeMap_InvalidateNodes
+     274  0x5bf00  PEAK_NodeMap_LoadFromFile
+     275  0x5bf50  PEAK_NodeMap_Lock
+     276  0x5bf80  PEAK_NodeMap_PollNodes
+     277  0x5bfc0  PEAK_NodeMap_StoreToFile
+     278  0x5c010  PEAK_NodeMap_Unlock
+     279  0x5c040  PEAK_NodeMap_UpdateChunkNodes
+     280  0x5c080  PEAK_NodeMap_UpdateEventNodes
+     281  0x5c0c0  PEAK_Node_FindInvalidatedNode
+     282  0x5c130  PEAK_Node_FindInvalidatingNode
+     283  0x5c1a0  PEAK_Node_FindSelectedNode
+     284  0x5c210  PEAK_Node_FindSelectingNode
+     285  0x5c280  PEAK_Node_GetAccessStatus
+     286  0x5c2c0  PEAK_Node_GetCachingMode
+     287  0x5c300  PEAK_Node_GetDescription
+     288  0x5c350  PEAK_Node_GetDisplayName
+     289  0x5c3a0  PEAK_Node_GetInvalidatedNode
+     290  0x5c3f0  PEAK_Node_GetInvalidatingNode
+     291  0x5c440  PEAK_Node_GetIsAccessStatusCacheable
+     292  0x5c480  PEAK_Node_GetIsCacheable
+     293  0x5c4c0  PEAK_Node_GetIsDeprecated
+     294  0x5c500  PEAK_Node_GetIsFeature
+     295  0x5c540  PEAK_Node_GetIsStreamable
+     296  0x5c580  PEAK_Node_GetName
+     297  0x5c5d0  PEAK_Node_GetNamespace
+     298  0x5c610  PEAK_Node_GetNumInvalidatedNodes
+     299  0x5c650  PEAK_Node_GetNumInvalidatingNodes
+     300  0x5c690  PEAK_Node_GetNumSelectedNodes
+     301  0x5c6d0  PEAK_Node_GetNumSelectingNodes
+     302  0x5c710  PEAK_Node_GetParentNodeMap
+     303  0x5c750  PEAK_Node_GetPollingTime
+     304  0x5c790  PEAK_Node_GetSelectedNode
+     305  0x5c7e0  PEAK_Node_GetSelectingNode
+     306  0x5c830  PEAK_Node_GetToolTip
+     307  0x5c880  PEAK_Node_GetType
+     308  0x5c8c0  PEAK_Node_GetVisibility
+     309  0x5c900  PEAK_Node_RegisterChangedCallback
+     310  0x5c970  PEAK_Node_ToBooleanNode
+     311  0x5c9b0  PEAK_Node_ToCategoryNode
+     312  0x5c9f0  PEAK_Node_ToCommandNode
+     313  0x5ca30  PEAK_Node_ToEnumerationEntryNode
+     314  0x5ca70  PEAK_Node_ToEnumerationNode
+     315  0x5cab0  PEAK_Node_ToFloatNode
+     316  0x5caf0  PEAK_Node_ToIntegerNode
+     317  0x5cb30  PEAK_Node_ToRegisterNode
+     318  0x5cb70  PEAK_Node_ToStringNode
+     319  0x5cbb0  PEAK_Node_UnregisterChangedCallback
+     320  0x5cbf0  PEAK_PortURL_GetFileName
+     321  0x5cc40  PEAK_PortURL_GetFileRegisterAddress
+     322  0x5cc80  PEAK_PortURL_GetFileSHA1Hash
+     323  0x5ccd0  PEAK_PortURL_GetFileSchemaVersionMajor
+     324  0x5cd10  PEAK_PortURL_GetFileSchemaVersionMinor
+     325  0x5cd50  PEAK_PortURL_GetFileSize
+     326  0x5cd90  PEAK_PortURL_GetFileVersionMajor
+     327  0x5cdd0  PEAK_PortURL_GetFileVersionMinor
+     328  0x5ce10  PEAK_PortURL_GetFileVersionSubminor
+     329  0x5ce50  PEAK_PortURL_GetInfo
+     330  0x5cec0  PEAK_PortURL_GetParentPort
+     331  0x5cf00  PEAK_PortURL_GetScheme
+     332  0x5cf40  PEAK_PortURL_GetURL
+     333  0x5cf90  PEAK_Port_GetDataEndianness
+     334  0x5cfd0  PEAK_Port_GetID
+     335  0x5d020  PEAK_Port_GetInfo
+     336  0x5d090  PEAK_Port_GetIsAvailable
+     337  0x5d0d0  PEAK_Port_GetIsImplemented
+     338  0x5d110  PEAK_Port_GetIsReadable
+     339  0x5d150  PEAK_Port_GetIsWritable
+     340  0x5d190  PEAK_Port_GetModelName
+     341  0x5d1e0  PEAK_Port_GetModuleName
+     342  0x5d230  PEAK_Port_GetName
+     343  0x5d280  PEAK_Port_GetNumURLs
+     344  0x5d2c0  PEAK_Port_GetTLType
+     345  0x5d310  PEAK_Port_GetURL
+     346  0x5d360  PEAK_Port_GetVendorName
+     347  0x5d3b0  PEAK_Port_GetVersion
+     348  0x5d400  PEAK_Port_Read
+     349  0x5d470  PEAK_Port_Write
+     350  0x5d4e0  PEAK_ProducerLibrary_Construct
+     351  0x5d530  PEAK_ProducerLibrary_Destruct
+     352  0x5d560  PEAK_ProducerLibrary_GetKey
+     353  0x5d5b0  PEAK_ProducerLibrary_GetSystem
+     354  0x5d5f0  PEAK_RegisterNode_GetAddress
+     355  0x5d630  PEAK_RegisterNode_GetLength
+     356  0x5d670  PEAK_RegisterNode_Read
+     357  0x5d6d0  PEAK_RegisterNode_ToNode
+     358  0x5d710  PEAK_RegisterNode_Write
+     359  0x5d760  PEAK_RemoteDevice_GetLocalDevice
+     360  0x5d7a0  PEAK_RemoteDevice_ToModule
+     361  0x5d7e0  PEAK_StringNode_GetMaximumLength
+     362  0x5d820  PEAK_StringNode_GetValue
+     363  0x5d880  PEAK_StringNode_SetValue
+     364  0x5d8d0  PEAK_StringNode_ToNode
+     365  0x5d910  PEAK_SystemDescriptor_GetCTIFileName
+     366  0x5d960  PEAK_SystemDescriptor_GetCTIFullPath
+     367  0x5d9b0  PEAK_SystemDescriptor_GetCharacterEncoding
+     368  0x5d9f0  PEAK_SystemDescriptor_GetDisplayName
+     369  0x5da40  PEAK_SystemDescriptor_GetGenTLVersionMajor
+     370  0x5da80  PEAK_SystemDescriptor_GetGenTLVersionMinor
+     371  0x5dac0  PEAK_SystemDescriptor_GetInfo
+     372  0x5db30  PEAK_SystemDescriptor_GetKey
+     373  0x5db80  PEAK_SystemDescriptor_GetModelName
+     374  0x5dbd0  PEAK_SystemDescriptor_GetParentLibrary
+     375  0x5dc10  PEAK_SystemDescriptor_GetTLType
+     376  0x5dc60  PEAK_SystemDescriptor_GetVendorName
+     377  0x5dcb0  PEAK_SystemDescriptor_GetVersion
+     378  0x5dd00  PEAK_SystemDescriptor_OpenSystem
+     379  0x5dd40  PEAK_SystemDescriptor_ToModuleDescriptor
+     380  0x5dd80  PEAK_System_Destruct
+     381  0x5ddb0  PEAK_System_GetCTIFileName
+     382  0x5de00  PEAK_System_GetCTIFullPath
+     383  0x5de50  PEAK_System_GetCharacterEncoding
+     384  0x5de90  PEAK_System_GetDisplayName
+     385  0x5dee0  PEAK_System_GetGenTLVersionMajor
+     386  0x5df20  PEAK_System_GetGenTLVersionMinor
+     387  0x5df60  PEAK_System_GetID
+     388  0x5dfb0  PEAK_System_GetInfo
+     389  0x5e020  PEAK_System_GetInterface
+     390  0x5e070  PEAK_System_GetKey
+     391  0x5e0c0  PEAK_System_GetModelName
+     392  0x5e110  PEAK_System_GetNumInterfaces
+     393  0x5e150  PEAK_System_GetParentLibrary
+     394  0x5e190  PEAK_System_GetTLType
+     395  0x5e1e0  PEAK_System_GetVendorName
+     396  0x5e230  PEAK_System_GetVersion
+     397  0x5e280  PEAK_System_RegisterInterfaceFoundCallback
+     398  0x5e2f0  PEAK_System_RegisterInterfaceLostCallback
+     399  0x5e360  PEAK_System_ToEventSupportingModule
+     400  0x5e3a0  PEAK_System_ToModule
+     401  0x5e3e0  PEAK_System_UnregisterInterfaceFoundCallback
+     402  0x5e420  PEAK_System_UnregisterInterfaceLostCallback
+     403  0x5e460  PEAK_System_UpdateInterfaces
+     807  0x570e0  PEAK_BufferChunk_Destruct
+     808  0x57210  PEAK_BufferPart_Destruct
+     809  0x5b5f0  PEAK_Interface_RegisterDeviceDisconnectedCallback
+     810  0x5b8a0  PEAK_Interface_UnregisterDeviceDisconnectedCallback
+     811  0x5b7b0  PEAK_Interface_RegisterDeviceReconnectedCallback
+     812  0x5b9a0  PEAK_Interface_UnregisterDeviceReconnectedCallback
+     813  0x5b6d0  PEAK_Interface_RegisterDeviceListChangedCallback
+     814  0x5b920  PEAK_Interface_UnregisterDeviceListChangedCallback
+     815  0x57910  PEAK_Buffer_GetHasParts

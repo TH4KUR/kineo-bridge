@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RegisterDescription
+  ModelName="KineoBridgeProducer"
+  VendorName="IDS_Imaging_Development_Systems_GmbH"
+  StandardNameSpace="None"
+  SchemaMajorVersion="1"
+  SchemaMinorVersion="1"
+  SchemaSubMinorVersion="0"
+  MajorVersion="1"
+  MinorVersion="0"
+  SubMinorVersion="0"
+  ProductGuid="c1c1c1c1-0001-0001-0001-000000000002"
+  VersionGuid="c1c1c1c1-0002-0001-0001-000000000002"
+  ToolTip="Kineo Bridge GenICam description (M4c-1: unchanged from M3i -- queue the producer-owned buffer, no new GenApi nodes)"
+  xmlns="http://www.genicam.org/GenApi/Version_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1 GenApiSchema_Version_1_1.xsd">
+
+  <Category Name="Root" NameSpace="Standard">
+    <pFeature>DeviceVendorName</pFeature>
+    <pFeature>DeviceModelName</pFeature>
+    <pFeature>DeviceSerialNumber</pFeature>
+    <pFeature>Width</pFeature>
+    <pFeature>Height</pFeature>
+    <pFeature>PixelFormat</pFeature>
+    <pFeature>PayloadSize</pFeature>
+    <pFeature>OffsetX</pFeature>
+    <pFeature>OffsetY</pFeature>
+    <pFeature>ExposureTime</pFeature>
+    <pFeature>Gain</pFeature>
+    <pFeature>BlackLevel</pFeature>
+    <pFeature>BrightnessAutoTarget</pFeature>
+    <pFeature>BrightnessAutoPercentile</pFeature>
+    <pFeature>BrightnessAutoTargetTolerance</pFeature>
+    <pFeature>TriggerMode</pFeature>
+    <pFeature>TLParamsLocked</pFeature>
+    <pFeature>AcquisitionStart</pFeature>
+    <pFeature>AcquisitionStop</pFeature>
+    <pFeature>ExposureStart</pFeature>
+    <pFeature>AcquisitionFrameRate</pFeature>
+    <pFeature>AcquisitionMode</pFeature>
+    <pFeature>TriggerSelector</pFeature>
+  </Category>
+
+  <Port Name="Remote" NameSpace="Standard">
+    <ToolTip>Port through which this device's register/XML content is accessed</ToolTip>
+  </Port>
+
+  <!-- ===== Identity (unchanged, literal values; no need to observe these via port access) ===== -->
+
+  <String Name="DeviceVendorName" NameSpace="Standard">
+    <ToolTip>Vendor name</ToolTip>
+    <Value>IDS Imaging Development Systems GmbH</Value>
+  </String>
+
+  <String Name="DeviceModelName" NameSpace="Standard">
+    <ToolTip>Model name</ToolTip>
+    <Value>U3-3560XCP-M</Value>
+  </String>
+
+  <String Name="DeviceSerialNumber" NameSpace="Standard">
+    <ToolTip>Serial number</ToolTip>
+    <Value>4110010861</Value>
+  </String>
+
+  <!-- ===== Register-backed image geometry / format =====
+       Pattern confirmed against a real working GenApi XML (Aravis's
+       arv-fake-camera.xml): a wrapper Integer/Float/Enumeration node
+       carries Min/Max/pValue; the paired IntReg/FloatReg carries only
+       Address/Length/AccessMode/pPort/Sign/Endianess, with no Min/Max on
+       the register node itself (that was the schema violation in the
+       first attempt: "unexpected element encountered"). -->
+
+  <Integer Name="Width" NameSpace="Standard">
+    <ToolTip>Image width</ToolTip>
+    <pValue>WidthReg</pValue>
+    <Min>1920</Min>
+    <Max>1920</Max>
+  </Integer>
+  <IntReg Name="WidthReg">
+    <Address>0x20000</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="Height" NameSpace="Standard">
+    <ToolTip>Image height</ToolTip>
+    <pValue>HeightReg</pValue>
+    <Min>1200</Min>
+    <Max>1200</Max>
+  </Integer>
+  <IntReg Name="HeightReg">
+    <Address>0x20010</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Enumeration Name="PixelFormat" NameSpace="Standard">
+    <ToolTip>Pixel format</ToolTip>
+    <EnumEntry Name="Mono8" NameSpace="Standard">
+      <Value>0x01080001</Value>
+    </EnumEntry>
+    <pValue>PixelFormatReg</pValue>
+  </Enumeration>
+  <IntReg Name="PixelFormatReg">
+    <Address>0x20020</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="PayloadSize" NameSpace="Standard">
+    <ToolTip>Payload size in bytes for the current mode (recomputed internally on Width/Height change)</ToolTip>
+    <pValue>PayloadSizeReg</pValue>
+  </Integer>
+  <IntReg Name="PayloadSizeReg">
+    <Address>0x20030</Address>
+    <Length>8</Length>
+    <AccessMode>RO</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="OffsetX" NameSpace="Standard">
+    <ToolTip>ROI horizontal offset</ToolTip>
+    <pValue>OffsetXReg</pValue>
+    <Min>0</Min>
+    <Max>0</Max>
+  </Integer>
+  <IntReg Name="OffsetXReg">
+    <Address>0x200A0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="OffsetY" NameSpace="Standard">
+    <ToolTip>ROI vertical offset</ToolTip>
+    <pValue>OffsetYReg</pValue>
+    <Min>0</Min>
+    <Max>0</Max>
+  </Integer>
+  <IntReg Name="OffsetYReg">
+    <Address>0x200B0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <!-- ===== Register-backed exposure/gain/brightness settings (known Kineo values) ===== -->
+
+  <Float Name="ExposureTime" NameSpace="Standard">
+    <ToolTip>Exposure time in microseconds</ToolTip>
+    <pValue>ExposureTimeReg</pValue>
+    <Min>1.0</Min>
+    <Max>1000000.0</Max>
+  </Float>
+  <FloatReg Name="ExposureTimeReg">
+    <Address>0x20040</Address>
+    <Length>8</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Endianess>LittleEndian</Endianess>
+  </FloatReg>
+
+  <Float Name="Gain" NameSpace="Standard">
+    <ToolTip>Analog gain</ToolTip>
+    <pValue>GainReg</pValue>
+    <Min>1.0</Min>
+    <Max>100.0</Max>
+  </Float>
+  <FloatReg Name="GainReg">
+    <Address>0x20050</Address>
+    <Length>8</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Endianess>LittleEndian</Endianess>
+  </FloatReg>
+
+  <Float Name="BlackLevel" NameSpace="Standard">
+    <ToolTip>Black level offset</ToolTip>
+    <pValue>BlackLevelReg</pValue>
+    <Min>0.0</Min>
+    <Max>100.0</Max>
+  </Float>
+  <FloatReg Name="BlackLevelReg">
+    <Address>0x20060</Address>
+    <Length>8</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Endianess>LittleEndian</Endianess>
+  </FloatReg>
+
+  <Integer Name="BrightnessAutoTarget" NameSpace="Custom">
+    <ToolTip>Target brightness for auto-exposure/gain</ToolTip>
+    <pValue>BrightnessAutoTargetReg</pValue>
+    <Min>0</Min>
+    <Max>255</Max>
+  </Integer>
+  <IntReg Name="BrightnessAutoTargetReg">
+    <Address>0x20070</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="BrightnessAutoPercentile" NameSpace="Custom">
+    <ToolTip>Percentile used for auto-brightness calculation</ToolTip>
+    <pValue>BrightnessAutoPercentileReg</pValue>
+    <Min>0</Min>
+    <Max>100</Max>
+  </Integer>
+  <IntReg Name="BrightnessAutoPercentileReg">
+    <Address>0x20080</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="BrightnessAutoTargetTolerance" NameSpace="Custom">
+    <ToolTip>Tolerance around the auto-brightness target</ToolTip>
+    <pValue>BrightnessAutoTargetToleranceReg</pValue>
+    <Min>0</Min>
+    <Max>100</Max>
+  </Integer>
+  <IntReg Name="BrightnessAutoTargetToleranceReg">
+    <Address>0x20090</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <!-- ===== Trigger / transport-layer lock ===== -->
+
+  <Enumeration Name="TriggerMode" NameSpace="Standard">
+    <ToolTip>Trigger mode</ToolTip>
+    <EnumEntry Name="Off" NameSpace="Standard">
+      <Value>0</Value>
+    </EnumEntry>
+    <EnumEntry Name="On" NameSpace="Standard">
+      <Value>1</Value>
+    </EnumEntry>
+    <pValue>TriggerModeReg</pValue>
+  </Enumeration>
+  <IntReg Name="TriggerModeReg">
+    <Address>0x200C0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Integer Name="TLParamsLocked" NameSpace="Standard">
+    <ToolTip>Transport layer parameter lock (must be 1 before AcquisitionStart per GenTL convention)</ToolTip>
+    <pValue>TLParamsLockedReg</pValue>
+    <Min>0</Min>
+    <Max>1</Max>
+  </Integer>
+  <IntReg Name="TLParamsLockedReg">
+    <Address>0x200D0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <!-- ===== Command nodes ===== -->
+
+  <Command Name="AcquisitionStart" NameSpace="Standard">
+    <ToolTip>Starts acquisition</ToolTip>
+    <pValue>AcquisitionStartReg</pValue>
+    <CommandValue>1</CommandValue>
+  </Command>
+  <IntReg Name="AcquisitionStartReg">
+    <Address>0x200E0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Command Name="AcquisitionStop" NameSpace="Standard">
+    <ToolTip>Stops acquisition</ToolTip>
+    <pValue>AcquisitionStopReg</pValue>
+    <CommandValue>1</CommandValue>
+  </Command>
+  <IntReg Name="AcquisitionStopReg">
+    <Address>0x200F0</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <Command Name="ExposureStart" NameSpace="Standard">
+    <ToolTip>Software exposure-start trigger</ToolTip>
+    <pValue>ExposureStartReg</pValue>
+    <CommandValue>1</CommandValue>
+  </Command>
+  <IntReg Name="ExposureStartReg">
+    <Address>0x20100</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <!-- ===== M3g addition: AcquisitionFrameRate =====
+       SYNTHETIC default/range. The real camera's AcquisitionFrameRate node
+       characteristics (type, current value, min, max, increment, access
+       mode, AcquisitionFrameRateEnable relevance) could not be queried this
+       pass: the WSL/Aravis path is blocked by a USB device-node
+       permission issue (root:root owned, no udev rule for this
+       dynamically-attached device, and non-interactive sudo is
+       unavailable). Default 30.0 / range 1.0 to 60.0 fps chosen as a
+       conservative placeholder only, per the pre-agreed fallback for this
+       situation. Same wrapper+register pattern as ExposureTime. -->
+  <Float Name="AcquisitionFrameRate" NameSpace="Standard">
+    <ToolTip>Acquisition frame rate in frames per second (SYNTHETIC placeholder, not read from the real camera this pass)</ToolTip>
+    <pValue>AcquisitionFrameRateReg</pValue>
+    <Min>1.0</Min>
+    <Max>60.0</Max>
+  </Float>
+  <FloatReg Name="AcquisitionFrameRateReg">
+    <Address>0x20110</Address>
+    <Length>8</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Endianess>LittleEndian</Endianess>
+  </FloatReg>
+
+  <!-- ===== M3h addition: AcquisitionMode =====
+       SFNC-style writable Enumeration, same register-backed pattern as
+       TriggerMode. Values are our own stable assignment (consumers select
+       by symbolic entry name via GenApi, not raw integer). No acquisition
+       behavior changes based on the value yet; storage only. -->
+  <Enumeration Name="AcquisitionMode" NameSpace="Standard">
+    <ToolTip>Acquisition mode</ToolTip>
+    <EnumEntry Name="Continuous" NameSpace="Standard">
+      <Value>0</Value>
+    </EnumEntry>
+    <EnumEntry Name="SingleFrame" NameSpace="Standard">
+      <Value>1</Value>
+    </EnumEntry>
+    <EnumEntry Name="MultiFrame" NameSpace="Standard">
+      <Value>2</Value>
+    </EnumEntry>
+    <pValue>AcquisitionModeReg</pValue>
+  </Enumeration>
+  <IntReg Name="AcquisitionModeReg">
+    <Address>0x20120</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+  <!-- ===== M3i addition: TriggerSelector =====
+       SFNC-style writable Enumeration, same register-backed pattern as
+       TriggerMode/AcquisitionMode. Values match the standard SFNC
+       ordering confirmed against a real working reference already on
+       this machine (Aravis's arv-fake-camera.xml): FrameStart=0,
+       AcquisitionStart=1. ExposureStart=2 added as a third entry since we
+       already expose an ExposureStart command node. No trigger behavior
+       changes based on the value yet; storage only. -->
+  <Enumeration Name="TriggerSelector" NameSpace="Standard">
+    <ToolTip>Selects the type of trigger to configure</ToolTip>
+    <EnumEntry Name="FrameStart" NameSpace="Standard">
+      <Value>0</Value>
+    </EnumEntry>
+    <EnumEntry Name="AcquisitionStart" NameSpace="Standard">
+      <Value>1</Value>
+    </EnumEntry>
+    <EnumEntry Name="ExposureStart" NameSpace="Standard">
+      <Value>2</Value>
+    </EnumEntry>
+    <pValue>TriggerSelectorReg</pValue>
+  </Enumeration>
+  <IntReg Name="TriggerSelectorReg">
+    <Address>0x20130</Address>
+    <Length>4</Length>
+    <AccessMode>RW</AccessMode>
+    <pPort>Remote</pPort>
+    <Sign>Unsigned</Sign>
+    <Endianess>LittleEndian</Endianess>
+  </IntReg>
+
+</RegisterDescription>

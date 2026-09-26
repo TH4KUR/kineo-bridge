@@ -1,0 +1,232 @@
+2026-09-26T09:13:45.758Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T09:13:45.768Z INFO: Version de l'application: 1.0.0 
+2026-09-26T09:13:46.082Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T09:13:46.088Z INFO: Server started on port 4000
+2026-09-26T09:13:46.161Z INFO: Child process created with PID: 8220
+2026-09-26T09:13:46.225Z INFO: Settings loaded successfully.
+2026-09-26T09:13:46.254Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T09:13:46.257Z INFO: Kineo service initialized
+2026-09-26T09:13:46.258Z INFO: Starting database initialization
+2026-09-26T09:13:46.325Z INFO: Database models synchronized successfully
+2026-09-26T09:13:46.335Z INFO: Backup created successfully at: c:\IMVapps\Kineo Software\Data\Kineo-software\chironbase_backup_20260926.sqlite
+2026-09-26T09:13:46.336Z INFO: Database initialization completed
+2026-09-26T09:13:46.339Z INFO: Settings loaded successfully.
+2026-09-26T09:13:46.340Z INFO: Starting analysis cleanup on startup
+2026-09-26T09:13:46.340Z INFO: Starting analysis cleanup on startup...
+2026-09-26T09:13:46.343Z INFO: No stuck analyses found on startup
+2026-09-26T09:13:46.344Z INFO: Analysis cleanup on startup completed
+2026-09-26T09:13:46.344Z INFO: Starting periodic analysis cleanup service
+2026-09-26T09:13:46.344Z INFO: Periodic analysis cleanup service started
+2026-09-26T09:13:46.823Z INFO: Settings loaded successfully.
+2026-09-26T09:13:46.851Z INFO: Settings loaded successfully.
+2026-09-26T09:13:46.957Z INFO: Settings loaded successfully.
+2026-09-26T09:13:46.960Z INFO: Settings loaded successfully.
+2026-09-26T09:13:51.896Z WARN: PowerShell disk space query failed, attempting WMIC fallback: Error: powershell.exe timed out after 5000ms
+2026-09-26T09:13:51.904Z ERROR: WMIC disk space query failed after PowerShell failure: Error: wmic failed: spawn wmic ENOENT
+2026-09-26T09:13:53.799Z INFO: WebSocket connection established.
+2026-09-26T09:27:41.615Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T09:27:41.623Z INFO: Version de l'application: 1.0.0 
+2026-09-26T09:27:41.698Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T09:27:41.704Z INFO: Server started on port 4000
+2026-09-26T09:27:41.726Z INFO: Settings loaded successfully.
+2026-09-26T09:27:41.741Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T09:27:41.743Z INFO: Kineo service initialized
+2026-09-26T09:27:41.743Z INFO: Starting database initialization
+2026-09-26T09:27:41.806Z INFO: Database models synchronized successfully
+2026-09-26T09:27:41.810Z INFO: Database initialization completed
+2026-09-26T09:27:41.813Z INFO: Settings loaded successfully.
+2026-09-26T09:27:41.814Z INFO: Starting analysis cleanup on startup
+2026-09-26T09:27:41.814Z INFO: Starting analysis cleanup on startup...
+2026-09-26T09:27:41.818Z INFO: No stuck analyses found on startup
+2026-09-26T09:27:41.818Z INFO: Analysis cleanup on startup completed
+2026-09-26T09:27:41.818Z INFO: Starting periodic analysis cleanup service
+2026-09-26T09:27:41.819Z INFO: Periodic analysis cleanup service started
+2026-09-26T09:27:41.889Z INFO: Child process created with PID: 9632
+2026-09-26T09:27:42.074Z INFO: Settings loaded successfully.
+2026-09-26T09:27:42.098Z INFO: Settings loaded successfully.
+2026-09-26T09:27:42.182Z INFO: Settings loaded successfully.
+2026-09-26T09:27:42.187Z INFO: Settings loaded successfully.
+2026-09-26T09:27:49.657Z INFO: WebSocket connection established.
+2026-09-26T09:27:57.429Z INFO: Setup completion status: true
+2026-09-26T09:34:54.562Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T09:34:54.570Z INFO: Version de l'application: 1.0.0 
+2026-09-26T09:34:54.650Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T09:34:54.655Z INFO: Server started on port 4000
+2026-09-26T09:34:54.683Z INFO: Settings loaded successfully.
+2026-09-26T09:34:54.695Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T09:34:54.696Z INFO: Kineo service initialized
+2026-09-26T09:34:54.697Z INFO: Starting database initialization
+2026-09-26T09:34:54.766Z INFO: Child process created with PID: 16952
+2026-09-26T09:34:54.775Z INFO: Database models synchronized successfully
+2026-09-26T09:34:54.778Z INFO: Database initialization completed
+2026-09-26T09:34:54.783Z INFO: Settings loaded successfully.
+2026-09-26T09:34:54.784Z INFO: Starting analysis cleanup on startup
+2026-09-26T09:34:54.784Z INFO: Starting analysis cleanup on startup...
+2026-09-26T09:34:54.788Z INFO: No stuck analyses found on startup
+2026-09-26T09:34:54.788Z INFO: Analysis cleanup on startup completed
+2026-09-26T09:34:54.788Z INFO: Starting periodic analysis cleanup service
+2026-09-26T09:34:54.788Z INFO: Periodic analysis cleanup service started
+2026-09-26T09:34:55.056Z INFO: Settings loaded successfully.
+2026-09-26T09:34:55.082Z INFO: Settings loaded successfully.
+2026-09-26T09:34:55.180Z INFO: Settings loaded successfully.
+2026-09-26T09:34:55.181Z INFO: Settings loaded successfully.
+2026-09-26T09:34:58.899Z INFO: Setup completion status: true
+2026-09-26T09:35:02.616Z INFO: WebSocket connection established.
+2026-09-26T09:36:45.711Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:36:45.713Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:36:45.724Z INFO: User preferences found for user ID: 2
+2026-09-26T09:36:45.725Z INFO: User preferences retrieved successfully
+2026-09-26T09:38:23.627Z WARN: WebSocket closed. Code: 1006, Reason: 
+2026-09-26T09:38:23.628Z WARN: Attempting to reconnect in 1000 ms... (Attempt 1)
+2026-09-26T09:38:23.681Z INFO: Child process exited with code: 3221226505
+2026-09-26T09:38:23.687Z INFO: Child process created with PID: 11512
+2026-09-26T09:38:24.668Z INFO: WebSocket connection established.
+2026-09-26T09:38:56.096Z INFO: Analysis 9 cancelled by user
+2026-09-26T09:39:07.162Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:39:07.162Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:39:07.168Z INFO: User preferences found for user ID: 2
+2026-09-26T09:39:07.168Z INFO: User preferences retrieved successfully
+2026-09-26T09:39:31.283Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T09:39:31.284Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T09:42:44.160Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T09:42:44.168Z INFO: Version de l'application: 1.0.0 
+2026-09-26T09:42:44.246Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T09:42:44.253Z INFO: Server started on port 4000
+2026-09-26T09:42:44.275Z INFO: Settings loaded successfully.
+2026-09-26T09:42:44.289Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T09:42:44.290Z INFO: Kineo service initialized
+2026-09-26T09:42:44.290Z INFO: Starting database initialization
+2026-09-26T09:42:44.358Z INFO: Database models synchronized successfully
+2026-09-26T09:42:44.361Z INFO: Database initialization completed
+2026-09-26T09:42:44.365Z INFO: Settings loaded successfully.
+2026-09-26T09:42:44.365Z INFO: Starting analysis cleanup on startup
+2026-09-26T09:42:44.365Z INFO: Starting analysis cleanup on startup...
+2026-09-26T09:42:44.369Z INFO: No stuck analyses found on startup
+2026-09-26T09:42:44.369Z INFO: Analysis cleanup on startup completed
+2026-09-26T09:42:44.369Z INFO: Starting periodic analysis cleanup service
+2026-09-26T09:42:44.369Z INFO: Periodic analysis cleanup service started
+2026-09-26T09:42:44.436Z INFO: Child process created with PID: 16248
+2026-09-26T09:42:44.633Z INFO: Settings loaded successfully.
+2026-09-26T09:42:44.663Z INFO: Settings loaded successfully.
+2026-09-26T09:42:44.749Z INFO: Settings loaded successfully.
+2026-09-26T09:42:44.751Z INFO: Settings loaded successfully.
+2026-09-26T09:42:52.209Z INFO: WebSocket connection established.
+2026-09-26T09:44:29.368Z INFO: Setup completion status: true
+2026-09-26T09:44:37.040Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:44:37.041Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:44:37.046Z INFO: User preferences found for user ID: 2
+2026-09-26T09:44:37.047Z INFO: User preferences retrieved successfully
+2026-09-26T09:45:13.977Z WARN: WebSocket closed. Code: 1006, Reason: 
+2026-09-26T09:45:13.978Z WARN: Attempting to reconnect in 1000 ms... (Attempt 1)
+2026-09-26T09:45:14.032Z INFO: Child process exited with code: 3221226505
+2026-09-26T09:45:14.037Z INFO: Child process created with PID: 7356
+2026-09-26T09:45:15.009Z INFO: WebSocket connection established.
+2026-09-26T09:50:44.413Z INFO: Found 1 stuck analyses during periodic cleanup
+2026-09-26T09:50:44.431Z INFO: Analysis 10 marked as failed: Analysis timeout - periodic cleanup
+2026-09-26T09:50:44.432Z INFO: Cleaned up 1 stuck analyses during periodic cleanup
+2026-09-26T09:50:58.119Z INFO: Analysis 10 cancelled by user
+2026-09-26T09:51:05.509Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:51:05.509Z INFO: Getting user preferences for user ID: 2
+2026-09-26T09:51:05.516Z INFO: User preferences found for user ID: 2
+2026-09-26T09:51:05.517Z INFO: User preferences retrieved successfully
+2026-09-26T09:51:08.524Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T09:51:08.526Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T10:07:31.083Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T10:07:31.092Z INFO: Version de l'application: 1.0.0 
+2026-09-26T10:07:31.172Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T10:07:31.179Z INFO: Server started on port 4000
+2026-09-26T10:07:31.204Z INFO: Settings loaded successfully.
+2026-09-26T10:07:31.219Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T10:07:31.220Z INFO: Kineo service initialized
+2026-09-26T10:07:31.220Z INFO: Starting database initialization
+2026-09-26T10:07:31.281Z INFO: Database models synchronized successfully
+2026-09-26T10:07:31.284Z INFO: Database initialization completed
+2026-09-26T10:07:31.288Z INFO: Settings loaded successfully.
+2026-09-26T10:07:31.288Z INFO: Starting analysis cleanup on startup
+2026-09-26T10:07:31.288Z INFO: Starting analysis cleanup on startup...
+2026-09-26T10:07:31.293Z INFO: No stuck analyses found on startup
+2026-09-26T10:07:31.293Z INFO: Analysis cleanup on startup completed
+2026-09-26T10:07:31.293Z INFO: Starting periodic analysis cleanup service
+2026-09-26T10:07:31.294Z INFO: Periodic analysis cleanup service started
+2026-09-26T10:07:31.360Z INFO: Child process created with PID: 19064
+2026-09-26T10:07:31.566Z INFO: Settings loaded successfully.
+2026-09-26T10:07:31.605Z INFO: Settings loaded successfully.
+2026-09-26T10:07:31.693Z INFO: Settings loaded successfully.
+2026-09-26T10:07:31.697Z INFO: Settings loaded successfully.
+2026-09-26T10:07:39.142Z INFO: WebSocket connection established.
+2026-09-26T10:07:50.468Z INFO: Setup completion status: true
+2026-09-26T10:07:52.665Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:07:52.666Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:07:52.675Z INFO: User preferences found for user ID: 2
+2026-09-26T10:07:52.676Z INFO: User preferences retrieved successfully
+2026-09-26T10:08:48.050Z WARN: WebSocket closed. Code: 1006, Reason: 
+2026-09-26T10:08:48.051Z WARN: Attempting to reconnect in 1000 ms... (Attempt 1)
+2026-09-26T10:08:48.097Z INFO: Child process exited with code: 3221226505
+2026-09-26T10:08:48.104Z INFO: Child process created with PID: 12852
+2026-09-26T10:08:49.091Z INFO: WebSocket connection established.
+2026-09-26T10:09:29.841Z INFO: Analysis 11 cancelled by user
+2026-09-26T10:09:32.542Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:09:32.542Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:09:32.548Z INFO: User preferences found for user ID: 2
+2026-09-26T10:09:32.548Z INFO: User preferences retrieved successfully
+2026-09-26T10:09:36.248Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T10:09:36.251Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T10:19:20.127Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T10:19:20.135Z INFO: Version de l'application: 1.0.0 
+2026-09-26T10:19:20.214Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T10:19:20.220Z INFO: Server started on port 4000
+2026-09-26T10:19:20.243Z INFO: Settings loaded successfully.
+2026-09-26T10:19:20.258Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T10:19:20.259Z INFO: Kineo service initialized
+2026-09-26T10:19:20.259Z INFO: Starting database initialization
+2026-09-26T10:19:20.319Z INFO: Database models synchronized successfully
+2026-09-26T10:19:20.323Z INFO: Database initialization completed
+2026-09-26T10:19:20.327Z INFO: Settings loaded successfully.
+2026-09-26T10:19:20.327Z INFO: Starting analysis cleanup on startup
+2026-09-26T10:19:20.328Z INFO: Starting analysis cleanup on startup...
+2026-09-26T10:19:20.332Z INFO: No stuck analyses found on startup
+2026-09-26T10:19:20.332Z INFO: Analysis cleanup on startup completed
+2026-09-26T10:19:20.332Z INFO: Starting periodic analysis cleanup service
+2026-09-26T10:19:20.332Z INFO: Periodic analysis cleanup service started
+2026-09-26T10:19:20.400Z INFO: Child process created with PID: 5532
+2026-09-26T10:19:20.593Z INFO: Settings loaded successfully.
+2026-09-26T10:19:20.623Z INFO: Settings loaded successfully.
+2026-09-26T10:19:20.699Z INFO: Settings loaded successfully.
+2026-09-26T10:19:20.701Z INFO: Settings loaded successfully.
+2026-09-26T10:19:23.842Z INFO: Setup completion status: true
+2026-09-26T10:19:28.203Z INFO: WebSocket connection established.
+2026-09-26T10:19:50.731Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:19:50.732Z INFO: Getting user preferences for user ID: 2
+2026-09-26T10:19:50.740Z INFO: User preferences found for user ID: 2
+2026-09-26T10:19:50.741Z INFO: User preferences retrieved successfully
+2026-09-26T10:20:34.615Z WARN: WebSocket closed. Code: 1006, Reason: 
+2026-09-26T10:20:34.616Z WARN: Attempting to reconnect in 1000 ms... (Attempt 1)
+2026-09-26T10:20:34.671Z INFO: Child process exited with code: 3221226505
+2026-09-26T10:20:34.676Z INFO: Child process created with PID: 8032
+2026-09-26T10:20:35.647Z INFO: WebSocket connection established.
+2026-09-26T10:22:03.102Z INFO: Analysis 12 cancelled by user
+2026-09-26T10:23:07.279Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T10:23:07.281Z INFO: Kineo process exiting. Killing child process...
+2026-09-26T10:27:23.893Z INFO: Http directory already exists: c:/IMVapps/Kineo Software/Data/HttpResources
+2026-09-26T10:27:23.901Z INFO: Version de l'application: 1.0.0 
+2026-09-26T10:27:23.981Z INFO: ****************************************************** Kineo service started in C:\IMVapps\Kineo Software ************************************************************
+2026-09-26T10:27:23.988Z INFO: Server started on port 4000
+2026-09-26T10:27:24.010Z INFO: Settings loaded successfully.
+2026-09-26T10:27:24.025Z INFO: i18next initialized with language=en, resources=C:\IMVapps\Kineo Software\resources\locales
+2026-09-26T10:27:24.026Z INFO: Kineo service initialized
+2026-09-26T10:27:24.027Z INFO: Starting database initialization
+2026-09-26T10:27:24.090Z INFO: Database models synchronized successfully
+2026-09-26T10:27:24.094Z INFO: Database initialization completed
+2026-09-26T10:27:24.097Z INFO: Settings loaded successfully.
+2026-09-26T10:27:24.097Z INFO: Starting analysis cleanup on startup
+2026-09-26T10:27:24.098Z INFO: Starting analysis cleanup on startup...
+2026-09-26T10:27:24.102Z INFO: No stuck analyses found on startup
+2026-09-26T10:27:24.102Z INFO: Analysis cleanup on startup completed
+2026-09-26T10:27:24.102Z INFO: Starting periodic analysis cleanup service
+2026-09-26T10:27:24.102Z INFO: Periodic analysis cleanup service started
+2026-09-26T10:27:24.176Z INFO: Child process created with PID: 8580
+2026-09-26T10:27:24.376Z INFO: Settings loaded successfully.
+2026-09-26T10:27:24.405Z INFO: Settings loaded successfully.
+2026-09-26T10:27:24.504Z INFO: Settings loaded successfully.
+2026-09-26T10:27:24.505Z INFO: Settings loaded successfully.
+2026-09-26T10:27:31.933Z INFO: WebSocket connection established.

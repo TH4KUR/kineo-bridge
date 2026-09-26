@@ -1,0 +1,51 @@
+M1 Export Parity Diff — generated to resolve the 81 vs "55+22+1=78" discrepancy
+flagged in review. Corrected count: 81 real exports = 55 common GenTL + 2
+IDS-only multipart DS + 23 OS_* helpers + 1 mangled CRT symbol (I had
+previously undercounted the OS_* set by one).
+
+=== A. real ids_u3vgentlk.cti: 81 exports ===
+=== B. accepted forwarding proxy (kineo_proxy.cti): 81 exports ===
+=== C. standalone probe (kineo_probe_v2.cti): 55 exports ===
+
+A ∩ B (common): 81 -- EXACT PARITY, zero symbols differ either direction.
+A - B (real-only, missing from proxy): (none)
+B - A (proxy-only, extra vs real): (none)
+
+A ∩ C (common): 55
+A - C (in real, missing from probe/standalone) -- 26 symbols:
+??4_Init_locks@std@@QEAAAEAV01@AEBV01@@Z
+DSGetBufferPartInfo
+DSGetNumBufferParts
+OS_EventClear
+OS_EventCreateObject
+OS_EventDeinitialize
+OS_EventDestroyObject
+OS_EventGetObjectSize
+OS_EventInitialize
+OS_EventSet
+OS_EventWait
+OS_EventWaitMultiple
+OS_MemoryAlloc
+OS_MemoryAllocWithTag
+OS_MemoryCmp
+OS_MemoryCompare
+OS_MemoryCopy
+OS_MemoryFree
+OS_MemoryGetPageShift
+OS_MemoryGetPageSize
+OS_MemoryMove
+OS_MemorySet
+OS_MemoryZero
+OS_StrGetCharStringLen
+OS_StringCopy
+OS_StringPrintf
+
+C - A (in probe/standalone, not in real): (none)
+
+Conclusion: the accepted forwarding proxy has confirmed EXACT export-name
+parity with the real IDS CTI (81/81, no extras, no gaps). The standalone
+probe (currently rejected even with correct vendor string) is missing
+exactly these 26 symbols. M1c tests whether closing this exact gap (while
+keeping our own implementation for the 55 common GenTL functions, matching
+correct vendor string, and only minimally stubbing the 26 missing symbols)
+is sufficient for Gate 2.
