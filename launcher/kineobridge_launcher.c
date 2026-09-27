@@ -77,9 +77,26 @@ static void log_line(const char *fmt, ...) {
 
 /* ================= tiny status UI ================= */
 
+#define IDC_TITLE   1
+#define IDC_STATUS  2
+#define IDC_ATTRIB1 3
+#define IDC_ATTRIB2 4
+
 static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     switch (msg) {
         case WM_DESTROY: PostQuitMessage(0); return 0;
+        case WM_CTLCOLORSTATIC: {
+            /* Subtle gray attribution text, everything else keeps the
+             * default (black-on-window-background) look. */
+            int id = GetDlgCtrlID((HWND)lp);
+            if (id == IDC_ATTRIB1 || id == IDC_ATTRIB2) {
+                HDC hdc = (HDC)wp;
+                SetTextColor(hdc, RGB(130, 130, 130));
+                SetBkMode(hdc, TRANSPARENT);
+                return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
+            }
+            return DefWindowProc(hwnd, msg, wp, lp);
+        }
         default: return DefWindowProc(hwnd, msg, wp, lp);
     }
 }
@@ -95,7 +112,7 @@ static HWND create_status_window(HINSTANCE hinst) {
 
     HWND hwnd = CreateWindowExA(WS_EX_TOOLWINDOW | WS_EX_TOPMOST, wc.lpszClassName,
         "Kineo Bridge", WS_POPUP | WS_BORDER | WS_VISIBLE,
-        CW_USEDEFAULT, CW_USEDEFAULT, 360, 90, NULL, NULL, hinst, NULL);
+        CW_USEDEFAULT, CW_USEDEFAULT, 360, 132, NULL, NULL, hinst, NULL);
     if (!hwnd) return NULL;
 
     /* Center on the primary monitor -- CW_USEDEFAULT doesn't reliably
@@ -106,13 +123,31 @@ static HWND create_status_window(HINSTANCE hinst) {
     SetWindowPos(hwnd, NULL, (sx - w) / 2, (sy - h) / 2, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
     CreateWindowExA(0, "STATIC", "Kineo Bridge", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 8, 340, 20, hwnd, (HMENU)1, hinst, NULL);
+        10, 8, 340, 20, hwnd, (HMENU)IDC_TITLE, hinst, NULL);
     HFONT bold = CreateFontA(18, 0, 0, 0, FW_BOLD, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
-    SendDlgItemMessageA(hwnd, 1, WM_SETFONT, (WPARAM)bold, TRUE);
+    SendDlgItemMessageA(hwnd, IDC_TITLE, WM_SETFONT, (WPARAM)bold, TRUE);
 
     CreateWindowExA(0, "STATIC", "Starting...", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 36, 340, 40, hwnd, (HMENU)2, hinst, NULL);
+        10, 34, 340, 34, hwnd, (HMENU)IDC_STATUS, hinst, NULL);
+
+    /* Thin separator + small attribution footer. */
+    CreateWindowExA(0, "STATIC", "", WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
+        10, 74, 340, 2, hwnd, NULL, hinst, NULL);
+
+    HWND attrib1 = CreateWindowExA(0, "STATIC",
+        "System Integration and Infrastructure Solutions (siis.in)",
+        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 82, 340, 16, hwnd,
+        (HMENU)IDC_ATTRIB1, hinst, NULL);
+    HWND attrib2 = CreateWindowExA(0, "STATIC",
+        "Eashaaan  \xB7  github.com/th4kur",
+        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 98, 340, 16, hwnd,
+        (HMENU)IDC_ATTRIB2, hinst, NULL);
+    HFONT small_font = CreateFontA(-12, 0, 0, 0, FW_NORMAL, 0, 0, 0, ANSI_CHARSET,
+        OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
+    SendMessageA(attrib1, WM_SETFONT, (WPARAM)small_font, TRUE);
+    SendMessageA(attrib2, WM_SETFONT, (WPARAM)small_font, TRUE);
+
     ShowWindow(hwnd, SW_SHOW);
     UpdateWindow(hwnd);
     return hwnd;
@@ -120,7 +155,7 @@ static HWND create_status_window(HINSTANCE hinst) {
 
 static void set_status(const char *text) {
     if (!g_status_wnd) { printf("%s\n", text); return; }
-    SetDlgItemTextA(g_status_wnd, 2, text);
+    SetDlgItemTextA(g_status_wnd, IDC_STATUS, text);
     /* Pump the message queue so the label actually repaints -- this
      * launcher has no message loop of its own between steps. */
     MSG msg;

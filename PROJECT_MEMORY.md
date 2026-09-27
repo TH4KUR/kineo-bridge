@@ -414,6 +414,13 @@ stays alive via its own **ChironLog** (not OS process polling alone; see
 §20 for the false-positive that made this necessary) -> hand off to the
 normal Kineo UI (status window closes).
 
+The status window's footer credits **System Integration and
+Infrastructure Solutions (siis.in)** and **Eashaaan
+(github.com/th4kur)** — small gray centered text below a thin
+separator, styled via a `WM_CTLCOLORSTATIC` handler in
+`create_status_window()`/`WndProc()`. Purely cosmetic; if it's ever
+removed or restyled, nothing else depends on it.
+
 Manifest: **`requireAdministrator`** (v1 product decision, 2026-09-27 —
 supersedes an earlier `asInvoker`-only design). One UAC prompt at
 launch; this lets `ensure_camera_ready()` run `usbipd bind` itself when

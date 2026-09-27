@@ -341,8 +341,23 @@ icon statement) — no functional/behavioral code changed, so the seven
 bug fixes and the 3-analysis validation result above still apply
 unchanged to this build.
 
-Current sha256 (icon added, supersedes the launcher hash above):
+Current sha256 (icon added):
 ```
 KineoBridge.exe                    4c4c96e26255e4e0c653a7181234778f9316d7f5d7f27e7c7a9d4632a4550a54
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
+
+## Status-window attribution footer (2026-09-27)
+
+Added a small credits footer to the status window: "System Integration
+and Infrastructure Solutions (siis.in)" and "Eashaaan
+(github.com/th4kur)", gray centered text below a thin separator.
+Cosmetic only, no functional/behavioral change — the window grew
+slightly taller (90px -> 132px) to fit it. Reproducibility re-verified,
+icon re-verified byte-identical.
+
+Current sha256 (footer added, supersedes the launcher hash above):
+```
+KineoBridge.exe                    8f2b88b2b5a3716566979b65e68edb92561d4cd5b93a0f6e670c0bb45beb8a40
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
