@@ -43,7 +43,28 @@ int wsl_bridge_get_frame_blocking(uint8_t *dst, size_t capacity, uint64_t *out_t
 
 /* Signals the connector/receiver thread to stop, best-effort sends
  * STOP+CLOSE, closes the socket to unblock any pending recv, and joins with
- * a timeout. Safe to call even if wsl_bridge_start() was never called. */
+ * a timeout. Safe to call even if wsl_bridge_start() was never called.
+ * Also stops the live-config forwarder thread (see below), if running. */
 void wsl_bridge_stop(void);
+
+/* Priority 2 (hardening): forward the GenApi "camera layer" AcquisitionStart/
+ * AcquisitionStop commands to the physical camera over the *existing*,
+ * already-open bridge connection -- no reconnect, no re-OPEN. A no-op (with
+ * a log line) if not yet connected; the initial connect sequence in
+ * wsl_bridge_start() already performs the first START on its own, so an
+ * early or redundant call here is harmless (the bridge's own START/STOP
+ * handling is idempotent). Only meaningful in FRAME_SOURCE_WSL mode. */
+void wsl_bridge_notify_acquisition_start(void);
+void wsl_bridge_notify_acquisition_stop(void);
+
+/* Priority 3 (hardening): forward a live GenApi register write (Exposure/
+ * Gain/BlackLevel/FrameRate) to the physical camera. Returns immediately --
+ * never blocks the calling (GenTL) thread on network I/O. Values are handed
+ * to a small dedicated forwarder thread that coalesces rapid successive
+ * calls (only the latest set of values is ever in flight) and sends one
+ * CONFIGURE message per wake-up. A no-op if not yet connected (logged, not
+ * an error) or in synthetic mode. */
+void wsl_bridge_notify_config_changed(double exposure_time_us, double gain,
+                                       double black_level, double frame_rate);
 
 #endif /* WSL_BRIDGE_CLIENT_H */

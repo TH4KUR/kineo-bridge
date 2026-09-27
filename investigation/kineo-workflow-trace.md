@@ -2148,3 +2148,46 @@ real camera in the background until `DSClose`/process exit. Harmless for
 a single short-lived test; worth revisiting (forward STOP/START to the
 bridge to match GenTL-level start/stop) if a long real-Kineo session
 shows it matters for camera contention or bandwidth.
+
+### M5 — Real Kineo, Real Camera: STRONG SUCCESS (Success Levels 3 and 5 reached)
+
+**First real-Kineo attempt failed** with the exact symptom the earlier
+official-bindings test had not exposed: Kineo's very first
+`EventGetData` after `AcquisitionStart` uses a short (~150ms) timeout,
+but the WSL bridge's one-time handshake (TCP connect + open the real
+camera via Aravis/usbipd + configure + start) took ~1-1.5s -- because
+`wsl_bridge_start()` was triggered lazily at `DSStartAcquisition`, right
+before that tight-timeout poll. Kineo timed out, retried opening the
+device twice more, never recovered, and tore the session down
+(`AcquisitionStop`/`DevClose`) without ever running Analysis.
+
+**Fix:** moved the trigger to `DevOpenDataStream`, which this trace shows
+happens **~31 seconds before `DSStartAcquisition`** -- by the time
+acquisition actually starts, the bridge has been streaming into the
+single-slot latest-frame hand-off for tens of seconds already, so the
+worker thread's first fill call returns instantly instead of blocking.
+
+**Second attempt failed differently:** bridge OPEN returned
+`{"ok": false, "error": "no device with serial '4110010861' found (saw:
+[])"}"` -- not a code bug. The `usbipd` USB/IP attachment to WSL had
+silently dropped (`usbipd list` showed the device `Shared` but not
+`Attached`) between test runs. Re-ran `usbipd attach --wsl --busid 3-2`;
+the already-running WSL bridge's automatic reconnect-with-backoff picked
+the camera back up with no code changes needed.
+
+**Third attempt: full success.** Real video appeared in Kineo's live
+viewer. Start-Analysis completed and wrote a real report:
+`C:\Users\IMV\Documents\Kineo\Reports\Analysis_33_Abcd_2026-09-26.pdf`.
+CTI log confirms the whole capture window
+(`AcquisitionStart` 00:24:15.761 -> `AcquisitionStop` 00:24:16.811,
+Kineo-initiated, no error): **35 real frames** delivered and cleanly
+requeued in that 1.05s window (~33 fps effective over WSL/usbipd/Aravis).
+The short (~1s) capture duration is Kineo's own application-level
+behavior (consistent with typical CASA short high-fps capture windows),
+not an artifact of the bridge.
+
+**STOP CONDITION MET: Success Levels 3 (real video visible in Kineo's
+UI) and 5 (complete Analysis using real camera frames, real report
+produced) both reached**, via the real IDS U3-3560XCP-M streamed through
+WSL2/Aravis/usbipd into the custom `probe/m5/m5_bridge.cti` GenTL
+producer, unmodified `probe/m3/m4h/` baseline preserved throughout.

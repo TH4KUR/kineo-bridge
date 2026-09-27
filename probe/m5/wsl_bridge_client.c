@@ -100,6 +100,36 @@ static int send_msg(SOCKET s, uint8_t msg_type, const char *payload) {
     return 1;
 }
 
+/* Priority 2/3 (hardening): the receiver thread is the sole reader of the
+ * session socket, but mid-session control sends (physical START/STOP,
+ * live CONFIGURE) now come from OTHER threads (the GenTL calling thread,
+ * and the config-forwarder thread below) -- g_send_lock serializes all
+ * sends so two control messages can never interleave on the wire, and
+ * g_active_sock is how those other threads find the live socket at all
+ * (INVALID_SOCKET whenever no session is connected). */
+static CRITICAL_SECTION g_send_lock;
+static int g_send_lock_ready = 0;
+static SOCKET g_active_sock = INVALID_SOCKET;
+
+static void ensure_send_lock(void) {
+    if (!g_send_lock_ready) {
+        InitializeCriticalSection(&g_send_lock);
+        g_send_lock_ready = 1;
+    }
+}
+
+/* Sends on g_active_sock (the current live session, if any) while holding
+ * g_send_lock -- safe to call from any thread. Reads g_active_sock itself,
+ * under the same lock that clears it on disconnect, so there is no
+ * check-then-use race with the socket being torn down concurrently. */
+static int send_msg_locked(uint8_t msg_type, const char *payload) {
+    ensure_send_lock();
+    EnterCriticalSection(&g_send_lock);
+    int ok = (g_active_sock != INVALID_SOCKET) && send_msg(g_active_sock, msg_type, payload);
+    LeaveCriticalSection(&g_send_lock);
+    return ok;
+}
+
 /* Reads one wire header. Returns 0 on disconnect/protocol error. */
 static int recv_wire_header(SOCKET s, uint8_t *msg_type_out, uint32_t *plen_out) {
     uint8_t hdr[WIRE_HDR_SIZE];
@@ -196,28 +226,60 @@ static void run_one_session(uint8_t *recv_buf) {
     }
     wlog("CONFIGURE -> %s", small);
 
-    if (!send_msg(s, MSG_START, "{}") || !recv_small_payload(s, MSG_START, small, sizeof small)) {
-        wlog("START failed"); closesocket(s); return;
-    }
-    wlog("START -> %s", small);
-    if (!json_has_ok_true(small)) { wlog("START reply not ok, aborting session"); closesocket(s); return; }
+    /* Lifecycle hardening (2026-09-27), FPS-investigation bugfix: this
+     * handshake used to send an unconditional physical START here too --
+     * a leftover from the original "stream continuously from connect"
+     * architecture that survived every later redesign by accident. Since
+     * the connection is established at DevOpenDataStream (which Kineo
+     * reaches long before the user actually clicks Start Analysis), this
+     * silently restarted the exact "long-running idle image stream"
+     * problem the whole lifecycle redesign was meant to eliminate --
+     * confirmed directly: a real session showed the physical camera
+     * streaming continuously for 7.5 minutes between connect and the
+     * first real AcquisitionStart, only stopping when the first genuine
+     * AcquisitionStop finally arrived. Fixed by NOT starting here --
+     * the connection now settles into the "ideal idle state" (camera
+     * open, configured, zero image traffic) immediately after CONFIGURE,
+     * and only wsl_bridge_notify_acquisition_start() (called from the
+     * real GenApi AcquisitionStart command) ever starts physical
+     * acquisition. Publish the live socket here, right after CONFIGURE,
+     * so that notify call has something to send to. */
+    ensure_send_lock();
+    EnterCriticalSection(&g_send_lock);
+    g_active_sock = s;
+    LeaveCriticalSection(&g_send_lock);
 
-    wlog("streaming loop entered");
+    wlog("connection idle and ready (camera open+configured, not acquiring)");
     uint64_t frames_accepted = 0, frames_rejected = 0;
     while (!g_should_stop) {
         uint8_t msg_type; uint32_t plen;
         if (!recv_wire_header(s, &msg_type, &plen)) { wlog("disconnected while streaming"); break; }
         if (msg_type != MSG_FRAME) {
-            /* Unexpected off-cycle control message (e.g. a STATUS reply to
-             * nothing we sent) -- drain its payload and ignore. */
-            if (plen > 0) {
+            /* Off-cycle control replies: STOP/START acks from
+             * notify_acquisition_*() (Priority 2), CONFIGURE acks from the
+             * live-config forwarder (Priority 3), or anything else -- log
+             * which one, then drain its payload. Never a protocol error;
+             * this is the expected shape of a mid-session STOP/START. */
+            const char *what = (msg_type == MSG_STOP) ? "STOP ack" :
+                                (msg_type == MSG_START) ? "START ack" :
+                                (msg_type == MSG_CONFIGURE) ? "CONFIGURE ack" : "off-cycle reply";
+            if (plen == 0) {
+                wlog("%s (empty)", what);
+            } else if (plen < sizeof(small)) {
+                if (!recv_all(s, (uint8_t *)small, plen)) { wlog("disconnected reading %s", what); break; }
+                small[plen] = '\0';
+                wlog("%s: %s", what, small);
+            } else {
                 uint8_t discard[512];
                 uint32_t remaining = plen;
+                int ok = 1;
                 while (remaining > 0) {
                     uint32_t chunk = remaining < sizeof discard ? remaining : (uint32_t)sizeof discard;
-                    if (!recv_all(s, discard, chunk)) { plen = 0; break; }
+                    if (!recv_all(s, discard, chunk)) { ok = 0; break; }
                     remaining -= chunk;
                 }
+                if (!ok) { wlog("disconnected reading %s", what); break; }
+                wlog("%s (%u bytes, not logged)", what, plen);
             }
             continue;
         }
@@ -256,6 +318,12 @@ static void run_one_session(uint8_t *recv_buf) {
     }
     wlog("session ending: frames_accepted=%llu frames_rejected=%llu",
          (unsigned long long)frames_accepted, (unsigned long long)frames_rejected);
+    /* Unpublish first -- once g_active_sock is cleared, notify_* calls from
+     * other threads correctly see "not connected" instead of racing the
+     * closesocket() below. */
+    EnterCriticalSection(&g_send_lock);
+    g_active_sock = INVALID_SOCKET;
+    LeaveCriticalSection(&g_send_lock);
     /* Best-effort STOP+CLOSE; the socket is being torn down regardless. */
     send_msg(s, MSG_STOP, "{}");
     send_msg(s, MSG_CLOSE, "{}");
@@ -350,7 +418,96 @@ int wsl_bridge_get_frame_blocking(uint8_t *dst, size_t capacity, uint64_t *out_t
     return ok;
 }
 
+/* ===== Priority 2 (hardening): physical START/STOP on the live session ===== */
+
+void wsl_bridge_notify_acquisition_start(void) {
+    if (g_frame_source_mode != FRAME_SOURCE_WSL) return;
+    if (send_msg_locked(MSG_START, "{}")) {
+        wlog("sent physical START request (AcquisitionStart)");
+    } else {
+        wlog("AcquisitionStart: not connected yet, request skipped (initial connect will start on its own)");
+    }
+}
+
+void wsl_bridge_notify_acquisition_stop(void) {
+    if (g_frame_source_mode != FRAME_SOURCE_WSL) return;
+    if (send_msg_locked(MSG_STOP, "{}")) {
+        wlog("sent physical STOP request (AcquisitionStop)");
+    } else {
+        wlog("AcquisitionStop: not connected, nothing to stop");
+    }
+}
+
+/* ===== Priority 3 (hardening): live control forwarding, non-blocking ===== */
+
+static CRITICAL_SECTION g_pending_cfg_lock;
+static CONDITION_VARIABLE g_pending_cfg_cv;
+static int g_pending_cfg_lock_ready = 0;
+static int g_pending_cfg_dirty = 0;
+static int g_pending_cfg_should_stop = 0;
+static double g_pending_exposure_us = 0, g_pending_gain = 0, g_pending_black = 0, g_pending_rate = 0;
+static HANDLE g_cfg_thread = NULL;
+
+static DWORD WINAPI cfg_forwarder_thread_proc(LPVOID param) {
+    (void)param;
+    wlog("[cfg-forwarder] thread started");
+    for (;;) {
+        EnterCriticalSection(&g_pending_cfg_lock);
+        while (!g_pending_cfg_dirty && !g_pending_cfg_should_stop) {
+            SleepConditionVariableCS(&g_pending_cfg_cv, &g_pending_cfg_lock, INFINITE);
+        }
+        if (g_pending_cfg_should_stop) { LeaveCriticalSection(&g_pending_cfg_lock); break; }
+        double e = g_pending_exposure_us, g = g_pending_gain, b = g_pending_black, r = g_pending_rate;
+        g_pending_cfg_dirty = 0;
+        LeaveCriticalSection(&g_pending_cfg_lock);
+
+        char body[256];
+        snprintf(body, sizeof body,
+                 "{\"exposure_time_us\": %f, \"gain\": %f, \"black_level\": %f, \"frame_rate\": %f}",
+                 e, g, b, r);
+        int ok = send_msg_locked(MSG_CONFIGURE, body);
+        if (ok) {
+            wlog("[cfg-forwarder] live CONFIGURE sent: exposure_us=%.3f gain=%.3f black_level=%.3f frame_rate=%.3f",
+                 e, g, b, r);
+        } else {
+            wlog("[cfg-forwarder] not connected, live config change dropped (will apply from scratch on next connect)");
+        }
+    }
+    wlog("[cfg-forwarder] thread exiting");
+    return 0;
+}
+
+void wsl_bridge_notify_config_changed(double exposure_time_us, double gain,
+                                       double black_level, double frame_rate) {
+    if (g_frame_source_mode != FRAME_SOURCE_WSL) return;
+    if (!g_pending_cfg_lock_ready) {
+        InitializeCriticalSection(&g_pending_cfg_lock);
+        InitializeConditionVariable(&g_pending_cfg_cv);
+        g_pending_cfg_lock_ready = 1;
+        g_cfg_thread = CreateThread(NULL, 0, cfg_forwarder_thread_proc, NULL, 0, NULL);
+    }
+    /* Just publish the latest values and wake the forwarder -- returns in
+     * microseconds, never touches the network from this (GenTL) thread. */
+    EnterCriticalSection(&g_pending_cfg_lock);
+    g_pending_exposure_us = exposure_time_us;
+    g_pending_gain = gain;
+    g_pending_black = black_level;
+    g_pending_rate = frame_rate;
+    g_pending_cfg_dirty = 1;
+    WakeAllConditionVariable(&g_pending_cfg_cv);
+    LeaveCriticalSection(&g_pending_cfg_lock);
+}
+
 void wsl_bridge_stop(void) {
+    if (g_cfg_thread) {
+        EnterCriticalSection(&g_pending_cfg_lock);
+        g_pending_cfg_should_stop = 1;
+        WakeAllConditionVariable(&g_pending_cfg_cv);
+        LeaveCriticalSection(&g_pending_cfg_lock);
+        WaitForSingleObject(g_cfg_thread, 2000);
+        CloseHandle(g_cfg_thread);
+        g_cfg_thread = NULL;
+    }
     if (!g_thread) return;
     g_should_stop = 1;
     if (g_frame_lock_ready) {

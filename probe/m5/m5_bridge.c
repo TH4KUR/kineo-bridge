@@ -375,6 +375,22 @@ static CRITICAL_SECTION g_buf_lock;
 static int g_buf_lock_ready;
 static CONDITION_VARIABLE g_buf_cv;
 static volatile int g_camera_running;
+static volatile int g_first_wait_after_start;
+static uint64_t g_acq_start_ts_ns;
+static uint64_t query_timestamp_ns(void);
+/* FPS-investigation instrumentation (2026-09-27): per-cycle deltas of the
+ * existing session-cumulative counters, snapshotted at AcquisitionStart
+ * and diffed at AcquisitionStop, so each real Analysis's own GenTL-level
+ * activity (frames delivered, EventGetData successes/timeouts) is
+ * directly visible in the log instead of only cumulative session
+ * totals. */
+static uint64_t g_frames_produced;
+static uint64_t g_events_delivered;
+static uint64_t g_eventgetdata_calls;
+static uint64_t g_cycle_frames_produced_at_start;
+static uint64_t g_cycle_events_delivered_at_start;
+static uint64_t g_cycle_eventgetdata_calls_at_start;
+static uint32_t g_cycle_number;
 GC_ERROR GC_CALLTYPE GCWritePort(PORT_HANDLE hPort, uint64_t iAddress, const void *pBuffer, size_t *piSize) {
     if (hPort != H_PORT) {
         probe_log("GCWritePort hPort=%p addr=0x%llx -> INVALID_HANDLE", hPort, (unsigned long long)iAddress);
@@ -408,13 +424,62 @@ GC_ERROR GC_CALLTYPE GCWritePort(PORT_HANDLE hPort, uint64_t iAddress, const voi
         if (r->storage == &g_acq_start_cmd) {
             EnterCriticalSection(&g_buf_lock);
             g_camera_running = 1;
+            /* Lifecycle hardening (2026-09-27), diagnostic experiment:
+             * physical acquisition now starts exactly HERE -- Kineo's own
+             * real trigger point, zero pre-roll -- and the resulting
+             * ~300-390ms real startup latency is absorbed inside
+             * EventGetData's own grace period (see there), not hidden by
+             * starting early. Camera stays genuinely idle (zero image
+             * traffic) between analyses. */
+            g_first_wait_after_start = 1;
+            g_acq_start_ts_ns = query_timestamp_ns();
+            g_cycle_number++;
+            g_cycle_frames_produced_at_start = g_frames_produced;
+            g_cycle_events_delivered_at_start = g_events_delivered;
+            g_cycle_eventgetdata_calls_at_start = g_eventgetdata_calls;
             WakeAllConditionVariable(&g_buf_cv);
             LeaveCriticalSection(&g_buf_lock);
+            probe_log("=== CYCLE #%u: AcquisitionStart at t=%llu ns ===",
+                      g_cycle_number, (unsigned long long)g_acq_start_ts_ns);
+            wsl_bridge_notify_acquisition_start();
         } else if (r->storage == &g_acq_stop_cmd) {
             EnterCriticalSection(&g_buf_lock);
+            /* A duplicate AcquisitionStop (observed: Kineo can send a
+             * second one on cancel, with no new AcquisitionStart in
+             * between) must not compute/log a "cycle summary" from
+             * g_acq_start_ts_ns, which is now stale (left over from the
+             * cycle that already, correctly, ended) -- that produced a
+             * misleading multi-second "duration" that never actually
+             * happened on the wire (confirmed: the physical stream was
+             * already idle the whole time; only this log line was
+             * wrong). Only compute/log a real summary on a genuine
+             * running->stopped transition. */
+            int was_running = g_camera_running;
             g_camera_running = 0;
+            g_first_wait_after_start = 0;
+            uint64_t frames_this_cycle = g_frames_produced - g_cycle_frames_produced_at_start;
+            uint64_t events_this_cycle = g_events_delivered - g_cycle_events_delivered_at_start;
+            uint64_t eventgetdata_this_cycle = g_eventgetdata_calls - g_cycle_eventgetdata_calls_at_start;
+            uint32_t cycle_num = g_cycle_number;
             WakeAllConditionVariable(&g_buf_cv);
             LeaveCriticalSection(&g_buf_lock);
+            if (was_running) {
+                uint64_t stop_ts_ns = query_timestamp_ns();
+                double duration_ms = (double)(stop_ts_ns - g_acq_start_ts_ns) / 1e6;
+                probe_log("=== CYCLE #%u SUMMARY: AcquisitionStop at t=%llu ns, "
+                          "duration=%.1fms, GenTL_frames_delivered=%llu, "
+                          "EVENT_NEW_BUFFER_delivered=%llu, EventGetData_calls=%llu ===",
+                          cycle_num, (unsigned long long)stop_ts_ns, duration_ms,
+                          (unsigned long long)frames_this_cycle, (unsigned long long)events_this_cycle,
+                          (unsigned long long)eventgetdata_this_cycle);
+            } else {
+                probe_log("AcquisitionStop: received while already stopped (duplicate/cancel) -- no-op, no cycle summary");
+            }
+            /* Stop AND release the physical stream/acquisition
+             * (camera_source.py's stop() releases the stream too) --
+             * camera object itself stays open; the next AcquisitionStart
+             * re-arms a fresh stream. */
+            wsl_bridge_notify_acquisition_stop();
         }
         if (r->log_count <= REG_LOG_LIMIT) probe_log("COMMAND %-28s addr=0x%llx", r->name, (unsigned long long)r->addr);
         else if (r->log_count == REG_LOG_LIMIT + 1) probe_log("COMMAND %-28s further invocations suppressed (counting silently)", r->name);
@@ -424,6 +489,21 @@ GC_ERROR GC_CALLTYPE GCWritePort(PORT_HANDLE hPort, uint64_t iAddress, const voi
         if (r->log_count <= REG_LOG_LIMIT) reg_log_value(r, "WRITE");
         else if (r->log_count == REG_LOG_LIMIT + 1) probe_log("WRITE %-28s further writes suppressed (counting silently)", r->name);
         if (r->storage == &g_width || r->storage == &g_height) recompute_payload_size();
+        /* M5 hardening Priority 3: REVERTED (2026-09-27). Confirmed from
+         * the CTI/bridge log that sending a live CONFIGURE while the real
+         * camera is actively streaming (every DevOpenDataStream pass
+         * rewrites these registers -- happens on every subsequent
+         * analysis, not just the first) wedges the same USB3Vision
+         * control channel Priority 2 did ("read_memory timeout" on
+         * PixelFormat), reproduced even with Priority 2 itself fully
+         * reverted. See investigation/hardening.md. CONFIGURE now only
+         * ever happens once, at the initial bridge connect (from
+         * DevOpenDataStream's first call) -- exactly the pre-hardening
+         * M5 behavior, which never exhibited this.
+         * if (r->storage == &g_exposure_time || r->storage == &g_gain ||
+         *     r->storage == &g_black_level || r->storage == &g_acq_frame_rate) {
+         *     wsl_bridge_notify_config_changed(g_exposure_time, g_gain, g_black_level, g_acq_frame_rate);
+         * } */
     }
     return GC_ERR_SUCCESS;
 }
@@ -727,22 +807,29 @@ GC_ERROR GC_CALLTYPE DevOpenDataStream(DEV_HANDLE hDevice, const char *sDataStre
     }
     if (!phDataStream) return GC_ERR_INVALID_PARAMETER;
     *phDataStream = H_DS;
-    /* M5: start the WSL bridge connection here, not lazily at
-     * DSStartAcquisition. Real Kineo has been observed opening the data
-     * stream tens of seconds before ever starting acquisition, but its
-     * *first* EventGetData after AcquisitionStart uses a short (~150ms)
-     * timeout -- far shorter than the real bridge's one-time handshake
-     * (TCP connect + open the real camera via Aravis/usbipd + configure +
-     * start, ~1-1.5s). Starting here instead gives that handshake the
-     * whole open-to-acquisition window to finish, so the stream is
-     * already flowing well before Kineo's first tight-timeout poll.
-     * Idempotent (a no-op on the 2nd/3rd DevOpenDataStream pass observed
-     * in practice) and a no-op entirely in synthetic mode. By this point
-     * ExposureTime/Gain/BlackLevel/AcquisitionFrameRate have already been
-     * written by Kineo (observed immediately before this call each pass),
-     * so the forwarded CONFIGURE values are Kineo's real ones, not
-     * defaults. */
+    /* M5: start the WSL bridge TCP connection + camera OPEN + CONFIGURE
+     * here (not lazily at DSStartAcquisition) -- this part has a
+     * multi-second-to-tens-of-seconds head start before Kineo actually
+     * starts acquisition, so its ~1-1.5s cost is never on the critical
+     * path. Idempotent (a no-op on the 2nd/3rd DevOpenDataStream pass)
+     * and a no-op entirely in synthetic mode. */
     wsl_bridge_start(DEV_SERIAL_STR, g_exposure_time, g_gain, g_black_level, g_acq_frame_rate);
+    /* Lifecycle hardening (2026-09-27): deliberately NOT pre-rolling
+     * physical acquisition here anymore. Measured (timing_test.py,
+     * timing_test_stream_reuse.py): real AcquisitionStart-to-first-frame
+     * latency is ~300-390ms regardless of whether the stream is
+     * recreated or reused -- intrinsic to the camera's own startup
+     * sequence, not fixable by our bookkeeping. Pre-rolling here meant
+     * the physical camera streamed unattended for however long the user
+     * took to actually click Start Analysis (observed: up to 6.5
+     * minutes), which reproduced the same sustained-streaming
+     * degradation this whole redesign was meant to avoid
+     * (investigation/hardening.md). Camera now stays genuinely idle
+     * (zero image traffic) between analyses; physical acquisition starts
+     * only at the real AcquisitionStart command below, and the ~300-
+     * 390ms startup cost is absorbed inside our own EventGetData via a
+     * narrowly-scoped startup grace period instead of hidden by timing
+     * games on this side. */
     return GC_ERR_SUCCESS;
 }
 GC_ERROR GC_CALLTYPE DevGetInfo(DEV_HANDLE hDevice, DEVICE_INFO_CMD iInfoCmd, INFO_DATATYPE *piType, void *pBuffer, size_t *piSize) {
@@ -1054,6 +1141,18 @@ static uint64_t g_event_unregister_count = 0;
  * production requires both. */
 static volatile int g_ds_grabbing = 0;    /* stream_armed; also STREAM_INFO_IS_GRABBING truth */
 static volatile int g_camera_running = 0; /* set by the AcquisitionStart/AcquisitionStop GenApi commands */
+/* Lifecycle hardening (2026-09-27): EventGetData startup grace period.
+ * Set the instant physical AcquisitionStart fires; cleared the instant
+ * the first real frame after that is actually delivered. While set,
+ * EventGetData internally waits at least EVENTGETDATA_GRACE_MS
+ * regardless of the caller's requested timeout, absorbing the real
+ * camera's ~300-390ms startup latency without lying about our own
+ * buffer/event semantics -- once a frame arrives, every subsequent call
+ * goes back to honoring the caller's real timeout exactly. Guarded by
+ * g_buf_lock, same as the rest of the acquisition state. */
+#define EVENTGETDATA_GRACE_MS 1000
+static volatile int g_first_wait_after_start = 0;
+static uint64_t g_acq_start_ts_ns = 0;
 static volatile int g_worker_should_stop = 0;
 static HANDLE g_worker_thread = NULL;
 static ACQ_START_FLAGS g_acq_start_flags = 0;
@@ -1831,6 +1930,7 @@ GC_ERROR GC_CALLTYPE EventGetData(EVENT_HANDLE hEvent, void *pBuffer, size_t *pi
     note_buffer_burst_boundary("EventGetData");
     g_eventgetdata_calls++;
     DWORD tid = GetCurrentThreadId();
+    ULONGLONG call_entry_tick = GetTickCount64();
     /* DWORD wait milliseconds: a very large iTimeout (the SDK's
      * INFINITE_NUMBER sentinel, or anything that would overflow a
      * DWORD) maps to Windows' own INFINITE wait. */
@@ -1851,7 +1951,26 @@ GC_ERROR GC_CALLTYPE EventGetData(EVENT_HANDLE hEvent, void *pBuffer, size_t *pi
     }
     ev->refcount++;
 
-    ULONGLONG deadline = is_infinite ? 0 : (GetTickCount64() + timeout_ms);
+    /* Lifecycle hardening (2026-09-27), diagnostic experiment: a
+     * narrowly-scoped startup grace period. Only the first wait after a
+     * fresh physical AcquisitionStart is allowed to run longer than the
+     * caller's requested timeout (up to EVENTGETDATA_GRACE_MS) -- this
+     * absorbs the real camera's own ~300-390ms startup latency entirely
+     * inside our own code, without ever claiming a shorter startup time
+     * than reality. Every other call (once a frame has been delivered,
+     * or if no AcquisitionStart is pending at all) honors the caller's
+     * timeout exactly, unchanged. */
+    int used_grace = 0;
+    DWORD effective_timeout_ms = timeout_ms;
+    if (g_first_wait_after_start && !is_infinite && timeout_ms < EVENTGETDATA_GRACE_MS) {
+        used_grace = 1;
+        effective_timeout_ms = EVENTGETDATA_GRACE_MS;
+        probe_log("EventGetData: startup grace active, caller requested timeout=%lums, "
+                  "internally allowing up to %dms for the first real frame",
+                  (unsigned long)timeout_ms, EVENTGETDATA_GRACE_MS);
+    }
+
+    ULONGLONG deadline = is_infinite ? 0 : (GetTickCount64() + effective_timeout_ms);
     completed_item_t item;
     int have_item = 0;
     int timed_out = 0;
@@ -1868,6 +1987,20 @@ GC_ERROR GC_CALLTYPE EventGetData(EVENT_HANDLE hEvent, void *pBuffer, size_t *pi
         }
         BOOL woke = SleepConditionVariableCS(&g_buf_cv, &g_buf_lock, wait_ms);
         if (!woke && !is_infinite && GetTickCount64() >= deadline) { timed_out = 1; break; }
+    }
+
+    if (used_grace && have_item) {
+        uint64_t now_ns = query_timestamp_ns();
+        double since_start_ms = (double)(now_ns - g_acq_start_ts_ns) / 1e6;
+        probe_log("EventGetData: first real frame delivered %.1fms after physical "
+                  "AcquisitionStart (caller timeout was %lums, grace allowed up to %dms) "
+                  "-- reverting to normal timeout handling from here",
+                  since_start_ms, (unsigned long)timeout_ms, EVENTGETDATA_GRACE_MS);
+        g_first_wait_after_start = 0;
+    } else if (used_grace && timed_out) {
+        probe_log("EventGetData: startup grace period (%dms) itself expired with no frame "
+                  "-- something is genuinely wrong beyond just being slow to start", EVENTGETDATA_GRACE_MS);
+        g_first_wait_after_start = 0;
     }
 
     GC_ERROR rc;
@@ -1912,11 +2045,15 @@ GC_ERROR GC_CALLTYPE EventGetData(EVENT_HANDLE hEvent, void *pBuffer, size_t *pi
     }
     LeaveCriticalSection(&g_buf_lock);
 
-    if (g_eventgetdata_calls <= 10) {
-        probe_log("EventGetData handle=%p -> rc=%d%s tid=%lu", hEvent, rc,
+    ULONGLONG total_blocking_ms = GetTickCount64() - call_entry_tick;
+    if (g_eventgetdata_calls <= 10 || used_grace) {
+        probe_log("EventGetData handle=%p -> rc=%d%s tid=%lu requested_timeout=%lums "
+                  "effective_wait=%lums total_blocking=%llums%s", hEvent, rc,
                   (rc == GC_ERR_SUCCESS && have_item) ? " (NEW_BUFFER delivered)" :
                   (rc == GC_ERR_ABORT) ? " (ABORT: killed/unregistered)" :
-                  (rc == GC_ERR_TIMEOUT) ? " (TIMEOUT)" : "", (unsigned long)tid);
+                  (rc == GC_ERR_TIMEOUT) ? " (TIMEOUT)" : "", (unsigned long)tid,
+                  (unsigned long)timeout_ms, (unsigned long)effective_timeout_ms,
+                  (unsigned long long)total_blocking_ms, used_grace ? " [GRACE]" : "");
     } else if (g_eventgetdata_calls == 11) {
         probe_log("EventGetData ... further calls logged only in the final tally");
     }

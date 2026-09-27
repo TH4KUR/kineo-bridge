@@ -1,0 +1,48 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Runtime-generated logs / health status (regenerated every run) ---
+wsl-camera/bridge.*.log
+wsl-camera/bridge_status*.json
+kineo_probe_cti.log
+logs/kineo_probe_cti_*.log
+logs/kineo-own-logs/
+logs/workflow-trace/
+
+# --- Customer/analysis data -- never ours to keep or ship ---
+*.pdf
+*.mp4
+investigation/golden-baseline-m5/*.pdf
+investigation/golden-baseline-m5/*.log
+
+# --- Debug symbols / build intermediates ---
+*.pdb
+*.o
+*.obj
+*.a
+!probe/**/*.def
+
+# --- Release packaging output (built, not source -- distributed separately) ---
+/release/
+/dist/
+/build/
+launcher/KineoBridge.exe
+probe/m5/m5_bridge.release.cti
+scripts/.kineo_version_cache
+
+# --- Windows-side test staging mirrors (large, machine-specific, regenerable) ---
+probe/m5/launch_kineo_*.ps1.bak
+
+# --- Editor / OS cruft ---
+.DS_Store
+*.swp
+*~
+
+# --- Secrets -- never commit these, ever ---
+*.pem
+*.key
+*.pfx
+*license_signing_key*
+.env
