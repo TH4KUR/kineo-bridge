@@ -380,3 +380,35 @@ Current sha256 (redesign):
 KineoBridge.exe                    156ebff3643884ece8bfd59846765fd1a35f46f94c0e7107cb8e8f136e856957
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## Status-window refinement round 2 (2026-09-27)
+
+User feedback on the round-1 redesign: only "Website"/"LinkedIn" should
+be the actual clickable text (not the whole line); title too heavy,
+status too faint (inverted from what it should be — status is the more
+important, moment-to-moment line); title/status should read as one
+tight group; footer should be pushed further down for separation; 460px
+width "looks awkward".
+
+Addressed all five: switched the two attribution rows from plain
+`SS_NOTIFY` statics to real `SysLink` controls with `<A HREF>` markup so
+only the tagged word is a link; title is now medium-weight/gray
+(de-emphasized), status is now bold/near-black (emphasized — this was
+an intentional hierarchy inversion from round 1); title/status gap
+shrunk to near zero, gap before the footer widened; window narrowed
+460×200 → 400×190. Each `SysLink` row is measured at its own real
+rendered width at runtime (`LM_GETIDEALHEIGHT`/`LM_GETIDEALSIZE`) and
+centered exactly there, rather than guessed — see `PROJECT_MEMORY.md`
+§19 for the full mechanism. Added the standard comctl32 v6 manifest
+dependency so `SysLink` themes correctly. Reproducibility and the
+embedded icon both re-verified unaffected. **Still not visually
+confirmed on real hardware** — I have no way to render a Win32 window
+from this dev environment; the sizing/centering is now measured live
+by the code itself at runtime rather than guessed by me, which should
+make it robust regardless, but an actual look is still worth doing.
+
+Current sha256:
+```
+KineoBridge.exe                    caa79166daca0c180c73952ce3f2b1d8330013269fafe7d6c8cff3363cbe5236
+```
+(CTI, XML, and `.pyc` hashes unchanged.)

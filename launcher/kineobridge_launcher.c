@@ -24,6 +24,7 @@
  */
 #include <windows.h>
 #include <shellapi.h>
+#include <commctrl.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -93,10 +94,18 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
         case WM_CTLCOLORSTATIC: {
             int id = GetDlgCtrlID((HWND)lp);
             HDC hdc = (HDC)wp;
-            /* Status text: dark charcoal, not pure black -- visually
-             * distinct from the bold black title above it. */
+            /* Title: lighter/medium gray -- de-emphasized, it barely
+             * changes after the first glance. */
+            if (id == IDC_TITLE) {
+                SetTextColor(hdc, RGB(95, 95, 95));
+                SetBkMode(hdc, TRANSPARENT);
+                return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
+            }
+            /* Status: near-black -- this is the line that actually
+             * matters moment to moment, it should be the most visible
+             * text in the window, not the title. */
             if (id == IDC_STATUS) {
-                SetTextColor(hdc, RGB(60, 60, 60));
+                SetTextColor(hdc, RGB(15, 15, 15));
                 SetBkMode(hdc, TRANSPARENT);
                 return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
             }
@@ -106,35 +115,51 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                 SetBkMode(hdc, TRANSPARENT);
                 return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
             }
-            /* The two attribution links: classic hyperlink blue. */
+            /* SysLink attribution rows: this sets the color of the
+             * PLAIN-text portion only -- SysLink renders its own
+             * <A HREF> portion in the link color/underline regardless,
+             * so "Website"/"LinkedIn" stay visually distinct as links
+             * without any extra handling here. */
             if (id == IDC_LINK_WEBSITE || id == IDC_LINK_LINKEDIN) {
-                SetTextColor(hdc, RGB(0, 102, 204));
+                SetTextColor(hdc, RGB(110, 110, 110));
                 SetBkMode(hdc, TRANSPARENT);
                 return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
             }
             return DefWindowProc(hwnd, msg, wp, lp);
         }
-        case WM_SETCURSOR: {
-            /* Hand cursor over either clickable attribution link. */
-            int id = GetDlgCtrlID((HWND)wp);
-            if (id == IDC_LINK_WEBSITE || id == IDC_LINK_LINKEDIN) {
-                SetCursor(LoadCursor(NULL, IDC_HAND));
-                return TRUE;
-            }
-            return DefWindowProc(hwnd, msg, wp, lp);
-        }
-        case WM_COMMAND: {
-            /* STN_CLICKED on an SS_NOTIFY static -- open the link. */
-            if (HIWORD(wp) == STN_CLICKED) {
-                int id = LOWORD(wp);
-                if (id == IDC_LINK_WEBSITE)
+        case WM_NOTIFY: {
+            /* NM_CLICK/NM_RETURN from a SysLink -- open its URL.
+             * SysLink already shows a hand cursor over the link text
+             * on its own, nothing to do for that here. */
+            NMHDR *hdr = (NMHDR *)lp;
+            if (hdr->code == NM_CLICK || hdr->code == NM_RETURN) {
+                if (hdr->idFrom == IDC_LINK_WEBSITE)
                     ShellExecuteA(NULL, "open", URL_WEBSITE, NULL, NULL, SW_SHOWNORMAL);
-                else if (id == IDC_LINK_LINKEDIN)
+                else if (hdr->idFrom == IDC_LINK_LINKEDIN)
                     ShellExecuteA(NULL, "open", URL_LINKEDIN, NULL, NULL, SW_SHOWNORMAL);
             }
             return 0;
         }
         default: return DefWindowProc(hwnd, msg, wp, lp);
+    }
+}
+
+/* Creates a SysLink row, measures its OWN real ideal single-line size
+ * on whatever machine this actually runs on (fonts/DPI vary -- this is
+ * why it's measured at runtime instead of guessed at build time), and
+ * centers it horizontally in a window of `win_w` pixels at height y. */
+static void create_centered_link(HWND parent, HINSTANCE hinst, int ctrl_id,
+                                  const char *markup, HFONT font, int win_w, int y) {
+    HWND link = CreateWindowExA(0, "SysLink", markup,
+        WS_CHILD | WS_VISIBLE | WS_TABSTOP, 10, y, win_w - 20, 24,
+        parent, (HMENU)(INT_PTR)ctrl_id, hinst, NULL);
+    SendMessageA(link, WM_SETFONT, (WPARAM)font, TRUE);
+    SIZE ideal = {0};
+    /* mingw's commctrl.h only has the older LM_GETIDEALHEIGHT name --
+     * same message, also fills in the width despite the name. */
+    SendMessageA(link, LM_GETIDEALHEIGHT, (WPARAM)2000, (LPARAM)&ideal);
+    if (ideal.cx > 0 && ideal.cx < win_w - 20) {
+        SetWindowPos(link, NULL, (win_w - ideal.cx) / 2, y, ideal.cx, ideal.cy, SWP_NOZORDER);
     }
 }
 
@@ -147,7 +172,10 @@ static HWND create_status_window(HINSTANCE hinst) {
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     RegisterClassA(&wc);
 
-    const int WIN_W = 460, WIN_H = 200;
+    INITCOMMONCONTROLSEX icc = { sizeof(icc), ICC_LINK_CLASS };
+    InitCommonControlsEx(&icc);
+
+    const int WIN_W = 400, WIN_H = 190;
     HWND hwnd = CreateWindowExA(WS_EX_TOOLWINDOW | WS_EX_TOPMOST, wc.lpszClassName,
         "Kineo Bridge", WS_POPUP | WS_BORDER | WS_VISIBLE,
         CW_USEDEFAULT, CW_USEDEFAULT, WIN_W, WIN_H, NULL, NULL, hinst, NULL);
@@ -160,24 +188,28 @@ static HWND create_status_window(HINSTANCE hinst) {
     int sx = GetSystemMetrics(SM_CXSCREEN), sy = GetSystemMetrics(SM_CYSCREEN);
     SetWindowPos(hwnd, NULL, (sx - w) / 2, (sy - h) / 2, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
-    /* Title: bold, larger -- the clear visual anchor. */
+    /* Title + status are one visual group: title sits lighter/smaller
+     * (medium gray, medium weight -- it barely changes, so it shouldn't
+     * dominate), status sits right underneath with almost no gap,
+     * bolder and near-black (it's the line that actually matters right
+     * now). A comfortably larger gap then separates this whole group
+     * from the footer below. */
     CreateWindowExA(0, "STATIC", "Kineo Bridge", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 14, 440, 28, hwnd, (HMENU)IDC_TITLE, hinst, NULL);
-    HFONT title_font = CreateFontA(-22, 0, 0, 0, FW_BOLD, 0, 0, 0, ANSI_CHARSET,
+        10, 14, 380, 24, hwnd, (HMENU)IDC_TITLE, hinst, NULL);
+    HFONT title_font = CreateFontA(-19, 0, 0, 0, FW_MEDIUM, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
     SendDlgItemMessageA(hwnd, IDC_TITLE, WM_SETFONT, (WPARAM)title_font, TRUE);
 
-    /* Status: regular weight, distinct size/color from the title above
-     * -- reads clearly as a secondary line, not competing with it. */
     CreateWindowExA(0, "STATIC", "Starting...", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 50, 440, 44, hwnd, (HMENU)IDC_STATUS, hinst, NULL);
-    HFONT status_font = CreateFontA(-15, 0, 0, 0, FW_NORMAL, 0, 0, 0, ANSI_CHARSET,
+        10, 40, 380, 32, hwnd, (HMENU)IDC_STATUS, hinst, NULL);
+    HFONT status_font = CreateFontA(-16, 0, 0, 0, FW_BOLD, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
     SendDlgItemMessageA(hwnd, IDC_STATUS, WM_SETFONT, (WPARAM)status_font, TRUE);
 
-    /* Thin inset separator, then the attribution footer. */
+    /* Thin inset separator, pushed well clear of the title/status group
+     * above, then the attribution footer. */
     CreateWindowExA(0, "STATIC", "", WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
-        20, 104, 420, 2, hwnd, NULL, hinst, NULL);
+        20, 100, 360, 2, hwnd, NULL, hinst, NULL);
 
     /* "Made with <heart> by" -- a Unicode child window (created via the
      * -W API) is used only here so the heart glyph (U+2665) renders
@@ -186,27 +218,24 @@ static HWND create_status_window(HINSTANCE hinst) {
      * can't do full-color emoji regardless of encoding, so this is the
      * plain heart symbol, not a colored emoji glyph. */
     HWND made_with = CreateWindowExW(0, L"STATIC", L"Made with \x2665 by",
-        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 112, 440, 18, hwnd,
+        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 110, 380, 18, hwnd,
         (HMENU)IDC_MADE_WITH, hinst, NULL);
     HFONT italic_font = CreateFontA(-13, 0, 0, 0, FW_NORMAL, TRUE, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
     SendMessageW(made_with, WM_SETFONT, (WPARAM)italic_font, TRUE);
 
-    /* Two clickable attribution links (SS_NOTIFY -> STN_CLICKED,
-     * handled in WndProc's WM_COMMAND above). Underlined font makes
-     * them read as links even before the hover cursor confirms it. */
-    HWND link_website = CreateWindowExA(0, "STATIC",
-        "System Integration and Infrastructure Solutions \xB7 Website",
-        WS_CHILD | WS_VISIBLE | SS_CENTER | SS_NOTIFY, 10, 132, 440, 18,
-        hwnd, (HMENU)IDC_LINK_WEBSITE, hinst, NULL);
-    HWND link_linkedin = CreateWindowExA(0, "STATIC",
-        "Eashaan Thakur \xB7 LinkedIn",
-        WS_CHILD | WS_VISIBLE | SS_CENTER | SS_NOTIFY, 10, 150, 440, 18,
-        hwnd, (HMENU)IDC_LINK_LINKEDIN, hinst, NULL);
-    HFONT link_font = CreateFontA(-12, 0, 0, 0, FW_NORMAL, FALSE, TRUE, 0, ANSI_CHARSET,
+    /* Two attribution rows: only "Website"/"LinkedIn" are the actual
+     * clickable link (SysLink's <A HREF> markup), the rest is plain
+     * text -- each row is measured and centered at its own real
+     * rendered width, not a guessed one (see create_centered_link). */
+    HFONT link_font = CreateFontA(-13, 0, 0, 0, FW_NORMAL, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
-    SendMessageA(link_website, WM_SETFONT, (WPARAM)link_font, TRUE);
-    SendMessageA(link_linkedin, WM_SETFONT, (WPARAM)link_font, TRUE);
+    create_centered_link(hwnd, hinst, IDC_LINK_WEBSITE,
+        "System Integration and Infrastructure Solutions \xB7 <A HREF=\"" URL_WEBSITE "\">Website</A>",
+        link_font, WIN_W, 130);
+    create_centered_link(hwnd, hinst, IDC_LINK_LINKEDIN,
+        "Eashaan Thakur \xB7 <A HREF=\"" URL_LINKEDIN "\">LinkedIn</A>",
+        link_font, WIN_W, 150);
 
     ShowWindow(hwnd, SW_SHOW);
     UpdateWindow(hwnd);

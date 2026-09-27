@@ -414,28 +414,44 @@ stays alive via its own **ChironLog** (not OS process polling alone; see
 §20 for the false-positive that made this necessary) -> hand off to the
 normal Kineo UI (status window closes).
 
-The status window is 460×200 (grew from the original 360×90 across two
-passes for legibility and to fit the footer). Typography: bold 22px
-title, regular 15px dark-charcoal status text (visually distinct from
-the title, not competing with it), then below a thin inset separator:
-an italic gray "Made with ♥ by" line (the ♥ is rendered via one
+The status window is 400×190. Title and status are deliberately treated
+as one visual group (near-zero gap between them, then a wide gap before
+the footer): title is medium-weight (`FW_MEDIUM`) 19px in medium gray
+(RGB 95,95,95) — de-emphasized, since it barely changes after the first
+glance — while status is bold 16px near-black (RGB 15,15,15) — the line
+that actually matters moment to moment, so it needs to be the most
+visible text in the window, not the title. Below a thin inset
+separator (pushed well clear of the title/status group): an italic
+gray "Made with ♥ by" line (the ♥ is rendered via one
 `CreateWindowExW`/Unicode child STATIC control — the only Unicode
 window in an otherwise all-ANSI ("A" API) codebase, needed because the
 heart glyph isn't representable in the ANSI/Windows-1252 codepage;
 classic GDI static text can't render full-color emoji regardless of
 encoding, so this is the plain U+2665 heart symbol, not a colored
-emoji), and two clickable attribution links styled as classic
-underlined blue hyperlinks with a hand cursor on hover:
-- "System Integration and Infrastructure Solutions · Website" → https://siis.in
-- "Eashaan Thakur · LinkedIn" → https://www.linkedin.com/in/eashaan-thakur/
+emoji), then two attribution rows where only "Website"/"LinkedIn" are
+the actual link (the rest is plain gray text):
+- "System Integration and Infrastructure Solutions · **Website**" → https://siis.in
+- "Eashaan Thakur · **LinkedIn**" → https://www.linkedin.com/in/eashaan-thakur/
 
-Implemented as `SS_NOTIFY` static controls (not `SysLink`, so the whole
-line can stay centered) — a click fires `STN_CLICKED` via `WM_COMMAND`,
-handled in `WndProc()` by calling `ShellExecuteA(..., "open", <url>,
-...)`. Colors/fonts are set via `WM_CTLCOLORSTATIC`, matched by control
-ID (`IDC_STATUS`, `IDC_MADE_WITH`, `IDC_LINK_WEBSITE`,
-`IDC_LINK_LINKEDIN`). Purely cosmetic; if any of this is ever removed
-or restyled, nothing else depends on it.
+Implemented as **`SysLink`** controls (class `"SysLink"`, requires
+`InitCommonControlsEx(ICC_LINK_CLASS)` plus a `Microsoft.Windows.Common-
+Controls` v6 dependency in `kineobridge.manifest` for proper themed
+rendering) using `<A HREF="...">text</A>` markup, so only the tagged
+substring renders as a link (blue, underlined, its own hand cursor —
+SysLink handles all of that natively) while the surrounding text stays
+plain. Each row is created and then measured with its OWN real
+rendered width via `LM_GETIDEALHEIGHT` (mingw's header only has the
+older name for what Microsoft's docs call `LM_GETIDEALSIZE` — same
+message) and centered at that exact width in `create_centered_link()`
+— measured live on whatever machine it actually runs on, not guessed at
+build time, since this dev environment can't render a real Win32
+window to check text metrics directly. A click fires `NM_CLICK`/
+`NM_RETURN` via `WM_NOTIFY`, handled in `WndProc()` by calling
+`ShellExecuteA(..., "open", <url>, ...)`. Colors/fonts are set via
+`WM_CTLCOLORSTATIC`, matched by control ID (`IDC_TITLE`, `IDC_STATUS`,
+`IDC_MADE_WITH`, `IDC_LINK_WEBSITE`, `IDC_LINK_LINKEDIN`). Purely
+cosmetic; if any of this is ever removed or restyled, nothing else
+depends on it.
 
 Manifest: **`requireAdministrator`** (v1 product decision, 2026-09-27 —
 supersedes an earlier `asInvoker`-only design). One UAC prompt at
