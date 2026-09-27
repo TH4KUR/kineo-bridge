@@ -414,12 +414,28 @@ stays alive via its own **ChironLog** (not OS process polling alone; see
 §20 for the false-positive that made this necessary) -> hand off to the
 normal Kineo UI (status window closes).
 
-The status window's footer credits **System Integration and
-Infrastructure Solutions (siis.in)** and **Eashaaan
-(github.com/th4kur)** — small gray centered text below a thin
-separator, styled via a `WM_CTLCOLORSTATIC` handler in
-`create_status_window()`/`WndProc()`. Purely cosmetic; if it's ever
-removed or restyled, nothing else depends on it.
+The status window is 460×200 (grew from the original 360×90 across two
+passes for legibility and to fit the footer). Typography: bold 22px
+title, regular 15px dark-charcoal status text (visually distinct from
+the title, not competing with it), then below a thin inset separator:
+an italic gray "Made with ♥ by" line (the ♥ is rendered via one
+`CreateWindowExW`/Unicode child STATIC control — the only Unicode
+window in an otherwise all-ANSI ("A" API) codebase, needed because the
+heart glyph isn't representable in the ANSI/Windows-1252 codepage;
+classic GDI static text can't render full-color emoji regardless of
+encoding, so this is the plain U+2665 heart symbol, not a colored
+emoji), and two clickable attribution links styled as classic
+underlined blue hyperlinks with a hand cursor on hover:
+- "System Integration and Infrastructure Solutions · Website" → https://siis.in
+- "Eashaan Thakur · LinkedIn" → https://www.linkedin.com/in/eashaan-thakur/
+
+Implemented as `SS_NOTIFY` static controls (not `SysLink`, so the whole
+line can stay centered) — a click fires `STN_CLICKED` via `WM_COMMAND`,
+handled in `WndProc()` by calling `ShellExecuteA(..., "open", <url>,
+...)`. Colors/fonts are set via `WM_CTLCOLORSTATIC`, matched by control
+ID (`IDC_STATUS`, `IDC_MADE_WITH`, `IDC_LINK_WEBSITE`,
+`IDC_LINK_LINKEDIN`). Purely cosmetic; if any of this is ever removed
+or restyled, nothing else depends on it.
 
 Manifest: **`requireAdministrator`** (v1 product decision, 2026-09-27 —
 supersedes an earlier `asInvoker`-only design). One UAC prompt at

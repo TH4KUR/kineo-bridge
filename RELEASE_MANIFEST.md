@@ -356,8 +356,27 @@ Cosmetic only, no functional/behavioral change — the window grew
 slightly taller (90px -> 132px) to fit it. Reproducibility re-verified,
 icon re-verified byte-identical.
 
-Current sha256 (footer added, supersedes the launcher hash above):
+Current sha256 (footer added):
 ```
 KineoBridge.exe                    8f2b88b2b5a3716566979b65e68edb92561d4cd5b93a0f6e670c0bb45beb8a40
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
+
+## Status-window redesign (2026-09-27)
+
+Window grew 400×132 → 460×200; typography reworked for clearer title
+vs. status hierarchy (see `PROJECT_MEMORY.md` §19); attribution changed
+to "Made with ♥ by" plus two real clickable hyperlinks (Website →
+siis.in, LinkedIn → Eashaan Thakur's profile), styled as classic
+underlined blue links with a hand cursor on hover. Cosmetic/UI only —
+no functional change. Reproducibility and the embedded icon both
+re-verified unaffected. Text-width margin for the longest link line
+was estimated (no way to render/preview a live Win32 window from this
+dev environment) rather than visually confirmed — worth a quick look
+on real hardware.
+
+Current sha256 (redesign):
+```
+KineoBridge.exe                    156ebff3643884ece8bfd59846765fd1a35f46f94c0e7107cb8e8f136e856957
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)

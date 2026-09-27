@@ -23,6 +23,7 @@
  *     surfaced as a short native MessageBox, never a console dump.
  */
 #include <windows.h>
+#include <shellapi.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -77,25 +78,61 @@ static void log_line(const char *fmt, ...) {
 
 /* ================= tiny status UI ================= */
 
-#define IDC_TITLE   1
-#define IDC_STATUS  2
-#define IDC_ATTRIB1 3
-#define IDC_ATTRIB2 4
+#define IDC_TITLE          1
+#define IDC_STATUS         2
+#define IDC_MADE_WITH      3
+#define IDC_LINK_WEBSITE   4
+#define IDC_LINK_LINKEDIN  5
+
+#define URL_WEBSITE  "https://siis.in"
+#define URL_LINKEDIN "https://www.linkedin.com/in/eashaan-thakur/"
 
 static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     switch (msg) {
         case WM_DESTROY: PostQuitMessage(0); return 0;
         case WM_CTLCOLORSTATIC: {
-            /* Subtle gray attribution text, everything else keeps the
-             * default (black-on-window-background) look. */
             int id = GetDlgCtrlID((HWND)lp);
-            if (id == IDC_ATTRIB1 || id == IDC_ATTRIB2) {
-                HDC hdc = (HDC)wp;
-                SetTextColor(hdc, RGB(130, 130, 130));
+            HDC hdc = (HDC)wp;
+            /* Status text: dark charcoal, not pure black -- visually
+             * distinct from the bold black title above it. */
+            if (id == IDC_STATUS) {
+                SetTextColor(hdc, RGB(60, 60, 60));
+                SetBkMode(hdc, TRANSPARENT);
+                return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
+            }
+            /* "Made with (heart) by": small italic gray. */
+            if (id == IDC_MADE_WITH) {
+                SetTextColor(hdc, RGB(140, 140, 140));
+                SetBkMode(hdc, TRANSPARENT);
+                return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
+            }
+            /* The two attribution links: classic hyperlink blue. */
+            if (id == IDC_LINK_WEBSITE || id == IDC_LINK_LINKEDIN) {
+                SetTextColor(hdc, RGB(0, 102, 204));
                 SetBkMode(hdc, TRANSPARENT);
                 return (LRESULT)GetSysColorBrush(COLOR_WINDOW);
             }
             return DefWindowProc(hwnd, msg, wp, lp);
+        }
+        case WM_SETCURSOR: {
+            /* Hand cursor over either clickable attribution link. */
+            int id = GetDlgCtrlID((HWND)wp);
+            if (id == IDC_LINK_WEBSITE || id == IDC_LINK_LINKEDIN) {
+                SetCursor(LoadCursor(NULL, IDC_HAND));
+                return TRUE;
+            }
+            return DefWindowProc(hwnd, msg, wp, lp);
+        }
+        case WM_COMMAND: {
+            /* STN_CLICKED on an SS_NOTIFY static -- open the link. */
+            if (HIWORD(wp) == STN_CLICKED) {
+                int id = LOWORD(wp);
+                if (id == IDC_LINK_WEBSITE)
+                    ShellExecuteA(NULL, "open", URL_WEBSITE, NULL, NULL, SW_SHOWNORMAL);
+                else if (id == IDC_LINK_LINKEDIN)
+                    ShellExecuteA(NULL, "open", URL_LINKEDIN, NULL, NULL, SW_SHOWNORMAL);
+            }
+            return 0;
         }
         default: return DefWindowProc(hwnd, msg, wp, lp);
     }
@@ -110,9 +147,10 @@ static HWND create_status_window(HINSTANCE hinst) {
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     RegisterClassA(&wc);
 
+    const int WIN_W = 460, WIN_H = 200;
     HWND hwnd = CreateWindowExA(WS_EX_TOOLWINDOW | WS_EX_TOPMOST, wc.lpszClassName,
         "Kineo Bridge", WS_POPUP | WS_BORDER | WS_VISIBLE,
-        CW_USEDEFAULT, CW_USEDEFAULT, 360, 132, NULL, NULL, hinst, NULL);
+        CW_USEDEFAULT, CW_USEDEFAULT, WIN_W, WIN_H, NULL, NULL, hinst, NULL);
     if (!hwnd) return NULL;
 
     /* Center on the primary monitor -- CW_USEDEFAULT doesn't reliably
@@ -122,31 +160,53 @@ static HWND create_status_window(HINSTANCE hinst) {
     int sx = GetSystemMetrics(SM_CXSCREEN), sy = GetSystemMetrics(SM_CYSCREEN);
     SetWindowPos(hwnd, NULL, (sx - w) / 2, (sy - h) / 2, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
+    /* Title: bold, larger -- the clear visual anchor. */
     CreateWindowExA(0, "STATIC", "Kineo Bridge", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 8, 340, 20, hwnd, (HMENU)IDC_TITLE, hinst, NULL);
-    HFONT bold = CreateFontA(18, 0, 0, 0, FW_BOLD, 0, 0, 0, ANSI_CHARSET,
+        10, 14, 440, 28, hwnd, (HMENU)IDC_TITLE, hinst, NULL);
+    HFONT title_font = CreateFontA(-22, 0, 0, 0, FW_BOLD, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
-    SendDlgItemMessageA(hwnd, IDC_TITLE, WM_SETFONT, (WPARAM)bold, TRUE);
+    SendDlgItemMessageA(hwnd, IDC_TITLE, WM_SETFONT, (WPARAM)title_font, TRUE);
 
+    /* Status: regular weight, distinct size/color from the title above
+     * -- reads clearly as a secondary line, not competing with it. */
     CreateWindowExA(0, "STATIC", "Starting...", WS_CHILD | WS_VISIBLE | SS_CENTER,
-        10, 34, 340, 34, hwnd, (HMENU)IDC_STATUS, hinst, NULL);
-
-    /* Thin separator + small attribution footer. */
-    CreateWindowExA(0, "STATIC", "", WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
-        10, 74, 340, 2, hwnd, NULL, hinst, NULL);
-
-    HWND attrib1 = CreateWindowExA(0, "STATIC",
-        "System Integration and Infrastructure Solutions (siis.in)",
-        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 82, 340, 16, hwnd,
-        (HMENU)IDC_ATTRIB1, hinst, NULL);
-    HWND attrib2 = CreateWindowExA(0, "STATIC",
-        "Eashaaan  \xB7  github.com/th4kur",
-        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 98, 340, 16, hwnd,
-        (HMENU)IDC_ATTRIB2, hinst, NULL);
-    HFONT small_font = CreateFontA(-12, 0, 0, 0, FW_NORMAL, 0, 0, 0, ANSI_CHARSET,
+        10, 50, 440, 44, hwnd, (HMENU)IDC_STATUS, hinst, NULL);
+    HFONT status_font = CreateFontA(-15, 0, 0, 0, FW_NORMAL, 0, 0, 0, ANSI_CHARSET,
         OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
-    SendMessageA(attrib1, WM_SETFONT, (WPARAM)small_font, TRUE);
-    SendMessageA(attrib2, WM_SETFONT, (WPARAM)small_font, TRUE);
+    SendDlgItemMessageA(hwnd, IDC_STATUS, WM_SETFONT, (WPARAM)status_font, TRUE);
+
+    /* Thin inset separator, then the attribution footer. */
+    CreateWindowExA(0, "STATIC", "", WS_CHILD | WS_VISIBLE | SS_ETCHEDHORZ,
+        20, 104, 420, 2, hwnd, NULL, hinst, NULL);
+
+    /* "Made with <heart> by" -- a Unicode child window (created via the
+     * -W API) is used only here so the heart glyph (U+2665) renders
+     * correctly; every other control in this app stays on the ANSI ("A")
+     * API to match the rest of the codebase. Classic GDI static text
+     * can't do full-color emoji regardless of encoding, so this is the
+     * plain heart symbol, not a colored emoji glyph. */
+    HWND made_with = CreateWindowExW(0, L"STATIC", L"Made with \x2665 by",
+        WS_CHILD | WS_VISIBLE | SS_CENTER, 10, 112, 440, 18, hwnd,
+        (HMENU)IDC_MADE_WITH, hinst, NULL);
+    HFONT italic_font = CreateFontA(-13, 0, 0, 0, FW_NORMAL, TRUE, 0, 0, ANSI_CHARSET,
+        OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
+    SendMessageW(made_with, WM_SETFONT, (WPARAM)italic_font, TRUE);
+
+    /* Two clickable attribution links (SS_NOTIFY -> STN_CLICKED,
+     * handled in WndProc's WM_COMMAND above). Underlined font makes
+     * them read as links even before the hover cursor confirms it. */
+    HWND link_website = CreateWindowExA(0, "STATIC",
+        "System Integration and Infrastructure Solutions \xB7 Website",
+        WS_CHILD | WS_VISIBLE | SS_CENTER | SS_NOTIFY, 10, 132, 440, 18,
+        hwnd, (HMENU)IDC_LINK_WEBSITE, hinst, NULL);
+    HWND link_linkedin = CreateWindowExA(0, "STATIC",
+        "Eashaan Thakur \xB7 LinkedIn",
+        WS_CHILD | WS_VISIBLE | SS_CENTER | SS_NOTIFY, 10, 150, 440, 18,
+        hwnd, (HMENU)IDC_LINK_LINKEDIN, hinst, NULL);
+    HFONT link_font = CreateFontA(-12, 0, 0, 0, FW_NORMAL, FALSE, TRUE, 0, ANSI_CHARSET,
+        OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Segoe UI");
+    SendMessageA(link_website, WM_SETFONT, (WPARAM)link_font, TRUE);
+    SendMessageA(link_linkedin, WM_SETFONT, (WPARAM)link_font, TRUE);
 
     ShowWindow(hwnd, SW_SHOW);
     UpdateWindow(hwnd);
