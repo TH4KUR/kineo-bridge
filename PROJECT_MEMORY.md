@@ -4,6 +4,31 @@ This is the durable handoff document. Read this first in any new session
 before touching code. It should let a fresh Claude Code session resume
 without rediscovering anything below.
 
+## 0. Repository
+
+- Private GitHub repo: **https://github.com/TH4KUR/kineo-bridge** (branch
+  `master`). All source, docs, and dev tooling described here are pushed
+  there as of this writing.
+- Tag **`v1.0.0-rc1`**: the first packaged-build validation state (see
+  `RELEASE_MANIFEST.md`, "First clean multi-run result" and "Icon
+  update"). Not yet full golden acceptance — see §23.
+- If this repo directory (`~/kineo-bridge/` in this project's dev
+  environment) is ever missing or a fresh session starts from scratch,
+  `git clone` from the URL above recovers everything needed — **except**
+  one external runtime dependency that is intentionally NOT in git (see
+  next bullet).
+- **Critical external dependency, not in this repo, must never be
+  deleted**: `~/aravis-0.8.36/` (the built Aravis 0.8.36 library —
+  specifically `~/aravis-0.8.36/build/src/`) is loaded at runtime by the
+  WSL-side bridge via `GI_TYPELIB_PATH`/`LD_LIBRARY_PATH` (see §10, §19).
+  It is a large third-party built C library, deliberately excluded from
+  git — but without it, the camera bridge cannot function at all, and
+  rebuilding it from source is nontrivial. If it's ever gone, it must be
+  rebuilt from the Aravis 0.8.36 source release before anything camera-
+  related will work again. This is NOT documented anywhere else — this
+  is the one thing to check first if the bridge mysteriously stops
+  working after any environment cleanup.
+
 ## 1. Purpose
 
 Make a specific USB3 camera work with Kineo Software (a Windows Electron
