@@ -358,6 +358,17 @@ double-click `KineoBridge.exe`.
 
 ## 19. Launcher behavior (KineoBridge.exe)
 
+`KineoBridge.exe`'s icon (Explorer/taskbar) is Kineo's own app icon,
+extracted directly from `C:\IMVapps\Kineo Software\Kineo Software.exe`
+via `launcher/extract_pe_icon.py` (a small dependency-free PE resource
+parser written because `icoutils`/`pefile` weren't available in this
+environment) into `launcher/kineo_icon.ico`, embedded via `1 ICON
+"kineo_icon.ico"` in `kineobridge.rc`. Verified byte-identical by
+re-extracting it back out of the built `KineoBridge.exe` and diffing.
+To refresh it after a Kineo update: re-run
+`python3 launcher/extract_pe_icon.py "<path to Kineo Software.exe>"
+launcher/kineo_icon.ico` and rebuild.
+
 Source: `launcher/kineobridge_launcher.c` (native Win32 GUI app, no
 console window, `mingw-w64`-built). Sequence: check Kineo install exists
 -> close any stale Kineo process -> deploy its own `payload\` (next to
@@ -603,6 +614,8 @@ wsl-camera/bridge_status.py        -- health-status file writer/reader
 launcher/kineobridge_launcher.c    -- KineoBridge.exe source
 launcher/build_launcher.sh         -- launcher build
 launcher/kineobridge.manifest      -- requireAdministrator manifest
+launcher/kineo_icon.ico            -- Kineo's own icon, extracted (see section 19)
+launcher/extract_pe_icon.py        -- dependency-free PE icon extractor
 
 scripts/lib_common.sh              -- shared constants + show_modal()
 scripts/lib_usbip.sh               -- USB/IP detection/recovery (bash, dev tooling)

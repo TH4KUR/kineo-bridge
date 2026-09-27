@@ -1,5 +1,11 @@
 #include <winuser.h>
 
+/* Lowest-ID icon resource becomes the exe's default (Explorer/taskbar)
+ * icon. Extracted directly from Kineo's own "Kineo Software.exe" (see
+ * extract_pe_icon.py) so KineoBridge.exe visually matches the product
+ * it launches -- not a third-party icon, same product family. */
+1 ICON "kineo_icon.ico"
+
 1 24 "kineobridge.manifest"
 
 1 VERSIONINFO

@@ -329,3 +329,20 @@ Analysis 76 and 77).
   -Wextra` dropped, `-s` added, `--no-insert-timestamp` added) until
   they behave identically, per the standing instruction not to ship a
   release CTI that hasn't been proven equivalent.
+
+## Icon update (2026-09-27)
+
+`KineoBridge.exe` now shows Kineo's own application icon (extracted
+from `Kineo Software.exe`, see `PROJECT_MEMORY.md` §19). Verified
+byte-identical by re-extracting the icon back out of the rebuilt exe
+and diffing against the source `.ico`. Reproducibility re-verified
+(unchanged). This changed only `launcher/kineobridge.rc` (added the
+icon statement) — no functional/behavioral code changed, so the seven
+bug fixes and the 3-analysis validation result above still apply
+unchanged to this build.
+
+Current sha256 (icon added, supersedes the launcher hash above):
+```
+KineoBridge.exe                    4c4c96e26255e4e0c653a7181234778f9316d7f5d7f27e7c7a9d4632a4550a54
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
