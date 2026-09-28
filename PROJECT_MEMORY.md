@@ -516,34 +516,50 @@ portable/dynamic resolution:
 
 **Third, added 2026-09-28 as the real backstop** (the two path checks
 above are trivially defeated by anyone who just recreates the expected
-username/directories — this one is not): a hardware fingerprint check.
-`get_hardware_fingerprint()` queries `Win32_BaseBoard.SerialNumber` +
-`Win32_ComputerSystemProduct.UUID` + first `Win32_DiskDrive.SerialNumber`
-via WMI (`powershell.exe -NoProfile -Command 'Get-CimInstance ...'`,
-joined as `"$bb|$bios|$disk"`), hashes it with `hw_sha256_hex()` (SHA-256
-via Windows' own BCrypt API, no hand-rolled crypto), and compares
-against `EXPECTED_HW_HASH`, a hardcoded hex digest, in `WinMain()`
-right after the path check (fails with `KB-ENV-002` on mismatch).
-**Deliberately no key involved, private or otherwise** — this is a
-plain one-way hash comparison, not a signature. A private key embedded
-in shipped code would be a real security mistake here, not just a
-style choice: anyone who extracts it (trivial for a native, only
-lightly-stripped .exe) could forge a valid credential for ANY machine,
-which defeats the point more thoroughly than what it would replace.
-Only the hash is embedded in the binary (verified via `strings` — the
-raw hardware identifiers themselves are NOT present, only their
-one-way digest), and the launcher's own log deliberately only logs
-pass/fail booleans, never the fingerprint or hash values, so the log
-file itself can't be used to help bypass this. This machine's real
-fingerprint (verified byte-exact between the build-time query used to
-compute the hash and the runtime trim logic, including the CRLF
-line-ending strip) was:
+username/directories — this one is not): a hardware fingerprint check,
+upgraded the same day from a plain hash comparison to a real ECDSA
+P-256 **signature**. `get_hardware_fingerprint()` queries
+`Win32_BaseBoard.SerialNumber` + `Win32_ComputerSystemProduct.UUID` +
+first `Win32_DiskDrive.SerialNumber` via WMI (`powershell.exe
+-NoProfile -Command 'Get-CimInstance ...'`, joined as
+`"$bb|$bios|$disk"`), hashes it with `hw_sha256_raw()` (SHA-256 via
+Windows' own BCrypt API), and `verify_hw_signature()` verifies
+`HW_SIGNATURE` against that hash using the embedded `HW_PUBKEY_X`/
+`HW_PUBKEY_Y` (`BCryptVerifySignature`, `ECDSA_P256`) in `WinMain()`
+right after the path check — fails closed with `KB-ENV-002` on any
+mismatch or error.
+
+**Key handling**: a real ECDSA P-256 keypair was generated once
+(`openssl ecparam -genkey`), offline, in `launcher/private/` (gitignored
+— explicit directory exclusion in `.gitignore`, not just the `*.pem`
+pattern, since the private key is stored encrypted-at-rest as
+`signing_key.pem.enc`, a `*.pem.enc` file the plain `*.pem` glob would
+have missed). The private key is AES-256 passphrase-encrypted and
+**never leaves that directory and never ships** — only the PUBLIC key
+(`HW_PUBKEY_X`/`Y`) and the one resulting SIGNATURE (`HW_SIGNATURE`,
+produced by signing this machine's fingerprint string once) are
+embedded in the binary. Verified via `strings` that neither the private
+key, the passphrase, nor the raw hardware identifiers are present in
+the built exe — only the public key bytes and the signature bytes are.
+This is meaningfully stronger than a plain hash comparison: patching a
+hardcoded expected hash to accept a new fingerprint needs no secret at
+all, but producing a new valid signature requires the private key,
+which isn't present anywhere in the shipped artifact or the git repo.
+(Standard caveat that applies to any client-side check, signature-based
+or not: someone willing to binary-patch out the verification call
+entirely can always do that — no purely client-side check prevents
+that class of attack.) The launcher's own log deliberately only logs
+pass/fail booleans, never the fingerprint, digest, or signature values.
+
+This machine's real fingerprint (verified byte-exact between the
+build-time signing input and the runtime trim logic, including the
+CRLF line-ending strip) was:
 `A122221111B8602A|FDBB7861-D56E-FBA1-2371-B568E5A71537|E823_8FA6_BF53_0001_001B_448B_4DC2_A75C.`
-→ sha256 `d0da8bd7b55e7c5fb260d1a99911cc43b42de6aca03fe7d5174fa632678be6c9`.
 Recorded here (not just in the source comment) so a fresh session
 without git blame handy still knows exactly what this was computed
-from and why, should the machine's hardware ever change and this need
-recomputing.
+from and why, should the machine's hardware ever change and the
+private key (in `launcher/private/`, only present on the machine that
+generated it — not recoverable from git) need to sign a new fingerprint.
 
 All three constants are defined together right after `PHYSICAL_MAX_FPS`
 in `kineobridge_launcher.c`, with comments explaining they're

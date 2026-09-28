@@ -46,3 +46,9 @@ probe/m5/launch_kineo_*.ps1.bak
 *.pfx
 *license_signing_key*
 .env
+# Hardware-lock signing key (private, offline-only -- see
+# PROJECT_MEMORY.md's "Machine lock" note). Explicit directory
+# exclusion, not just *.pem, since the private key is encrypted at
+# rest as signing_key.pem.enc (a *.pem.enc file, which the *.pem glob
+# above does not match).
+launcher/private/

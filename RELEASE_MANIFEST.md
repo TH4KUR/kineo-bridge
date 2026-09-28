@@ -505,3 +505,22 @@ Current sha256:
 KineoBridge.exe                    3fccb6631acfe89f396fa7358b57719890760f9b2e11ff497777585b15a2b195
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## Hardware lock upgraded to a real signature (2026-09-28)
+
+User-directed correction to the previous plain-hash approach: a real
+ECDSA P-256 keypair was generated offline (`launcher/private/`,
+gitignored, encrypted-at-rest, never shipped). This machine's hardware
+fingerprint was signed once with the private key; only the public key
+and that one signature are embedded in the binary. Verified via
+`strings` that no private key material, passphrase, or raw hardware
+identifier is present in the shipped exe. Live-tested end to end on
+real hardware: signature verification passes (`fp_ok=1 match=1`),
+camera/bridge/Kineo all completed normally on the first attempt.
+Reproducibility and the embedded icon both re-verified unaffected.
+
+Current sha256:
+```
+KineoBridge.exe                    b01a2e3447220cb3e65e9b5dd4cc9ce88f834d80de81afc9d5d62d845a74b61d
+```
+(CTI, XML, and `.pyc` hashes unchanged.)

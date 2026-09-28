@@ -53,28 +53,52 @@
 /* Hardware fingerprint lock (2026-09-28, deliberate, user-directed):
  * the WIN_LOCK_PATH check above only catches someone who didn't bother
  * to recreate the expected username/directories -- trivial to work
- * around by literally just imitating them on another machine. This is
- * the real backstop: SHA-256 of "<motherboard serial>|<BIOS/system
- * UUID>|<first disk serial>", queried fresh at every launch via WMI
- * (get_hardware_fingerprint()) and hashed with Windows' own BCrypt API
- * (hw_sha256_hex()), compared against this ONE hardcoded expected
- * hash. There is deliberately no key here, private or otherwise --
- * this is a plain hash comparison, not a signature. A private key
- * embedded in a shipped binary would be pointless: whoever extracts it
- * (trivial for a native, only lightly-stripped .exe) could sign a
- * valid credential for ANY machine, which defeats the entire point
- * more thoroughly than what this replaces. Hashing real hardware
- * identifiers means bypassing this means actually faking hardware
- * identifiers, not copying a folder. Computed once, for this exact
- * machine, via:
- *   powershell.exe -NoProfile -Command '$bb=(Get-CimInstance
- *   Win32_BaseBoard).SerialNumber; $bios=(Get-CimInstance
- *   Win32_ComputerSystemProduct).UUID; $disk=(Get-CimInstance
- *   Win32_DiskDrive | Select-Object -First 1).SerialNumber;
- *   Write-Output "$bb|$bios|$disk"'
- * -- see PROJECT_MEMORY.md's "Machine lock" note for the exact
- * verified fingerprint string this hash was computed from. */
-#define EXPECTED_HW_HASH   "d0da8bd7b55e7c5fb260d1a99911cc43b42de6aca03fe7d5174fa632678be6c9"
+ * around by literally just imitating them on another machine. The real
+ * backstop is a real ECDSA P-256 signature, not a plain hash:
+ *
+ *   1. get_hardware_fingerprint() queries "<motherboard serial>|<BIOS/
+ *      system UUID>|<first disk serial>" via WMI, fresh at every launch.
+ *   2. hw_sha256_hex() hashes it (Windows' own BCrypt API, no
+ *      hand-rolled crypto).
+ *   3. verify_hw_signature() verifies HW_SIGNATURE against that hash
+ *      using the embedded HW_PUBKEY_X/Y (BCryptVerifySignature,
+ *      ECDSA_P256) -- fails closed on any mismatch.
+ *
+ * HW_SIGNATURE was produced ONCE, offline, by signing this exact
+ * machine's fingerprint with a private ECDSA P-256 key that was
+ * generated in launcher/private/ (gitignored, never committed, never
+ * embedded in the binary -- passphrase-encrypted at rest as an extra
+ * layer). Only the PUBLIC key and the one resulting SIGNATURE are
+ * embedded here; forging a signature for a different machine's
+ * fingerprint would require that private key, not just reading this
+ * source or disassembling the binary. This is meaningfully stronger
+ * than the plain-hash-comparison this replaces: patching a hardcoded
+ * expected hash to match a new fingerprint needs no secret at all,
+ * but producing a new valid signature does. (Standard caveat that
+ * applies to ANY client-side check, signature-based or not: someone
+ * willing to binary-patch out the verification call entirely can
+ * always do that -- no purely client-side check can prevent that.)
+ * Fingerprint this was computed from (see PROJECT_MEMORY.md's
+ * "Machine lock" note):
+ *   A122221111B8602A|FDBB7861-D56E-FBA1-2371-B568E5A71537|E823_8FA6_BF53_0001_001B_448B_4DC2_A75C. */
+static const unsigned char HW_PUBKEY_X[32] = {
+    0x14, 0x9f, 0xc5, 0x90, 0xe0, 0x70, 0xbb, 0x5f, 0xa5, 0x92, 0x8d, 0x7e,
+    0xaa, 0x12, 0x83, 0x20, 0xea, 0x50, 0xb0, 0xfc, 0x16, 0x54, 0x54, 0xa2,
+    0x93, 0x12, 0x80, 0xc4, 0x9f, 0x86, 0xb3, 0x08,
+};
+static const unsigned char HW_PUBKEY_Y[32] = {
+    0x89, 0xc0, 0x3d, 0x90, 0x13, 0x07, 0x75, 0x31, 0xfa, 0xc3, 0x68, 0x0f,
+    0xb6, 0x18, 0xe8, 0x5e, 0xd9, 0xa1, 0x7f, 0x90, 0x88, 0x3b, 0x8d, 0x5a,
+    0xae, 0xaf, 0x89, 0x5f, 0x66, 0xa5, 0xae, 0x48,
+};
+static const unsigned char HW_SIGNATURE[64] = {
+    0x74, 0x7e, 0x7a, 0xdb, 0x68, 0xf3, 0x0f, 0x2a, 0xae, 0xa9, 0x04, 0x85,
+    0x43, 0xdf, 0x5e, 0x27, 0x35, 0x87, 0x35, 0x20, 0x9e, 0xc7, 0x5b, 0x03,
+    0xd2, 0xa2, 0x2d, 0xe9, 0x47, 0xc2, 0x50, 0xa3, 0xc3, 0xb0, 0x1f, 0xc7,
+    0x84, 0x44, 0xe1, 0x47, 0x82, 0x0a, 0x27, 0xb6, 0x9e, 0x6e, 0xeb, 0xef,
+    0x09, 0xce, 0x71, 0xbc, 0x70, 0xdf, 0x48, 0xf4, 0x70, 0xd9, 0xdb, 0x7d,
+    0xf3, 0x63, 0x10, 0x19,
+};
 #define PRODUCT_NAME       "KineoBridge"
 #define PRODUCT_VERSION    "1.0.0"
 #define LOG_DIR            "C:\\ProgramData\\KineoBridge\\logs"
@@ -350,22 +374,52 @@ static int run_capture(const char *cmdline, char *out, size_t bufcap, DWORD time
     return (int)exit_code;
 }
 
-static int hw_sha256_hex(const char *data, size_t len, char hexout[65]) {
+static int hw_sha256_raw(const char *data, size_t len, unsigned char digest[32]) {
     BCRYPT_ALG_HANDLE alg = NULL;
     BCRYPT_HASH_HANDLE hash = NULL;
-    UCHAR digest[32];
     int ok = 0;
     if (BCryptOpenAlgorithmProvider(&alg, BCRYPT_SHA256_ALGORITHM, NULL, 0) != 0) return 0;
     if (BCryptCreateHash(alg, &hash, NULL, 0, NULL, 0, 0) == 0) {
         if (BCryptHashData(hash, (PUCHAR)data, (ULONG)len, 0) == 0 &&
-            BCryptFinishHash(hash, digest, sizeof digest, 0) == 0) {
-            for (int i = 0; i < 32; i++) sprintf(hexout + i * 2, "%02x", digest[i]);
-            hexout[64] = '\0';
+            BCryptFinishHash(hash, digest, 32, 0) == 0) {
             ok = 1;
         }
         BCryptDestroyHash(hash);
     }
     BCryptCloseAlgorithmProvider(alg, 0);
+    return ok;
+}
+
+#pragma pack(push, 1)
+typedef struct { BCRYPT_ECCKEY_BLOB hdr; unsigned char x[32]; unsigned char y[32]; } hw_ecc_pub_blob_t;
+#pragma pack(pop)
+
+/* Verifies HW_SIGNATURE against SHA-256(fingerprint) using the
+ * embedded HW_PUBKEY_X/Y (ECDSA P-256, Windows BCrypt API). Fails
+ * closed: any error anywhere in this chain returns 0 (not verified). */
+static int verify_hw_signature(const char *fingerprint) {
+    unsigned char digest[32];
+    if (!hw_sha256_raw(fingerprint, strlen(fingerprint), digest)) return 0;
+
+    hw_ecc_pub_blob_t blob;
+    blob.hdr.dwMagic = BCRYPT_ECDSA_PUBLIC_P256_MAGIC;
+    blob.hdr.cbKey = 32;
+    memcpy(blob.x, HW_PUBKEY_X, 32);
+    memcpy(blob.y, HW_PUBKEY_Y, 32);
+
+    BCRYPT_ALG_HANDLE alg = NULL;
+    BCRYPT_KEY_HANDLE key = NULL;
+    int ok = 0;
+    if (BCryptOpenAlgorithmProvider(&alg, BCRYPT_ECDSA_P256_ALGORITHM, NULL, 0) == 0) {
+        if (BCryptImportKeyPair(alg, NULL, BCRYPT_ECCPUBLIC_BLOB, &key,
+                                 (PUCHAR)&blob, sizeof blob, 0) == 0) {
+            NTSTATUS st = BCryptVerifySignature(key, NULL, digest, sizeof digest,
+                                                 (PUCHAR)HW_SIGNATURE, sizeof HW_SIGNATURE, 0);
+            ok = (st == 0);
+            BCryptDestroyKey(key);
+        }
+        BCryptCloseAlgorithmProvider(alg, 0);
+    }
     return ok;
 }
 
@@ -930,17 +984,15 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprev, LPSTR cmdline, int nshow) {
         return 1;
     }
 
-    /* Hardware fingerprint lock (see EXPECTED_HW_HASH above) -- the
-     * real backstop, checked after the cheap path check so a wrong
-     * machine fails fast without spawning PowerShell/WMI in the common
-     * case, but still before the status window. */
+    /* Hardware fingerprint lock (see HW_PUBKEY_X/Y/HW_SIGNATURE above)
+     * -- the real backstop, checked after the cheap path check so a
+     * wrong machine fails fast without spawning PowerShell/WMI in the
+     * common case, but still before the status window. */
     {
         char fp[512];
-        char digest[65];
         int fp_ok = get_hardware_fingerprint(fp, sizeof fp);
-        int hash_ok = fp_ok && hw_sha256_hex(fp, strlen(fp), digest);
-        int match = hash_ok && strcmp(digest, EXPECTED_HW_HASH) == 0;
-        log_line("hw lock: fp_ok=%d hash_ok=%d match=%d", fp_ok, hash_ok, match);
+        int match = fp_ok && verify_hw_signature(fp);
+        log_line("hw lock: fp_ok=%d match=%d", fp_ok, match);
         if (!match) {
             MessageBoxA(NULL,
                 "Kineo Bridge could not start on this machine.\n\n"
