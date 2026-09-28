@@ -834,13 +834,34 @@ static int chiron_log_check(const char *path, long from_line, int *out_ok) {
 
 static int launch_and_verify_kineo(void) {
     char chiron_path[MAX_PATH] = "";
-    long mark = 0;
-    if (find_chiron_log(chiron_path, sizeof chiron_path)) {
-        mark = chiron_log_line_count(chiron_path);
-    }
-    log_line("launch_and_verify_kineo: chiron_path=[%s] mark=%ld", chiron_path, mark);
+    find_chiron_log(chiron_path, sizeof chiron_path);
 
     for (int attempt = 1; attempt <= 2; attempt++) {
+        /* Real bug, found 2026-09-28 (a genuine Kineo-side crash,
+         * STATUS_STACK_BUFFER_OVERRUN in KineoDeviceService.exe, right
+         * after its own log warned "Running KineoDeviceService
+         * processus found" -- i.e. a leftover, not-yet-cleaned-up
+         * instance): previously `mark` was computed ONCE before this
+         * loop, so a retry's ChironLog scan window still included the
+         * PREVIOUS attempt's own failure line -- attempt 2 would see
+         * attempt 1's stale error and report failure almost instantly
+         * (observed: ~1s, far too fast to be a real signal from attempt
+         * 2's own process), never giving attempt 2 a fair chance. Also,
+         * nothing killed attempt 1's process tree before attempt 2
+         * launched a SECOND "Kineo Software.exe" on top of it -- the
+         * likely real cause of the orphaned KineoDeviceService.exe.
+         * Fixed: re-mark fresh before every attempt, and clean up any
+         * previous attempt's processes first. */
+        if (attempt > 1) {
+            run_capture("taskkill.exe /IM \"" KINEO_EXE_NAME "\" /F", NULL, 0, 5000);
+            run_capture("taskkill.exe /IM \"KineoDeviceService.exe\" /F", NULL, 0, 5000);
+            Sleep(1500);
+            find_chiron_log(chiron_path, sizeof chiron_path);
+        }
+        long mark = chiron_path[0] ? chiron_log_line_count(chiron_path) : 0;
+        log_line("launch_and_verify_kineo: attempt=%d chiron_path=[%s] mark=%ld",
+                  attempt, chiron_path, mark);
+
         size_t env_len; char *env = build_kineo_env(&env_len);
         STARTUPINFOA si = { sizeof(si) };
         PROCESS_INFORMATION pi = {0};

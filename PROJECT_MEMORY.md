@@ -605,6 +605,23 @@ exe itself after the customer-deployability tradeoff was flagged).
 
 ## 21. Do-not-regress rules
 
+- In `launch_and_verify_kineo()`'s 2-attempt retry loop: never compute
+  the ChironLog `mark` (scan start line) once before the loop — it must
+  be recomputed fresh at the start of EVERY attempt. And before any
+  attempt after the first, always kill both `Kineo Software.exe` and
+  `KineoDeviceService.exe` first. A real bug (found 2026-09-28): a
+  stale `mark` meant a retry's scan window still included the PREVIOUS
+  attempt's own failure line, so the retry could report failure almost
+  instantly (observed ~1s) without giving its own freshly-launched
+  process any real chance — and because nothing killed the first
+  attempt's process tree, the second attempt's "Kineo Software.exe"
+  launched on top of a still-running (or crashing) first-attempt
+  "KineoDeviceService.exe", which is the most likely real cause of a
+  genuine Kineo-side crash observed the same day (`Child process exited
+  with code: 3221226505` / `STATUS_STACK_BUFFER_OVERRUN`, preceded by
+  Kineo's own log warning `"Running KineoDeviceService processus
+  found"` — i.e. a leftover instance it didn't expect). Verified fixed:
+  a subsequent clean run succeeded on attempt 1 with no retry needed.
 - Never make `WSL_HOME`/`WIN_LOCK_PATH` (kineobridge_launcher.c) or the
   machine-lock check in `WinMain()` dynamic/portable again without
   explicit confirmation from whoever's directing the work — this is a

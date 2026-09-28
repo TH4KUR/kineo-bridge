@@ -482,3 +482,26 @@ Current sha256:
 KineoBridge.exe                    1257785aaeebd4b3d290df04227bba8c6620cf7e65850bfa8d09e23dfcd86f9c
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## Retry-loop bug found and fixed (2026-09-28)
+
+Live-tested the hardware lock (passed correctly, `match=1`); the very
+next thing observed was a real Kineo-side crash on a retry
+(`KB-KINEO-002`, `Child process exited with code: 3221226505` =
+`STATUS_STACK_BUFFER_OVERRUN` in `KineoDeviceService.exe`, preceded by
+Kineo's own log warning about an unexpected leftover instance) —
+unrelated to the hardware lock itself. Root-caused to a real bug in the
+2-attempt retry loop: the ChironLog scan `mark` was computed once
+before the loop instead of fresh per attempt (so a retry's scan window
+still included the previous attempt's own failure line, causing a
+near-instant false failure ~1s in), and nothing killed the first
+attempt's process tree before the second attempt launched a new "Kineo
+Software.exe" on top of it. Fixed both; verified with a subsequent
+clean run succeeding on attempt 1, no retry needed. Reproducibility and
+the embedded icon both re-verified unaffected.
+
+Current sha256:
+```
+KineoBridge.exe                    3fccb6631acfe89f396fa7358b57719890760f9b2e11ff497777585b15a2b195
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
