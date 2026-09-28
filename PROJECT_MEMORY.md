@@ -295,6 +295,24 @@ much riskier "pre-roll" approach.
   is NOT true within a live session anymore (the 60fps lifecycle fixed
   that) — only between sessions. Not a priority to chase further; the
   launcher handles it automatically and invisibly to the user.
+- **`scripts/wsl_warmup.ps1`** (2026-09-27): an optional native
+  PowerShell script (not bash — has to drive `wsl.exe`/`usbipd.exe`
+  before WSL itself is even up), meant to run at Windows login, that
+  addresses two further real causes of `KB-USB-003` beyond what the
+  launcher's own bounded retry budget can absorb: (1) a cold WSL2 VM
+  boot race — `usbipd`'s Shared/bind state survives a reboot but the
+  WSL-side attach does not, and a genuine cold boot can outlast
+  `ensure_camera_ready()`'s retry budget; (2) WSL2's own idle-shutdown
+  silently drops the attach again later even with no reboot in between
+  (confirmed via `Get-Process vmwp` showing a fresh VM worker start
+  time hours after a successful attach) — the script keeps one trivial
+  `sleep infinity` process alive in the distro (via `flock` as an
+  atomic OS-level singleton, not a captured PID — `$!` was found
+  unreliable through this exact interop path, see §21) so WSL never
+  considers itself idle between login and whenever the user actually
+  opens Kineo. Never touches the registry/`.wslconfig`, never needs
+  elevation. **Not yet wired into the installer/release payload** —
+  deploy manually (e.g. Task Scheduler, "At log on" trigger) if used.
 
 ## 15. Start / cancel / stop behavior
 
@@ -635,6 +653,24 @@ assume from a successful launch alone.
   exited, with both `setsid` and the trailing `sleep 1` in place. Any
   future WSL-side background process this launcher starts (not just
   the bridge) needs the same treatment.
+- In `deploy_and_start_bridge()`: never capture the bridge's PID via
+  `$!`, even with the `cd`-as-separate-statement fix above applied. A
+  real bug (found 2026-09-27, investigating a `KB-USB-003` report that
+  turned out to be unrelated to camera/USB entirely): `$!` itself is
+  unreliable specifically through the `wsl.exe -- bash -lc "..."`
+  interop path in this environment — a minimal isolated repro,
+  `wsl.exe -- bash -c 'sleep 5 & echo $!'` run from a genuine native
+  Windows process, printed an EMPTY PID every time; the real, shipped
+  `bridge.pid` matched exactly (a bare newline, no digits), meaning
+  `stop_bridge()`'s `kill "$(cat bridge.pid)"` had been silently a
+  no-op all along. Fixed by never relying on `$!` at all: the
+  backgrounded command is now `bash -c 'echo $$ > bridge.pid; exec
+  python3 ...'` — `$$` there is the *new* bash's own PID read from
+  inside itself, and since `exec` replaces that process in place (same
+  PID, no further fork), the PID written is guaranteed correct by
+  construction, with no dependency on the outer shell's job-table
+  bookkeeping. Verified directly across several clean runs, each
+  cross-checked against an independent `ps` snapshot.
 - In `usbip_find()` (launcher/kineobridge_launcher.c): never search
   the unbounded `line` pointer (which runs into every subsequent line
   of `usbipd.exe list`'s multi-line output) for the state substrings
@@ -687,6 +723,7 @@ scripts/start-kineo.sh             -- dev one-command launcher (bash, NOT the cu
 scripts/stop-kineo.sh              -- dev stop/cleanup
 scripts/diagnose.sh                -- dev health check, layered (USB/IP vs Aravis vs bridge vs CTI)
 scripts/package_release.sh         -- assembles release/
+scripts/wsl_warmup.ps1             -- optional login-time WSL/camera warmup (see section 14)
 RELEASE_MANIFEST.md                -- private release record (per-build hashes, tests performed)
 
 investigation/kineo-workflow-trace.md  -- full milestone-by-milestone history (M1-M4d)

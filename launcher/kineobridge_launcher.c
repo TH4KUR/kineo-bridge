@@ -543,8 +543,26 @@ static int deploy_and_start_bridge(void) {
      * killing the `$!` one would leave python3 -- protected by nohup
      * from the resulting SIGHUP -- running forever). With `cd` as a
      * separate prior statement, the backgrounded command is a single
-     * simple command and `$!` is confirmed to match python3's real PID
-     * exactly. */
+     * simple command, which avoids that particular subshell trap.
+     *
+     * BUT: `$!` itself was found to be unreliable through the
+     * `wsl.exe -- bash -lc "..."` interop path in this environment
+     * (found 2026-09-27, investigating a KB-USB-003 report that turned
+     * out to be unrelated to camera/USB at all): a minimal, fully
+     * isolated repro -- `wsl.exe -- bash -c 'sleep 5 & echo $!'`, run
+     * from a genuine native Windows process, no shell tricks -- printed
+     * an EMPTY PID every time. The real, shipped `bridge.pid` matched
+     * this exactly: a bare newline, no digits, meaning
+     * `stop_bridge()`'s `kill "$(cat bridge.pid)"` had been silently a
+     * no-op. Fixed by never relying on `$!` at all: the backgrounded
+     * command is now `bash -c 'echo $$ > bridge.pid; exec python3 ...'`
+     * -- `$$` here is the *new* bash's own PID, read from inside
+     * itself, and since `exec` replaces that process in place (same
+     * PID, no further fork), the PID written is guaranteed to be
+     * python3's real PID by construction, with no dependency on the
+     * outer shell's job-table bookkeeping at all. Verified directly
+     * across several clean runs (each cross-checked against an
+     * independent `ps` snapshot) before shipping this. */
     /* Delete any stale status file from a previous run BEFORE starting
      * the new process -- a real bug (found 2026-09-27, sixth live
      * launch attempt): the health check below only tested for the
@@ -585,8 +603,9 @@ static int deploy_and_start_bridge(void) {
          * before this one-shot session ends -- without that sleep,
          * `setsid` alone was still not sufficient (also verified
          * directly). */
-        "setsid nohup python3 -u kineo_camera_bridge.pyc --source camera --host 0.0.0.0 --port " BRIDGE_PORT
-        " > /tmp/kineobridge.log 2>&1 < /dev/null & echo $! > ~/.local/lib/kineobridge/bridge.pid; "
+        "setsid nohup bash -c 'echo $$ > ~/.local/lib/kineobridge/bridge.pid; "
+        "exec python3 -u kineo_camera_bridge.pyc --source camera --host 0.0.0.0 --port " BRIDGE_PORT "' "
+        "> /tmp/kineobridge.log 2>&1 < /dev/null & "
         "disown; sleep 1; echo STARTED");
     char out[256];
     if (wsl_run(cmd, out, sizeof out, 8000) < 0 || !strstr(out, "STARTED")) return 0;

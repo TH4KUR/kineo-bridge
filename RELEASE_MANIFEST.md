@@ -412,3 +412,23 @@ Current sha256:
 KineoBridge.exe                    caa79166daca0c180c73952ce3f2b1d8330013269fafe7d6c8cff3363cbe5236
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## PID-capture reliability fix (2026-09-27)
+
+`$!` turned out to be unreliable specifically through the `wsl.exe --
+bash -lc "..."` interop path in this environment — the shipped
+`bridge.pid` was found to be a bare newline (empty), meaning
+`stop_bridge()`'s kill had been silently a no-op. Fixed with
+`bash -c 'echo $$ > bridge.pid; exec python3 ...'` instead (`$$` read
+from inside the new process itself, `exec` keeps the same PID — see
+`PROJECT_MEMORY.md` §21 for the full repro/fix). Also added
+`scripts/wsl_warmup.ps1`, an optional login-time script addressing two
+further `KB-USB-003` causes (cold WSL2 boot race, WSL2 idle-shutdown
+silently dropping the attach) — not yet wired into the installer.
+Reproducibility and the embedded icon both re-verified unaffected.
+
+Current sha256:
+```
+KineoBridge.exe                    9e3b9f84fee5a6d5ce8553ad17a09b837caaefbc99e3aad063143bf4682178ca
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
