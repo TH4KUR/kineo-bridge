@@ -484,7 +484,7 @@ launch; this lets `ensure_camera_ready()` run `usbipd bind` itself when
 a device is ever seen `NotShared`, as well as `usbipd attach` — no
 manual admin command is ever shown to the customer for either case. On
 any real failure, a native `MessageBoxA` shows a short, non-technical
-message plus a short support code (`KB-ENV-001`, `KB-USB-000/001/003`,
+message plus a short support code (`KB-ENV-001/002`, `KB-USB-000/001/003`,
 `KB-BRIDGE-001`, `KB-KINEO-001/002`) — never a console/log dump.
 
 **Known gap in `deploy_runtime_payload()`**: if no `payload\` folder
@@ -514,9 +514,40 @@ portable/dynamic resolution:
   Aravis `GI_TYPELIB_PATH`/`LD_LIBRARY_PATH` would all point at a
   nonexistent path and the bridge would fail to start.
 
-Both constants are defined together right after `PHYSICAL_MAX_FPS` in
-`kineobridge_launcher.c`, with a comment explaining they're deliberate.
-**This is a real, understood tradeoff, not an oversight**: it directly
+**Third, added 2026-09-28 as the real backstop** (the two path checks
+above are trivially defeated by anyone who just recreates the expected
+username/directories — this one is not): a hardware fingerprint check.
+`get_hardware_fingerprint()` queries `Win32_BaseBoard.SerialNumber` +
+`Win32_ComputerSystemProduct.UUID` + first `Win32_DiskDrive.SerialNumber`
+via WMI (`powershell.exe -NoProfile -Command 'Get-CimInstance ...'`,
+joined as `"$bb|$bios|$disk"`), hashes it with `hw_sha256_hex()` (SHA-256
+via Windows' own BCrypt API, no hand-rolled crypto), and compares
+against `EXPECTED_HW_HASH`, a hardcoded hex digest, in `WinMain()`
+right after the path check (fails with `KB-ENV-002` on mismatch).
+**Deliberately no key involved, private or otherwise** — this is a
+plain one-way hash comparison, not a signature. A private key embedded
+in shipped code would be a real security mistake here, not just a
+style choice: anyone who extracts it (trivial for a native, only
+lightly-stripped .exe) could forge a valid credential for ANY machine,
+which defeats the point more thoroughly than what it would replace.
+Only the hash is embedded in the binary (verified via `strings` — the
+raw hardware identifiers themselves are NOT present, only their
+one-way digest), and the launcher's own log deliberately only logs
+pass/fail booleans, never the fingerprint or hash values, so the log
+file itself can't be used to help bypass this. This machine's real
+fingerprint (verified byte-exact between the build-time query used to
+compute the hash and the runtime trim logic, including the CRLF
+line-ending strip) was:
+`A122221111B8602A|FDBB7861-D56E-FBA1-2371-B568E5A71537|E823_8FA6_BF53_0001_001B_448B_4DC2_A75C.`
+→ sha256 `d0da8bd7b55e7c5fb260d1a99911cc43b42de6aca03fe7d5174fa632678be6c9`.
+Recorded here (not just in the source comment) so a fresh session
+without git blame handy still knows exactly what this was computed
+from and why, should the machine's hardware ever change and this need
+recomputing.
+
+All three constants are defined together right after `PHYSICAL_MAX_FPS`
+in `kineobridge_launcher.c`, with comments explaining they're
+deliberate. **This is a real, understood tradeoff, not an oversight**: it directly
 conflicts with ever shipping this to a genuinely different customer
 machine as currently architected (a different Windows/WSL username
 would need matching hardcoded values here, or the checks removed). If

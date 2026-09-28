@@ -25,6 +25,7 @@
 #include <windows.h>
 #include <shellapi.h>
 #include <commctrl.h>
+#include <bcrypt.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -48,6 +49,32 @@
  * in WinMain() and PROJECT_MEMORY.md's "Machine lock" note. */
 #define WSL_HOME           "/home/imv"
 #define WIN_LOCK_PATH      "C:\\Users\\IMV"
+
+/* Hardware fingerprint lock (2026-09-28, deliberate, user-directed):
+ * the WIN_LOCK_PATH check above only catches someone who didn't bother
+ * to recreate the expected username/directories -- trivial to work
+ * around by literally just imitating them on another machine. This is
+ * the real backstop: SHA-256 of "<motherboard serial>|<BIOS/system
+ * UUID>|<first disk serial>", queried fresh at every launch via WMI
+ * (get_hardware_fingerprint()) and hashed with Windows' own BCrypt API
+ * (hw_sha256_hex()), compared against this ONE hardcoded expected
+ * hash. There is deliberately no key here, private or otherwise --
+ * this is a plain hash comparison, not a signature. A private key
+ * embedded in a shipped binary would be pointless: whoever extracts it
+ * (trivial for a native, only lightly-stripped .exe) could sign a
+ * valid credential for ANY machine, which defeats the entire point
+ * more thoroughly than what this replaces. Hashing real hardware
+ * identifiers means bypassing this means actually faking hardware
+ * identifiers, not copying a folder. Computed once, for this exact
+ * machine, via:
+ *   powershell.exe -NoProfile -Command '$bb=(Get-CimInstance
+ *   Win32_BaseBoard).SerialNumber; $bios=(Get-CimInstance
+ *   Win32_ComputerSystemProduct).UUID; $disk=(Get-CimInstance
+ *   Win32_DiskDrive | Select-Object -First 1).SerialNumber;
+ *   Write-Output "$bb|$bios|$disk"'
+ * -- see PROJECT_MEMORY.md's "Machine lock" note for the exact
+ * verified fingerprint string this hash was computed from. */
+#define EXPECTED_HW_HASH   "d0da8bd7b55e7c5fb260d1a99911cc43b42de6aca03fe7d5174fa632678be6c9"
 #define PRODUCT_NAME       "KineoBridge"
 #define PRODUCT_VERSION    "1.0.0"
 #define LOG_DIR            "C:\\ProgramData\\KineoBridge\\logs"
@@ -321,6 +348,38 @@ static int run_capture(const char *cmdline, char *out, size_t bufcap, DWORD time
     CloseHandle(pi.hThread);
     log_line("run_capture: cmd=[%s] exit=%d output=[%s]", cmdline, (int)exit_code, logbuf);
     return (int)exit_code;
+}
+
+static int hw_sha256_hex(const char *data, size_t len, char hexout[65]) {
+    BCRYPT_ALG_HANDLE alg = NULL;
+    BCRYPT_HASH_HANDLE hash = NULL;
+    UCHAR digest[32];
+    int ok = 0;
+    if (BCryptOpenAlgorithmProvider(&alg, BCRYPT_SHA256_ALGORITHM, NULL, 0) != 0) return 0;
+    if (BCryptCreateHash(alg, &hash, NULL, 0, NULL, 0, 0) == 0) {
+        if (BCryptHashData(hash, (PUCHAR)data, (ULONG)len, 0) == 0 &&
+            BCryptFinishHash(hash, digest, sizeof digest, 0) == 0) {
+            for (int i = 0; i < 32; i++) sprintf(hexout + i * 2, "%02x", digest[i]);
+            hexout[64] = '\0';
+            ok = 1;
+        }
+        BCryptDestroyHash(hash);
+    }
+    BCryptCloseAlgorithmProvider(alg, 0);
+    return ok;
+}
+
+static int get_hardware_fingerprint(char *out, size_t outcap) {
+    int rc = run_capture(
+        "powershell.exe -NoProfile -Command \"$bb=(Get-CimInstance Win32_BaseBoard).SerialNumber; "
+        "$bios=(Get-CimInstance Win32_ComputerSystemProduct).UUID; "
+        "$disk=(Get-CimInstance Win32_DiskDrive | Select-Object -First 1).SerialNumber; "
+        "Write-Output \\\"$bb|$bios|$disk\\\"\"",
+        out, outcap, 10000);
+    if (rc != 0 || !out) return 0;
+    size_t n = strlen(out);
+    while (n > 0 && (out[n - 1] == '\n' || out[n - 1] == '\r')) out[--n] = '\0';
+    return n > 0;
 }
 
 static int process_is_running_by_name(const char *image_name) {
@@ -848,6 +907,26 @@ int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprev, LPSTR cmdline, int nshow) {
             "Error KB-ENV-001",
             "Kineo Bridge", MB_OK | MB_ICONERROR);
         return 1;
+    }
+
+    /* Hardware fingerprint lock (see EXPECTED_HW_HASH above) -- the
+     * real backstop, checked after the cheap path check so a wrong
+     * machine fails fast without spawning PowerShell/WMI in the common
+     * case, but still before the status window. */
+    {
+        char fp[512];
+        char digest[65];
+        int fp_ok = get_hardware_fingerprint(fp, sizeof fp);
+        int hash_ok = fp_ok && hw_sha256_hex(fp, strlen(fp), digest);
+        int match = hash_ok && strcmp(digest, EXPECTED_HW_HASH) == 0;
+        log_line("hw lock: fp_ok=%d hash_ok=%d match=%d", fp_ok, hash_ok, match);
+        if (!match) {
+            MessageBoxA(NULL,
+                "Kineo Bridge could not start on this machine.\n\n"
+                "Error KB-ENV-002",
+                "Kineo Bridge", MB_OK | MB_ICONERROR);
+            return 1;
+        }
     }
 
     g_status_wnd = create_status_window(hinst);

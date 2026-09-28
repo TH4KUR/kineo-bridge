@@ -460,3 +460,25 @@ Current sha256:
 KineoBridge.exe                    27e5e4c531061d296a02a5db0cf82405f51d99bc85d7b12431b4b0c310aac89f
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## Hardware fingerprint lock added (2026-09-28)
+
+User-directed: the path-based lock alone is trivially defeated by
+recreating the expected username/directories, so a real backstop was
+added — SHA-256 (via Windows BCrypt, no hand-rolled crypto) of this
+machine's motherboard serial + BIOS UUID + first disk serial, hardcoded
+as `EXPECTED_HW_HASH` and checked in `WinMain()` right after the path
+check (`KB-ENV-002` on mismatch). Deliberately no private/signing key
+anywhere — that would be a real security mistake in shipped code, not
+a style choice (see `PROJECT_MEMORY.md` §19 "Machine lock" for the
+full reasoning). Verified: only the hash is embedded in the binary
+(`strings` scan — raw hardware identifiers are not present), the log
+never records the fingerprint/hash values, and the build-time fingerprint
+matches the runtime trim logic byte-for-byte. Reproducibility and the
+embedded icon both re-verified unaffected.
+
+Current sha256:
+```
+KineoBridge.exe                    1257785aaeebd4b3d290df04227bba8c6620cf7e65850bfa8d09e23dfcd86f9c
+```
+(CTI, XML, and `.pyc` hashes unchanged.)

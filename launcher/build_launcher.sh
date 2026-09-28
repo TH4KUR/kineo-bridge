@@ -14,7 +14,7 @@ echo "== Compiling resources (manifest + version info) =="
 echo "== Building KineoBridge.exe (release, stripped) =="
 "$CC" -O2 -s -mwindows -static -static-libgcc \
     -o KineoBridge.exe kineobridge_launcher.c kineobridge_res.o \
-    -lcomctl32 -Wl,--no-insert-timestamp
+    -lcomctl32 -lbcrypt -Wl,--no-insert-timestamp
 
 file KineoBridge.exe
 echo "--- sha256 ---"
