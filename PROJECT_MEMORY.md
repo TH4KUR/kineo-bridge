@@ -28,6 +28,13 @@ without rediscovering anything below.
   related will work again. This is NOT documented anywhere else — this
   is the one thing to check first if the bridge mysteriously stops
   working after any environment cleanup.
+- **The shipped `KineoBridge.exe` is deliberately machine-locked** to
+  this specific Windows account (`IMV`) and WSL account (`imv`) — see
+  §19, "Machine lock". It will refuse to run (or the bridge will fail
+  to start) on any other machine/account by design. This is a real,
+  intentional tradeoff against ever deploying to a genuinely different
+  customer machine as currently built — do not remove it without
+  checking first (see §21).
 
 ## 1. Purpose
 
@@ -477,7 +484,7 @@ launch; this lets `ensure_camera_ready()` run `usbipd bind` itself when
 a device is ever seen `NotShared`, as well as `usbipd attach` — no
 manual admin command is ever shown to the customer for either case. On
 any real failure, a native `MessageBoxA` shows a short, non-technical
-message plus a short support code (`KB-USB-000/001/003`,
+message plus a short support code (`KB-ENV-001`, `KB-USB-000/001/003`,
 `KB-BRIDGE-001`, `KB-KINEO-001/002`) — never a console/log dump.
 
 **Known gap in `deploy_runtime_payload()`**: if no `payload\` folder
@@ -490,6 +497,37 @@ its `payload\` folder. Mitigation: always verify the deployed
 `C:\ProgramData\KineoBridge\runtime\m5_bridge.release.cti` hash matches
 the release manifest's recorded hash during release validation — never
 assume from a successful launch alone.
+
+**Machine lock (2026-09-27, deliberate, user-directed)**: this build is
+intentionally tied to one specific machine/account and is expected to
+fail outright if the exe/payload is copied anywhere else. Two
+independent checks, both using hardcoded absolute paths instead of any
+portable/dynamic resolution:
+- `WinMain()`, before anything else (before even creating the status
+  window): `GetFileAttributesA(WIN_LOCK_PATH)` where `WIN_LOCK_PATH` =
+  `C:\Users\IMV`, must exist as a directory, else shows a generic
+  `KB-ENV-001` error and exits immediately.
+- Every WSL-side command (`deploy_and_start_bridge()`,
+  `stop_bridge()`, `aravis_sees_camera()`, the bridge status-file
+  health check) uses the hardcoded `WSL_HOME` = `/home/imv`, never `~`
+  — on a WSL account with any other username, `cd`/`mkdir -p`/the
+  Aravis `GI_TYPELIB_PATH`/`LD_LIBRARY_PATH` would all point at a
+  nonexistent path and the bridge would fail to start.
+
+Both constants are defined together right after `PHYSICAL_MAX_FPS` in
+`kineobridge_launcher.c`, with a comment explaining they're deliberate.
+**This is a real, understood tradeoff, not an oversight**: it directly
+conflicts with ever shipping this to a genuinely different customer
+machine as currently architected (a different Windows/WSL username
+would need matching hardcoded values here, or the checks removed). If
+this project is ever extended to real multi-customer deployment, this
+is the first thing to revisit — replace with real licensing/hardware-ID
+binding (already flagged as a future item, see §20) rather than adding
+more machines to an ever-growing hardcoded allowlist. Do not "fix" this
+by making the paths dynamic/portable again without checking with
+whoever asked for it first — it was requested explicitly, twice
+confirmed (once generally, once specifically extended to the shipped
+exe itself after the customer-deployability tradeoff was flagged).
 
 ## 20. Known limitations
 
@@ -536,6 +574,11 @@ assume from a successful launch alone.
 
 ## 21. Do-not-regress rules
 
+- Never make `WSL_HOME`/`WIN_LOCK_PATH` (kineobridge_launcher.c) or the
+  machine-lock check in `WinMain()` dynamic/portable again without
+  explicit confirmation from whoever's directing the work — this is a
+  deliberate, twice-confirmed restriction (see the "Machine lock" note
+  in §19), not an oversight to "clean up".
 - Never modify `probe/m3/m4h/` (the M4d golden synthetic baseline).
 - Never remove `KINEO_BRIDGE_SOURCE=synthetic` mode.
 - Never reintroduce continuous/pre-roll physical streaming while idle —

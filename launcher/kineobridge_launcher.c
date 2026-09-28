@@ -39,6 +39,15 @@
 #define RUNTIME_DIR        "C:\\ProgramData\\KineoBridge\\runtime"
 #define BRIDGE_PORT        "9494"
 #define PHYSICAL_MAX_FPS   "60"
+
+/* Deliberately hardcoded, not resolved dynamically (no "~", no
+ * %USERPROFILE%/GetUserName() fallback): this build is tied to this
+ * one specific machine on purpose (Windows account "IMV", WSL account
+ * "imv"). Copying KineoBridge.exe/payload to any other account or
+ * machine is expected to fail outright -- see the machine-lock check
+ * in WinMain() and PROJECT_MEMORY.md's "Machine lock" note. */
+#define WSL_HOME           "/home/imv"
+#define WIN_LOCK_PATH      "C:\\Users\\IMV"
 #define PRODUCT_NAME       "KineoBridge"
 #define PRODUCT_VERSION    "1.0.0"
 #define LOG_DIR            "C:\\ProgramData\\KineoBridge\\logs"
@@ -456,7 +465,7 @@ static int aravis_sees_camera(void) {
      * see deploy_runtime()/GI_TYPELIB_PATH below. */
     char out[512];
     int rc = wsl_run(
-        "GI_TYPELIB_PATH=~/aravis-0.8.36/build/src LD_LIBRARY_PATH=~/aravis-0.8.36/build/src "
+        "GI_TYPELIB_PATH=" WSL_HOME "/aravis-0.8.36/build/src LD_LIBRARY_PATH=" WSL_HOME "/aravis-0.8.36/build/src "
         "python3 -c \\\"import gi; gi.require_version('Aravis','0.8'); from gi.repository import Aravis; "
         "Aravis.update_device_list(); import sys; sys.exit(0 if any(Aravis.get_device_serial_nbr(i)=='"
         CAMERA_SERIAL "' for i in range(Aravis.get_n_devices())) else 1)\\\"",
@@ -576,13 +585,13 @@ static int deploy_and_start_bridge(void) {
      * again once THIS run's process writes a fresh one. */
     char cmd[1024];
     snprintf(cmd, sizeof cmd,
-        "mkdir -p ~/.local/lib/kineobridge && "
-        "cp /mnt/c/ProgramData/KineoBridge/runtime/bridge/*.pyc ~/.local/lib/kineobridge/ 2>/dev/null; "
-        "if [ -f ~/.local/lib/kineobridge/bridge.pid ]; then "
-        "kill \"$(cat ~/.local/lib/kineobridge/bridge.pid)\" 2>/dev/null; fi; sleep 1; "
-        "rm -f ~/.local/lib/kineobridge/bridge_status." BRIDGE_PORT ".json; "
-        "cd ~/.local/lib/kineobridge; "
-        "GI_TYPELIB_PATH=~/aravis-0.8.36/build/src LD_LIBRARY_PATH=~/aravis-0.8.36/build/src "
+        "mkdir -p " WSL_HOME "/.local/lib/kineobridge && "
+        "cp /mnt/c/ProgramData/KineoBridge/runtime/bridge/*.pyc " WSL_HOME "/.local/lib/kineobridge/ 2>/dev/null; "
+        "if [ -f " WSL_HOME "/.local/lib/kineobridge/bridge.pid ]; then "
+        "kill \"$(cat " WSL_HOME "/.local/lib/kineobridge/bridge.pid)\" 2>/dev/null; fi; sleep 1; "
+        "rm -f " WSL_HOME "/.local/lib/kineobridge/bridge_status." BRIDGE_PORT ".json; "
+        "cd " WSL_HOME "/.local/lib/kineobridge; "
+        "GI_TYPELIB_PATH=" WSL_HOME "/aravis-0.8.36/build/src LD_LIBRARY_PATH=" WSL_HOME "/aravis-0.8.36/build/src "
         "KINEO_BRIDGE_MAX_FPS=" PHYSICAL_MAX_FPS " "
         /* setsid fully detaches the process from this wsl.exe
          * invocation's own session -- a real bug (found 2026-09-27,
@@ -603,7 +612,7 @@ static int deploy_and_start_bridge(void) {
          * before this one-shot session ends -- without that sleep,
          * `setsid` alone was still not sufficient (also verified
          * directly). */
-        "setsid nohup bash -c 'echo $$ > ~/.local/lib/kineobridge/bridge.pid; "
+        "setsid nohup bash -c 'echo $$ > " WSL_HOME "/.local/lib/kineobridge/bridge.pid; "
         "exec python3 -u kineo_camera_bridge.pyc --source camera --host 0.0.0.0 --port " BRIDGE_PORT "' "
         "> /tmp/kineobridge.log 2>&1 < /dev/null & "
         "disown; sleep 1; echo STARTED");
@@ -620,7 +629,7 @@ static int deploy_and_start_bridge(void) {
     for (int i = 0; i < 20; i++) {
         Sleep(500);
         char probe_out[512];
-        int rc = wsl_run("test -f ~/.local/lib/kineobridge/bridge_status." BRIDGE_PORT ".json && echo OK",
+        int rc = wsl_run("test -f " WSL_HOME "/.local/lib/kineobridge/bridge_status." BRIDGE_PORT ".json && echo OK",
                           probe_out, sizeof probe_out, 3000);
         if (rc == 0 && strstr(probe_out, "OK") && i >= 3) return 1;
     }
@@ -631,8 +640,8 @@ static void stop_bridge(void) {
     /* PID-file based, not `pkill -f` -- see the comment in
      * deploy_and_start_bridge() for why a pattern-based kill here would
      * self-match this very command's own invoking shell. */
-    wsl_run("if [ -f ~/.local/lib/kineobridge/bridge.pid ]; then "
-            "kill \"$(cat ~/.local/lib/kineobridge/bridge.pid)\" 2>/dev/null; fi",
+    wsl_run("if [ -f " WSL_HOME "/.local/lib/kineobridge/bridge.pid ]; then "
+            "kill \"$(cat " WSL_HOME "/.local/lib/kineobridge/bridge.pid)\" 2>/dev/null; fi",
             NULL, 0, 3000);
 }
 
@@ -824,6 +833,23 @@ static int launch_and_verify_kineo(void) {
 int WINAPI WinMain(HINSTANCE hinst, HINSTANCE hprev, LPSTR cmdline, int nshow) {
     (void)hprev; (void)cmdline; (void)nshow;
     log_line("=== KineoBridge %s starting ===", PRODUCT_VERSION);
+
+    /* Machine lock (deliberate, see WSL_HOME/WIN_LOCK_PATH above): this
+     * build is tied to one specific machine/account on purpose, not
+     * meant to run correctly if the exe/payload is copied elsewhere.
+     * Checked before anything else -- including creating the status
+     * window -- so a copy elsewhere fails immediately rather than
+     * partway through camera/bridge setup. */
+    DWORD lock_attrs = GetFileAttributesA(WIN_LOCK_PATH);
+    if (lock_attrs == INVALID_FILE_ATTRIBUTES || !(lock_attrs & FILE_ATTRIBUTE_DIRECTORY)) {
+        log_line("machine lock: " WIN_LOCK_PATH " not found, refusing to start");
+        MessageBoxA(NULL,
+            "Kineo Bridge could not start on this machine.\n\n"
+            "Error KB-ENV-001",
+            "Kineo Bridge", MB_OK | MB_ICONERROR);
+        return 1;
+    }
+
     g_status_wnd = create_status_window(hinst);
 
     set_status("Checking Kineo installation...");

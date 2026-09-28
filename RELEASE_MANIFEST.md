@@ -432,3 +432,31 @@ Current sha256:
 KineoBridge.exe                    9e3b9f84fee5a6d5ce8553ad17a09b837caaefbc99e3aad063143bf4682178ca
 ```
 (CTI, XML, and `.pyc` hashes unchanged.)
+
+## Machine lock added (2026-09-28)
+
+User-directed, twice-confirmed (once generally, once specifically
+extended to the shipped exe after I flagged that this conflicts with
+future multi-customer deployability as currently architected): this
+build now refuses to run outside this one machine/account. Two checks,
+both hardcoded absolute paths instead of anything dynamic/portable:
+`WinMain()` requires `C:\Users\IMV` to exist as a directory (checked
+before anything else, including creating the status window — fails
+immediately with `KB-ENV-001` otherwise), and every WSL-side command
+now uses the hardcoded `/home/imv` instead of `~`. Both constants
+verified true on this actual machine before shipping (so this build
+still works here); full rationale and the explicit "don't remove this
+without checking first" note are in `PROJECT_MEMORY.md` §0/§19/§21.
+Reproducibility and the embedded icon both re-verified unaffected.
+
+**This is the first release build that will NOT run correctly if
+handed to a different machine/account, even a real future customer
+one.** If that's ever needed, this is the first thing to revisit —
+replace with real licensing/hardware-ID binding (already flagged as a
+future item above) rather than hardcoding more machines.
+
+Current sha256:
+```
+KineoBridge.exe                    27e5e4c531061d296a02a5db0cf82405f51d99bc85d7b12431b4b0c310aac89f
+```
+(CTI, XML, and `.pyc` hashes unchanged.)
